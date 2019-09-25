@@ -1,6 +1,8 @@
 Idea #1 - 
 
 Project Title: Medical report suggestion
+### I love this idea. Use NLG to generate commentary for users. I would stick to mobile app and make it useful for underprivileged users in rural area and support multiple languages such as spanish, hindi, tamil, telugu etc... 
+feel free to change codename 
 
 Goal of the project: To help the common man understand their medical reports without going to a doctor
 
