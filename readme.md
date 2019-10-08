@@ -1,14 +1,25 @@
-MediReport
+**MediReport**
 
-Everyone cannot read or understand their medical reports (lipid profile, CBC report, LFT, RFT, etc.). They have to take a day off from work and go to a doctor for getting a sense of their annual health reports. Our solution will save them time and money of a doctor's visit by making an informed decision about their health using their medical reports.
+**Description:**
+An application which enables end users to interpret the meanings of various medical/physiological parameters which are present in their medical reports or health checkups.
 
-Abstract
-1. Scan report/Upload softcopy of the report to our system. 
-2. Using OCR and/or NLP, we parse the report and use public data sets such as DBpedia's, etc., to get the definitions if the medical terms.
-3. We use ML to find if any correlations are present between fields and if any medical diagnosis can be made out of it.
-4. We also display in our app, meaning of each field in the medical report. If required, we also display ways through which a person may be able to bring the field's value within the normal range.
 
-Architecture Diagram
+**Abstract:**
 
-Technology stack: OCR, NLP, Linked Open Data/Semantic Graph, etc.
+Everyone cannot read or understand the various medical jargon and paramters mentioned in their medical reports (lipid profile, CBC report, LFT, RFT, etc.). They usually have to take a day off from their schedules and visit their doctor/medical practioner to get a sense of their annual health reprts or even results of important tests. Our solution will save people time and money of a doctor's visit, by making an informed decision about their health using their medical reports. This will be useful particularly in the case of polulation located in remote areas where medical facilities are sparse.
+
+We propose to build a React-based UI where user can upload their medical reports. React native will be used to implement the solution, which will enable the application to be ported to mobile platforms as well. 
+Tesseract OCR and Aspose APIs will be used to extract medical report data while scanning the report. We will store RDF medical data from DBpedia and other datasets in MarkLogic. 
+We will also be using various NLP/NLG libraries such as Apache OpenNLP, SimpleNLP etc., to generate human-like response for the user. 
+Our Java-based system will interface with the RDF database and NLP/NLG libraries to send back repose to the UI.
+
+We will provide support for multiple space-delimited languages for example, English, Spanish and all Indian languages. We will not able to support languages like Chinese, Japanese, Korean, Thai, Khmer whose writing systems that don't use spaces, since OpenNLP performs space-level token parsing.
+
+
+
+![](https://github.com/SJSUFall2019-CMPE272/MediReport/blob/master/MediReport_archi_diagram.png)
+
+**Technology stack:**
+
+React, OCR, OpenNLP, SimpleNLP Linked Open Data/Semantic Graph.
 
