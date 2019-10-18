@@ -36,12 +36,19 @@ MediReport will solve the following use cases -
 ![](https://github.com/SJSUFall2019-CMPE272/MediReport/blob/master/MediReport_archi_diagram.png)
 
 <h1>Technology stack</h1>
-React, OCR, OpenNLP, SimpleNLP Linked Open Data/Semantic Graph.
+React Native, OCR, OpenNLP, SimpleNLP Linked Open Data/Semantic Graph.
 
-<h2>Technology choices</h2>
-  | Actor      | Use case |
+<h2>Technology choices and viability</h2>
+
+  | Technology      | Choice and viability |
 | ----------- | ----------- |
-| x | x
+| React Native | React Native is a multi-platform solution developed by Facebook that lets you build mobile apps using JavaScript. These mobile apps are considered multi-platform because they’re written once and deployed across many platforms, like Android, iOS and the web. |
+| React | x |
+| React | x |
+| React | x |
+| React | x |
+| React | x |
+| React | x |
 
 <h1>Feedback</h1>
 Professor Ranjan's initial reaction:
@@ -51,7 +58,7 @@ Professor Ranjan's initial reaction:
 
 <h1>Team</h1>
 
-1. [Animesh Swain]()
+1. [Animesh Swain](https://github.com/SwainsteigerSJSU)
 1. [Anjana Menon Cherubala](https://github.com/AnjanaMenonCherubala)
 1. [Sakshi Mahendru](https://github.com/sakshimahendrusjsu)
 1. [Vini Aswal](https://github.com/vaswal)
