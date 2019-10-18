@@ -18,6 +18,7 @@ We will provide support for multiple space-delimited languages for example, Engl
 
 
 <h1>Architecture</h1>
+
 ![](https://github.com/SJSUFall2019-CMPE272/MediReport/blob/master/MediReport_archi_diagram.png)
 
 <h1>Technology stack</h1>
