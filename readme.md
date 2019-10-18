@@ -26,8 +26,8 @@ MediReport will solve the following use cases -
 
 | Actor      | Use case |
 | ----------- | ----------- |
-| Patient trying to understand a medical report      | Patients often have difficulties understanding the clinical data presented in portals. In response, increasingly, patients either ignore their reports or go online<sup>[3]</sup> to make sense of this data |
-| Patient trying to understand a doctor's prescription   |  40-80% of medical information provided by healthcare practitioners is forgotten immediately. The greater the amount of information presented, the lower the proportion correctly recalled;<sup>[4]</sup> furthermore, almost half of the information that is remembered is incorrect.<sup>[5]</sup>        |
+| Patient trying to understand a medical report      | Patients often have difficulties understanding the clinical data presented in portals. In response, increasingly, patients either ignore their reports or go online<sup>[3]</sup> to make sense of this data. Medical infromation provided online in forums and discussion groups can lead to patient anxiety or such information may not always be applicable. Medireport will give the a one-stop solution for patients to understand their medical reports, the meaning and impact of each term (for ex., Bilirubin, Creatinine etc.) as well as ways to manage it  |
+| Patient trying to understand a doctor's prescription   |  40-80% of medical information provided by healthcare practitioners is forgotten immediately. The greater the amount of information presented, the lower the proportion correctly recalled;<sup>[4]</sup> furthermore, almost half of the information that is remembered is incorrect.<sup>[5]</sup> To help patients in recalling and undestanding each prescribed medicine, MediReport will augment the prescription with explantion, categorization (antibiotic, antibacterial etc.) side-effects, medical usage, mode of action etc.        |
 
 <h1>Architecture</h1>
 
