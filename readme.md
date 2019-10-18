@@ -16,6 +16,13 @@ Our Java-based system will interface with the RDF database and NLP/NLG libraries
 
 We will provide support for multiple space-delimited languages for example, English, Spanish and all Indian languages. We will not able to support languages like Chinese, Japanese, Korean, Thai, Khmer whose writing systems that don't use spaces, since OpenNLP performs space-level token parsing.
 
+<h1>Business Value</h1>
+MediReport will solve the following use cases - 
+
+| Actor      | Use case |
+| ----------- | ----------- |
+| Patient trying to understand a medical report      | Patients often have difficulties understanding the clinical data presented in portals. In response, increasingly, patients either ignore their reports or go online<sup>[1]</sup> to make sense of this data |
+| Patient trying to understand a doctor's prescription   | Text        |
 
 <h1>Architecture</h1>
 
@@ -29,4 +36,7 @@ Professor Ranjan's initial reaction:
 
 > I love this idea. Use NLG to generate commentary for users. I would stick to mobile app and make it useful for
 > underprivileged users in rural area and support multiple languages such as spanish, hindi, tamil, telugu etc... 
+
+<h1>References</h1>
+Graham, S., & Brookey, J. (2008). Do patients understand?. The Permanente journal, 12(3), 67–69. doi:10.7812/tpp/07-144
 
