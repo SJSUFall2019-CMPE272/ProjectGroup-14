@@ -27,5 +27,7 @@ React, OCR, OpenNLP, SimpleNLP Linked Open Data/Semantic Graph.
 
 <h1>Feedback</h1>
 Professor Ranjan's initial reaction:
-> I love this idea. Use NLG to generate commentary for users. I would stick to mobile app and make it useful for underprivileged users in rural area and support multiple languages such as spanish, hindi, tamil, telugu etc... 
+
+> I love this idea. Use NLG to generate commentary for users. I would stick to mobile app and make it useful for
+> underprivileged users in rural area and support multiple languages such as spanish, hindi, tamil, telugu etc... 
 
