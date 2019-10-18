@@ -3,11 +3,10 @@ Easy and understandable medical records
 
 
 <h1>Description</h1>
-An application which enables end users to interpret the meanings of various medical/physiological parameters which are present in their medical reports or health checkups.
+An application which enables end users to interpret the meanings of various medical/physiological parameters which are present in their medical reports or prescriptions.
 
 
-**Abstract:**
-
+<h1>Abstract</h1>
 Everyone cannot read or understand the various medical jargon and paramters mentioned in their medical reports (lipid profile, CBC report, LFT, RFT, etc.). They usually have to take a day off from their schedules and visit their doctor/medical practioner to get a sense of their annual health reprts or even results of important tests. Our solution will save people time and money of a doctor's visit, by making an informed decision about their health using their medical reports. This will be useful particularly in the case of polulation located in remote areas where medical facilities are sparse.
 
 We propose to build a React-based UI where user can upload their medical reports. React native will be used to implement the solution, which will enable the application to be ported to mobile platforms as well. 
@@ -21,8 +20,7 @@ We will provide support for multiple space-delimited languages for example, Engl
 
 ![](https://github.com/SJSUFall2019-CMPE272/MediReport/blob/master/MediReport_archi_diagram.png)
 
-**Technology stack:**
-
+<h1>Technology stack</h1>
 React, OCR, OpenNLP, SimpleNLP Linked Open Data/Semantic Graph.
 
 <h1>Feedback</h1>
