@@ -17,7 +17,7 @@ Our Java-based system will interface with the RDF database and NLP/NLG libraries
 We will provide support for multiple space-delimited languages for example, English, Spanish and all Indian languages. We will not able to support languages like Chinese, Japanese, Korean, Thai, Khmer whose writing systems that don't use spaces, since OpenNLP performs space-level token parsing.
 
 
-
+<h1>Architecture</h1>
 ![](https://github.com/SJSUFall2019-CMPE272/MediReport/blob/master/MediReport_archi_diagram.png)
 
 <h1>Technology stack</h1>
