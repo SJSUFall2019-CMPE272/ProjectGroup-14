@@ -20,13 +20,14 @@ We will provide support for multiple space-delimited languages for example, Engl
 Limited literacy skills are one of the strongest predictors of poor health outcomes for patients. Studies have shown that when patients have low reading fluency, they know less about their chronic diseases, they are worse at managing their care<sup>[1]</sup>.
 
 
-Overall, studies of patient-accessible medical records suggest modest improvements in doctor-patient communication, adherence, patient empowerment, and patient education<sup>[2]</sup>.. 
+Overall, studies of patient-accessible medical records suggest modest improvements in doctor-patient communication, adherence, patient empowerment, and patient education<sup>[2]</sup>. 
+
 MediReport will solve the following use cases - 
 
 | Actor      | Use case |
 | ----------- | ----------- |
-| Patient trying to understand a medical report      | Patients often have difficulties understanding the clinical data presented in portals. In response, increasingly, patients either ignore their reports or go online<sup>[2]</sup> to make sense of this data |
-| Patient trying to understand a doctor's prescription   | Text        |
+| Patient trying to understand a medical report      | Patients often have difficulties understanding the clinical data presented in portals. In response, increasingly, patients either ignore their reports or go online<sup>[3]</sup> to make sense of this data |
+| Patient trying to understand a doctor's prescription   |  40-80% of medical information provided by healthcare practitioners is forgotten immediately. The greater the amount of information presented, the lower the proportion correctly recalled;<sup>[4]</sup> furthermore, almost half of the information that is remembered is incorrect.<sup>[5]</sup>        |
 
 <h1>Architecture</h1>
 
@@ -49,5 +50,7 @@ Professor Ranjan's initial reaction:
 
 3. Reynolds, T. L., Ali, N., McGregor, E., O'Brien, T., Longhurst, C., Rosenberg, A. L., … Zheng, K. (2018). Understanding Patient Questions about their Medical Records in an Online Health Forum: Opportunity for Patient Portal Design. AMIA ... Annual Symposium proceedings. AMIA Symposium, 2017, 1468–1477.
 
-4. 
+4. McGuire LC. Remembering what the doctor said: organization and older adults' memory for medical information. Exp Aging Res 1996;22: 403-28
+
+5. Anderson JL, Dodman S, Kopelman M, Fleming A. Patient information recall in a rheumatology clinic. Rheumatol Rehabil 1979;18: 245-55
 
