@@ -48,8 +48,6 @@ React Native, ,  Linked Open Data/Semantic Graph.
 | Aspose | Aspose provides the most complete set of PDF/Word/Excel manipulation and parsing solution for developers & end users. Aspose is one of the leaders with a suite of tools for creating PDF/MS Office documents<sup>[10]</sup>. We will use Aspose to parse and extract information from medical reports in PDF, MS Word and other supported formats. |
 | Tesseract | Tesseract is an OCR engine with support for unicode and the ability to recognize more than 100 languages out of the box. It can be trained to recognize other languages. We will use it to do OCR of medical reports where a user will be able to quicly take a picture of his/her medical record and get most accurate data from MediReport|
 
-| React | x |
-
 <h1>Feedback</h1>
 Professor Ranjan's initial reaction:
 
