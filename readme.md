@@ -42,6 +42,14 @@ Professor Ranjan's initial reaction:
 > I love this idea. Use NLG to generate commentary for users. I would stick to mobile app and make it useful for
 > underprivileged users in rural area and support multiple languages such as spanish, hindi, tamil, telugu etc... 
 
+<h1>Team</h1>
+
+1. [Animesh Swain]()
+1. [Anjana Menon Cherubala](https://github.com/AnjanaMenonCherubala)
+1. [Sakshi]()
+1. [Vini Aswal](https://github.com/vaswal)
+
+
 <h1>References</h1>
 
 1. Graham, S., & Brookey, J. (2008). Do patients understand?. The Permanente journal, 12(3), 67–69. doi:10.7812/tpp/07-144
