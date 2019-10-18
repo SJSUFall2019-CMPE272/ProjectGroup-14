@@ -1,6 +1,8 @@
 <h1>MediReport</h1>
+Easy and understandable medical records
 
-**Description:**
+
+<h1>Description</h1>
 An application which enables end users to interpret the meanings of various medical/physiological parameters which are present in their medical reports or health checkups.
 
 
