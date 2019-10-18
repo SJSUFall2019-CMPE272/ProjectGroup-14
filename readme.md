@@ -35,19 +35,19 @@ MediReport will solve the following use cases -
 
 ![](https://github.com/SJSUFall2019-CMPE272/MediReport/blob/master/MediReport_archi_diagram.png)
 
-<h1>Technology stack</h1>
-React Native, OCR, OpenNLP, SimpleNLP Linked Open Data/Semantic Graph.
+React Native, ,  Linked Open Data/Semantic Graph.
 
-<h2>Technology choices and viability</h2>
+<h2>Technology stack choice and viability</h2>
 
   | Technology      | Choice and viability |
 | ----------- | ----------- |
-| React Native | React Native is a multi-platform solution developed by Facebook that lets you build mobile apps using JavaScript. These mobile apps are considered multi-platform because they’re written once and deployed across many platforms, like Android, iOS and the web. |
-| React | x |
-| React | x |
-| React | x |
-| React | x |
-| React | x |
+| React Native | React Native is a multi-platform solution developed by Facebook that lets you build mobile apps using JavaScript. These mobile apps are considered multi-platform because they’re written once and deployed across many platforms, like Android, iOS and the web. We will use React Native to create cross platform app that can be run on iOS, Android and Web. |
+| spaCy | spaCy is an open-source software library for advanced natural language processing. spaCy excels at large-scale information extraction tasks. It's written from the ground up in carefully memory-managed Cython. Independent research in 2015 found spaCy to be the fastest in the world<sup>[8]</sup>. We will be using spaCy to perform most of our NLP tasks such as NER, sentence detection etc.  |
+| Linked data | Linked data (often capitalized as Linked Data) is structured data which is interlinked with other data so it becomes more useful through semantic queries<sup>[9]</sup>. It builds upon standard Web technologies such as HTTP, RDF and URIs, but rather than using them to serve web pages only for human readers, it extends them to share information in a way that can be read automatically by computers. We will use Dbpedia, a Linked dataset because it can provide us virtually every information present in Wikipedia as well as enable us to combine various Linked Data sources to generate a comprehensive dataset. |
+| DBpedia | DBpedia extracts factual information from Wikipedia pages, allowing users to find answers to questions where the information is spread across multiple Wikipedia articles. Data is accessed using an SQL-like query language for RDF called SPARQL. We will use DBpedia as our primary dataset for providing information in more than 100 languages. |
+| Aspose | Aspose provides the most complete set of PDF/Word/Excel manipulation and parsing solution for developers & end users. Aspose is one of the leaders with a suite of tools for creating PDF/MS Office documents<sup>[10]</sup>. We will use Aspose to parse and extract information from medical reports in PDF, MS Word and other supported formats. |
+| Tesseract | Tesseract is an OCR engine with support for unicode and the ability to recognize more than 100 languages out of the box. It can be trained to recognize other languages. We will use it to do OCR of medical reports where a user will be able to quicly take a picture of his/her medical record and get most accurate data from MediReport|
+
 | React | x |
 
 <h1>Feedback</h1>
@@ -79,3 +79,9 @@ Professor Ranjan's initial reaction:
 6. Meyer AND, Payne VL, Meeks DW, Rao R, Singh H. Physicians’ Diagnostic Accuracy, Confidence, and Resource Requests: A Vignette Study. JAMA Intern Med. 2013;173(21):1952–1958. doi:10.1001/jamainternmed.2013.10081
 
 7. Kaufman J. M. (2015). How to work with insurance companies. Neurology. Clinical practice, 5(5), 448–453. doi:10.1212/CPJ.0000000000000179
+
+8. Facts & Figures https://spacy.io/usage/facts-figures
+
+9. Bizer, Christian; Heath, Tom; Berners-Lee, Tim (2009). "Linked Data – The Story So Far" (PDF). International Journal on Semantic Web and Information Systems. 5 (3). doi:10.4018/jswis.2009081901.
+
+10. Create Documents with Aspose.Pdf for .NET https://visualstudiomagazine.com/articles/2010/09/01/create-documents-with-asposepdf-for-net.aspx
