@@ -29,6 +29,7 @@ MediReport will solve the following use cases -
 | Patient trying to understand a medical report      | Patients often have difficulties understanding the clinical data presented in portals. In response, increasingly, patients either ignore their reports or go online<sup>[3]</sup> to make sense of this data. Medical infromation provided online in forums and discussion groups can lead to patient anxiety or such information may not always be applicable. Medireport will give the a one-stop solution for patients to understand their medical reports, the meaning and impact of each term (for ex., Bilirubin, Creatinine etc.) as well as ways to manage it  |
 | Patient trying to understand a doctor's prescription   |  40-80% of medical information provided by healthcare practitioners is forgotten immediately. The greater the amount of information presented, the lower the proportion correctly recalled;<sup>[4]</sup> furthermore, almost half of the information that is remembered is incorrect.<sup>[5]</sup> To help patients in recalling and undestanding each prescribed medicine, MediReport will augment the prescription with explantion, categorization (antibiotic, antibacterial etc.) side-effects, medical usage, mode of action etc.        |
 | Physicians trying to make a diagnosys | A study by Meyer and Payne<sup>[6]</sup> suggests that the association between physicians’ diagnostic accuracy and their confidence in that accuracy may be poor and that physicians may not request the required additional resources (ie, additional tests, second opinions, curbside consultations, referrals, and reference materials) to facilitate diagnosis when they most need it. These mismatched associations might prevent physicians from reexamining difficult cases when their diagnosis is incorrect. Improving these associations and the use of potential resources in handling difficult cases could potentially reduce diagnostic error. Medireport will help reduce diagnostic error by providing the physician the additional resources such as Signs and symptoms, Virology, Pathophysiology, Diagnosis, Prevention, Treatment, Management, Prognosis, etc. |
+| Insurance company validating a claim | The insurers know a lot about you, based on claims. They aggregate data, such as imaging, medications, referrals, admissions, and emergency department visits, as well as quality metrics around severity-adjusted episodes of care for specific diagnoses<sup>[7]</sup>. MediReport will help insurance companies in making decisions about pre-existing conditions, valid claims, reporting malpractise etc. by providing them with a clear understanding of the thousands of medical terms and jargon that can be difficutl to remember. It will save insuracne company a lot of money by reducing work hours in understaning medical cases and well as reduce dependence on consultants that need to be paid high salaries. |
 
 <h1>Architecture</h1>
 
@@ -47,7 +48,7 @@ Professor Ranjan's initial reaction:
 
 1. [Animesh Swain]()
 1. [Anjana Menon Cherubala](https://github.com/AnjanaMenonCherubala)
-1. [Sakshi]()
+1. [Sakshi Mahendru](https://github.com/sakshimahendrusjsu)
 1. [Vini Aswal](https://github.com/vaswal)
 
 
@@ -64,3 +65,5 @@ Professor Ranjan's initial reaction:
 5. Anderson JL, Dodman S, Kopelman M, Fleming A. Patient information recall in a rheumatology clinic. Rheumatol Rehabil 1979;18: 245-55
 
 6. Meyer AND, Payne VL, Meeks DW, Rao R, Singh H. Physicians’ Diagnostic Accuracy, Confidence, and Resource Requests: A Vignette Study. JAMA Intern Med. 2013;173(21):1952–1958. doi:10.1001/jamainternmed.2013.10081
+
+7. Kaufman J. M. (2015). How to work with insurance companies. Neurology. Clinical practice, 5(5), 448–453. doi:10.1212/CPJ.0000000000000179
