@@ -38,6 +38,11 @@ MediReport will solve the following use cases -
 <h1>Technology stack</h1>
 React, OCR, OpenNLP, SimpleNLP Linked Open Data/Semantic Graph.
 
+<h2>Technology choices</h2>
+  | Actor      | Use case |
+| ----------- | ----------- |
+| x | x
+
 <h1>Feedback</h1>
 Professor Ranjan's initial reaction:
 
