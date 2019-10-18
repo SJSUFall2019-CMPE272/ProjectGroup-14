@@ -19,6 +19,7 @@ We will provide support for multiple space-delimited languages for example, Engl
 <h1>Business Value</h1>
 Limited literacy skills are one of the strongest predictors of poor health outcomes for patients. Studies have shown that when patients have low reading fluency, they know less about their chronic diseases, they are worse at managing their care<sup>[1]</sup>.
 
+
 Overall, studies of patient-accessible medical records suggest modest improvements in doctor-patient communication, adherence, patient empowerment, and patient education<sup>[2]</sup>.. 
 MediReport will solve the following use cases - 
 
@@ -41,8 +42,12 @@ Professor Ranjan's initial reaction:
 > underprivileged users in rural area and support multiple languages such as spanish, hindi, tamil, telugu etc... 
 
 <h1>References</h1>
+
 1. Graham, S., & Brookey, J. (2008). Do patients understand?. The Permanente journal, 12(3), 67–69. doi:10.7812/tpp/07-144
+
 2. Ross, S. E., & Lin, C. T. (2003). The effects of promoting patient access to medical records: a review. Journal of the American Medical Informatics Association : JAMIA, 10(2), 129–138. doi:10.1197/jamia.m1147
+
 3. Reynolds, T. L., Ali, N., McGregor, E., O'Brien, T., Longhurst, C., Rosenberg, A. L., … Zheng, K. (2018). Understanding Patient Questions about their Medical Records in an Online Health Forum: Opportunity for Patient Portal Design. AMIA ... Annual Symposium proceedings. AMIA Symposium, 2017, 1468–1477.
+
 4. 
 
