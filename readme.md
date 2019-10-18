@@ -1,4 +1,4 @@
-**MediReport**
+<h1>MediReport</h1>
 
 **Description:**
 An application which enables end users to interpret the meanings of various medical/physiological parameters which are present in their medical reports or health checkups.
