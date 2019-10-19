@@ -47,6 +47,7 @@ MediReport will solve the following use cases -
 | Aspose | Aspose provides the most complete set of PDF/Word/Excel manipulation and parsing solution for developers & end-users. Aspose is one of the leaders with a suite of tools for creating PDF/MS Office documents<sup>[10]</sup>. We will use Aspose to parse and extract information from medical reports in PDF, MS Word, and other supported formats. |
 | Tesseract | Tesseract is an OCR engine with support for Unicode and the ability to recognize more than 100 languages out of the box. It can be trained to recognize other languages. We will use it to do OCR of medical reports where a user will be able to quickly take a picture of his/her medical record and get the most accurate data from MediReport|
 | SimpleNLG | SimpleNLG can be used to help you write a program that generates grammatically correct English sentences. It’s a library (not an application), written in Java, which performs simple and useful tasks that are necessary for natural language generation (NLG). In the final phase, which is not of the highest priority, we will use SimpleNLG to generate human-like response for the user. |
+| | MarkLogic Server is a powerful software solution for harnessing your digital content all in a single database. MarkLogic enables you to build complex applications that interact with large volumes of JSON, XML, SGML, HTML, RDF triples, binary files, and other popular content formats. The unique architecture of MarkLogic ensures that your applications are both scalable and high-performance, delivering query results at search-engine speeds while providing transactional integrity over the underlying database<sup>[11]</sup>. Gartner’s most recent Magic Quadrant report for Operational Database Management Systems underscores my position. Of all the companies in the challengers’ quadrant, MarkLogic achieved the highest placement for its “ability to execute.”<sup>[12]</sup>|
 
 <h1>Feedback</h1>
 Professor Ranjan's initial reaction:
@@ -83,3 +84,7 @@ Professor Ranjan's initial reaction:
 9. Bizer, Christian; Heath, Tom; Berners-Lee, Tim (2009). "Linked Data – The Story So Far" (PDF). International Journal on Semantic Web and Information Systems. 5 (3). doi:10.4018/jswis.2009081901.
 
 10. Create Documents with Aspose.Pdf for .NET https://visualstudiomagazine.com/articles/2010/09/01/create-documents-with-asposepdf-for-net.aspx
+
+11. Getting Started With MarkLogic Server https://docs.marklogic.com/guide/getting-started/intro
+
+12. Why MarkLogic Will Lead the Next-Generation of Database Technology https://www.marklogic.com/blog/marklogic-will-lead-next-generation-multi-model-database/
