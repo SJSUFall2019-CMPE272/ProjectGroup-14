@@ -12,9 +12,9 @@ Everyone cannot read or understand the various medical jargon and parameters men
 We propose to build a React-based UI where the user can upload their medical reports. React native will be used to implement the solution, which will enable the application to be ported to mobile platforms as well. 
 Tesseract OCR and Aspose APIs will be used to extract medical report data while scanning the report. We will store RDF medical data from DBpedia and other datasets in MarkLogic. 
 We will also be using various NLP/NLG libraries such as Apache OpenNLP, SimpleNLP, etc., to generate a human-like response for the user. 
-Our Java-based system will interface with the RDF database and NLP/NLG libraries to send back repose to the UI.
+Our Java-based system will interface with the RDF database and NLP/NLG libraries to send back response to the UI.
 
-We will provide support for multiple space-delimited languages, for example, English, Spanish, and all Indian languages. We will not able to support languages like Chinese, Japanese, Korean, Thai, Khmer whose writing systems don't use spaces since OpenNLP performs space-level token parsing.
+We will provide support for multiple space-delimited languages, for example, English, Spanish, and all Indian languages. We will not be able to support languages like Chinese, Japanese, Korean, Thai, Khmer whose writing systems don't use spaces since OpenNLP performs space-level token parsing.
 
 <h1>Business Value</h1>
 Limited literacy skills are one of the strongest predictors of poor health outcomes for patients. Studies have shown that when patients have low reading fluency, they know less about their chronic diseases, they are worse at managing their care<sup>[1]</sup>.
