@@ -49,6 +49,14 @@ MediReport will solve the following use cases -
 | SimpleNLG | SimpleNLG can be used to help you write a program that generates grammatically correct English sentences. It’s a library (not an application), written in Java, which performs simple and useful tasks that are necessary for natural language generation (NLG). In the final phase, which is not of the highest priority, we will use SimpleNLG to generate human-like response for the user. |
 | MarkLogic | MarkLogic Server is a powerful software solution for harnessing your digital content all in a single database. MarkLogic enables you to build complex applications that interact with large volumes of JSON, XML, SGML, HTML, RDF triples, binary files, and other popular content formats. The unique architecture of MarkLogic ensures that your applications are both scalable and high-performance, delivering query results at search-engine speeds while providing transactional integrity over the underlying database<sup>[11]</sup>. Gartner’s most recent Magic Quadrant report for Operational Database Management Systems underscores my position. Of all the companies in the challengers’ quadrant, MarkLogic achieved the highest placement for its “ability to execute.”<sup>[12]</sup>|
 
+<h1>Input</h1>
+
+![](https://ibb.co/FJDZxHv][img]https://i.ibb.co/sQVxmWS/Screen-Shot-2019-10-20-at-3-52-31-PM.png)
+
+<h1>Algorithm</h1>
+
+<h1>Output</h1>
+
 <h1>Feedback</h1>
 Professor Ranjan's initial reaction:
 
