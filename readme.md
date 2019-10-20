@@ -41,7 +41,8 @@ MediReport will solve the following use cases -
   | Technology      | Choice and viability |
 | ----------- | ----------- |
 | React Native | React Native is a multi-platform solution developed by Facebook that lets you build mobile apps using JavaScript. These mobile apps are considered multi-platform because they’re written once and deployed across many platforms, like Android, iOS and the web. We will use React Native to create a cross-platform app that can be run on iOS, Android and Web. |
-| spaCy | spaCy is an open-source software library for advanced natural language processing. spaCy excels at large-scale information extraction tasks. It's written from the ground up in carefully memory-managed Cython. Independent research in 2015 found spaCy to be the fastest in the world<sup>[8]</sup>. We will be using spaCy to perform most of our NLP tasks such as NER, sentence detection, etc.  |
+| spaCy | spaCy is an open-source software library for advanced natural language processing. spaCy excels at large-scale information extraction tasks. It's written from the ground up in carefully memory-managed Cython. Independent research in 2015 found spaCy to be the fastest in the world<sup>[8]</sup>. We will be using spaCy to perform most of our non-clinical NLP tasks such as NER, sentence detection, etc.  |
+| medaCy and Apache cTAKES™ | MedaCy is a text processing and learning framework built over spaCy to support the lightning fast prototyping, training, and application of highly predictive medical NLP models. It is designed to streamline researcher workflow by providing utilities for model training, prediction and organization while insuring the replicability of systems. Apache cTAKES™ is a natural language processing system for extraction of information from electronic medical record clinical free-text. It can discover codable entities, temporal events, properties and relations. It can process database or file-stored batches at 50,000 clinical notes per hour and can be scaled up to run on clusters, queue systems and cloud computing services. We will use a combination of medaCy and Apache cTAKES™ for all clinical NLP suhc as clinical NER, co-reference resolution etc. We might use another NLP tool if the need arises. |
 | Linked data | Linked data (often capitalized as Linked Data) is structured data that is interlinked with other data so it becomes more useful through semantic queries<sup>[9]</sup>. It builds upon standard Web technologies such as HTTP, RDF, and URIs, but rather than using them to serve web pages only for human readers, it extends them to share information in a way that can be read automatically by computers. We will use Dbpedia, a Linked dataset because it can provide us virtually every information present in Wikipedia as well as enable us to combine various Linked Data sources to generate a comprehensive dataset. |
 | DBpedia | DBpedia extracts factual information from Wikipedia pages, allowing users to find answers to questions where the information is spread across multiple Wikipedia articles. Data is accessed using an SQL-like query language for RDF called SPARQL. We will use DBpedia as our primary dataset for providing information in more than 100 languages. |
 | Aspose | Aspose provides the most complete set of PDF/Word/Excel manipulation and parsing solution for developers & end-users. Aspose is one of the leaders with a suite of tools for creating PDF/MS Office documents<sup>[10]</sup>. We will use Aspose to parse and extract information from medical reports in PDF, MS Word, and other supported formats. |
@@ -49,13 +50,45 @@ MediReport will solve the following use cases -
 | SimpleNLG | SimpleNLG can be used to help you write a program that generates grammatically correct English sentences. It’s a library (not an application), written in Java, which performs simple and useful tasks that are necessary for natural language generation (NLG). In the final phase, which is not of the highest priority, we will use SimpleNLG to generate human-like response for the user. |
 | MarkLogic | MarkLogic Server is a powerful software solution for harnessing your digital content all in a single database. MarkLogic enables you to build complex applications that interact with large volumes of JSON, XML, SGML, HTML, RDF triples, binary files, and other popular content formats. The unique architecture of MarkLogic ensures that your applications are both scalable and high-performance, delivering query results at search-engine speeds while providing transactional integrity over the underlying database<sup>[11]</sup>. Gartner’s most recent Magic Quadrant report for Operational Database Management Systems underscores my position. Of all the companies in the challengers’ quadrant, MarkLogic achieved the highest placement for its “ability to execute.”<sup>[12]</sup>|
 
-<h1>Input</h1>
+<h1>Sample Input</h1>
+Medical report -
 
-![](https://ibb.co/FJDZxHv][img]https://i.ibb.co/sQVxmWS/Screen-Shot-2019-10-20-at-3-52-31-PM.png)
+![](https://github.com/SJSUFall2019-CMPE272/MediReport/blob/master/images/Screen%20Shot%202019-10-20%20at%203.52.31%20PM.png)
+
+Doctor's presciption -
+1 capsule of Advil for 5 days.
+
 
 <h1>Algorithm</h1>
+1. Fetch user's medical report via React-based UI/Node.js 
+2. Use Apose PDF or Tesseract OCR to extrat text data from the medical report
+3. Use medaCy and Apache cTAKES™ for clincal NLP where we extract entites, relationships
+4. Enhance the above extracted data by providing explanations of each term using Dbpedia
+5. (Low priority) Use various NLP/NLG libraries such as Apache OpenNLP, SimpleNLP, etc., to generate a human-like response for the user. 
 
-<h1>Output</h1>
+<h1>Sample Output</h1>
+The below response from the back-end will be displayed in an user-friendly design on the UI -
+{
+    'entities': {
+        'T1': ('Cholesterol', 'Cholesterol is a molecule that is found in animal cells and body fluids. Cholesterol is not found in plant sources. It is a type of lipid which is a fat or fat-like molecule. Cholesterol is a soft waxy substance. Cholesterol is a special type of lipid that is called a steroid. Steroids are lipids that have a special chemical structure. This structure is made of four rings of carbon atoms. Cholesterol is found especially in animal fats.
+
+Hypercholesterolemia means that cholesterol level is too high in the blood. High cholesterol levels show that heart disease may develop.'),
+        'T2': ('Drug', 'High-density lipoprotein (HDL) is one of the five major groups of lipoproteins.[1] Lipoproteins are complex particles composed of multiple proteins which transport all fat molecules (lipids) around the body within the water outside cells. Increasing concentrations of HDL particles are strongly associated with decreasing accumulation of atherosclerosis within the walls of arteries. This is important because atherosclerosis eventually results in sudden plaque ruptures, cardiovascular disease, stroke and other vascular diseases. ')
+        ...
+    }
+}
+
+
+
+{
+    'entities': {
+        'T3': ('Drug', 40, 45, 'Advil'),
+        'T1': ('Dosage', 27, 28, '1'), 
+        'T2': ('Form', 29, 36, 'capsule'),
+        'T4': ('Duration', 46, 56, 'for 5 days')
+     },
+     'relations': []
+}
 
 <h1>Feedback</h1>
 Professor Ranjan's initial reaction:
