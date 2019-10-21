@@ -60,6 +60,7 @@ Doctor's presciption -
 
 
 <h1>Algorithm</h1>
+
 1. Fetch user's medical report via React-based UI/Node.js 
 2. Use Apose PDF or Tesseract OCR to extrat text data from the medical report
 3. Use medaCy and Apache cTAKES™ for clincal NLP where we extract entites, relationships
