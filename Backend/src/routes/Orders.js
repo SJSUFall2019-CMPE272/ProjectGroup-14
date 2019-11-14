@@ -53,41 +53,25 @@ queryMap.set("INSERT_IN_GRUBHUB_ORDER", 'INSERT INTO grubhub_order values (?, ?,
 const PdfReader =  require("pdfreader");
 const pdfreader = require("pdfreader");
 
+let text = "empty";
+
 router.post('/pdf/read', function (req, res) {
     console.log("pdf/read");
 
-    // let pdfParser = new PDFParser(this,1);
-    //
-    // pdfParser.on("pdfParser_dataError", errData => {
-    //     console.log("Error in pdfParser_dataError")
-    //     console.log(errData.parserError);
-    // });
-    //
-    // pdfParser.on("pdfParser_dataReady", pdfData => {
-    //     let pdfParser = new PDFParser(this, 1);
-    //
-    //     console.log("pdfData");
-    //     console.log(pdfParser);
-    //     console.log(pdfParser.getRawTextContent());
-    //     console.log(pdfParser.getAllFieldsTypes());
-    //
-    //     res.send("Ok")
-    // });
-    //
-    // pdfParser.loadPDF("/Users/vijendra4/GoogleDrive/sjsu/272/lab2/grubhub-react/Backend/src/honestyPledge20160202.pdf");
-
-    let text = ""
-    new pdfreader.PdfReader().parseFileItems("/Users/vijendra4/GoogleDrive/sjsu/272/lab2/grubhub-react/Backend/src/lipid-profile.pdf", function(err, item) {
+    new pdfreader.PdfReader().parseFileItems("/Users/vijendra4/GoogleDrive/sjsu/272/MediReport/Backend/src/full-report.pdf", function(err, item) {
         if (err) {console.log(err)}
         else if (!item) {console.log(err)}
         else if (item.text) {
-            console.log(item.text);
-            text = text + item.text;
-            //res.send("Ok")
+            fs.appendFile('message.txt', item.text + "\n", function (err) {
+                if (err) throw err;
+                console.log('Saved!');
+            });
         }
     });
 
-    res.send(text);
+
+
+    res.send("Ok");
 });
 
 router.post('/section/get', function (req, res) {

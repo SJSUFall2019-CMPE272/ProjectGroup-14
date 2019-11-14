@@ -1,0 +1,1433 @@
+Registration Id     
+Patient Name       
+Referred By        
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+09:56 AM
+13/02/2018  /  01:48PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+Sample Type:
+SERUM
+LIPID PROFILE
+83.00
+mg/dl
+Upto 150
+S. Triglycerides
+( Method : Glycerol Phosphate Oxidase)
+ mg/dl
+0 - 200
+   *216.00
+Total Cholesterol
+( Method : Enzymatic)
+mg/dl
+40 - 60
+   *64.00
+HDL Cholesterol
+( Method : Accelerator Selective Detergent)
+mg/dl
+Upto 100
+   *135.40
+LDL Cholesterol
+( Method : Liquid Selective Detergent)
+16.6
+mg/dl
+7 - 35
+VLDL Cholesterol
+( Method : Calculated)
+2.5 - 3.5
+   *2.12
+LDL/HDL Ratio
+( Method : Calculated)
+3.38
+3.0 - 5.0
+TC/HDL Ratio
+( Method : Calculated)
+*Rechecked
+Verified By
+RAHUL D
+Page 1 of 2
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+10:13 AM
+13/02/2018  /  01:48PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+For Lipids,Reference Range is as per NCEP Guidelines
+TOTAL CHOLESTEROL:
+Desirable         : < 200
+Borderline High : 200 - 239
+High                 : >= 240
+TRIGLYCERIDES :
+Normal           : <150
+Borderline High: 150 - 199
+High               : 200 - 499
+Very High       : >= 500
+LDL-CHOLESTEROL :
+Optimal                 : < 100
+Near/Above Optimal:100-129
+Borderline High    : 130 - 159
+High                  : 160 - 189
+Very High            : >=190
+HDL-CHOLESTEROL :
+Low   : < 40
+High  : >= 60
+Verified By
+RAHUL D
+Page 2 of 2
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+09:56 AM
+13/02/2018  /  01:48PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+Sample Type:
+SERUM
+58.1
+ U/L
+20 - 130
+Alkaline Phosphatase
+( Method : Enzymatic p-NPP)
+Verified By
+Page 1 of 1
+RAHUL D
+Registration Id     
+NOTE : This is Electronically generated report.Signature is not required.
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+13/2/2018
+Male
+/   
+25 Years
+/   
+09:56 AM
+13/02/2018  /  12:30PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+SERUM
+Sample Type:
+mg/dl
+0.0 - 1.2
+   *1.39
+Bilirubin (Total)
+( Method : Diazo with Sulphanilic Acid in presence of DMSO)
+0.50
+mg/dl
+Bilirubin (Direct)
+0 - 0.50
+( Method : Diazo Reaction)
+0.89
+0.0 - 1.0
+mg/dl
+Bilirubin (Indirect)
+( Method : Calculated)
+*Rechecked
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319048
+CITI CORP
+Male
+/   
+25 Years
+/   
+13/2/2018
+09:26 AM
+13/02/2018  /  11:05AM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:24AM
+Sample Type:
+PLASMA
+88
+mg/dl
+70 - 110
+Blood Sugar Fasting
+( Method : Hexokinase/G-6-PDH)
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319048
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+09:26 AM
+13/02/2018  /  12:45PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:22AM
+Sample Type:
+PLASMA
+96
+mg/dl
+70 - 140
+Blood Sugar (PP)
+( Method : Hexokinase/G-6-PDH)
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+09:56 AM
+13/02/2018  /  12:05PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+Sample Type:
+SERUM
+9.80
+mg/dl
+8.4 - 10.2
+Calcium
+( Method : Arsenazo III)
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+:   
+:   
+:   
+258319049
+CITI CORP
+Mr. Vijendra Aswal
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+25 Years
+13/02/2018  /  09:27AM
+/   
+13/02/2018     /  02:00PM
+:   
+Male
+13/02/2018  /  09:17AM
+09:27 AM
+COMPLETE BLOOD COUNT
+Sample Type:
+EDTA Whole Blood
+UNITS
+Reference Range
+TEST
+OBSERVED VALUE
+Leucocytes Count
+/c.mm
+4000 - 10000
+:
+4900
+Erythrocytes
+mill/c.mm
+4.5 - 5.5
+:
+4.89
+Haemoglobin
+gm %
+13.5 - 18.0
+:
+15.3
+Packed Cell Volume
+%
+40.0 - 50.0
+:
+45.6
+MCV
+fl
+83 - 101
+:
+93.0
+MCH
+Pg
+27 - 32
+:
+31.3
+MCHC
+g/dl
+31.5 - 34.5
+:
+33.6
+RDW
+%
+11.6 - 14.0
+:
+11.8
+Platelet Count
+10 ^ 3/c.mm
+150 - 450
+:
+203
+MPV
+fl
+9.0 - 13.0
+:
+9.0
+Neutrophils
+%
+40 - 80
+:
+41
+Lymphocytes
+%
+20 - 40
+:
+*
+52
+Monocytes
+%
+2 - 10
+:
+06
+Eosinophils
+%
+01 - 06
+01
+:
+%
+Basophils
+00 - 01
+:
+00
+Microcytes
+:
+-
+Macrocytes
+:
+-
+Anisocytosis
+:
+-
+:
+Poikilocytosis
+-
+Hypochromia
+:
+-
+Polychromasia
+:
+-
+Oval cells
+:
+-
+Target cells
+:
+-
+Remarks
+Platelet adequate on smear. Normocytic Normochromic RBCs.
+:
+**    END OF REPORT    **
+*Rechecked
+Verified By
+Page 1 of 1
+SUSHIL B
+NOTE : This is Electronically generated report.Signature is not required.
+2D ECHOCARDIOGRAPHY REPORT
+Mitral Valves
+ :         
+Thin leaflets, Normal sub-valvular apparatus. No MR / No MS 
+Aortic Valve
+  :
+          Thin, trileaflet . Normal gradients across the valves. No AR / No AS 
+Tricuspid Valve
+ :
+      Thin leaflets, Normal gradients across valve. Mild TR
+                                  No Pulmonary Hypertension 
+Pulmonary Valve
+ :
+   Thin leaflets, Normal gradients across valves
+Left Ventricle
+ :
+                            No regional wall motion abnormality 
+   Normal LV Size with normal thickness 
+                            No Diastolic Dysfunction 
+                            Normal LV Systolic function, LVEF 60%
+Left Atrium
+      Normal Size and free of clots 
+ :
+Right Atrium & Right Ventricle
+ :
+IAS Intact 
+ Normal Size and function 
+IVS Intact 
+No pericardial effusion / vegetations / clots. 
+Impression
+ : 
+  Normal Cardiac Valves 
+                       Normal Cardiac Chambers 
+                       Normal LV Systolic  function.  LVEF 60% 
+Dr. Vivek Gaikwad                                                   
+Cardiologist
+DNB (Cardiology) 
+Note : 
+2D-Echo Cardiogram has interoperatibility variation and need to correlate clinically. Advice confirmatory tests, if required.
+REF. NO.                : 258319049
+NAME                     : MR..VIJENDRA ASWAL
+REF.DOCTOR       : CITI CORP
+ AGE                 : 25 Years
+ SEX                  : M
+DATE               : 2/13/2018  12:00:00AM
+Page 2 of 3
+NOTE : This is Electronically generated report.Signature is not required.
+NOTE : This is Electronically generated report.Signature is not required.
+Anterior leaflet
+EF Slope
+Opening Amplitude
+E.P.S.S
+Mitral valve prolapse
+Vegetations
+Posterior leaflet
+EF Slope
+'A' Wave
+Midsyostolic notch
+Flutter
+Other Findings
+Cuspal Opening
+Closure Line
+Eccentricity index
+Other Findings
+1. Lvd. (Diastolic)
+2. Lvd. (Systolic)
+3. Rvd. (Diastolic)
+4. IVST. (Diastolic)
+5. IVST. (Systolic)
+6. LVPWT. (Diastolic)
+7. LVPWT. (Systolic)
+8.Aortic root
+9. Left Atrium
+MITRAL VALVE
+TRICUSPID VALVE
+AORTIC VALVE
+PULMONARY VALVE
+/
+/
+/
+/
+/
+/
+/
+/
+/
+/
+/
+/
+70 -150 mm/sec
+8 mm
+15 mm-26 mm
+35 - 56 mm
+6 -11 mm
+7 - 23 mm
+24 - 42 mm
+6 - 11 mm
+22 - 37 mm
+19 - 40 mm
+NOTE : This is Electronically generated report.Signature is not required.
+Referred By        
+Registration Id     
+Patient Name       
+Registration Date/Time
+Reporting Date / Time
+Collection Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+09:56 AM
+13/02/2018  /  01:48PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+SERUM
+Sample Type:
+0.89
+mg/dl
+0.50 - 1.50
+Creatinine
+( Method : Alkaline Picrate (Kinetic Jaffe~s Reaction))
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Mr. Vijendra Aswal
+258319049
+25 Years
+2/13/2018
+Patient Name       
+CITI CORP
+:
+:
+Reffered By      
+Registration Id      
+Registration  Date      
+Age       
+:
+:
+:
+Lumbar spine
+NIL
+-0.1
+-0.1
+0.978
+Left Forearm
+NIL
+0.3
+0.3
+1.141
+Left Femoral neck
+NIL
+0.2
+0.2
+1.239
+Recommended follow up scan after 3 years.
+Lumbar spine, Left Femoral Neck and Left Forearm BMD are normal.
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+2/13/2018
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+:   
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+09:56 AM
+13/02/2018  /  01:48PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+Sample Type:
+SERUM
+0.89
+mg/dl
+0.50 - 1.50
+Creatinine
+( Method : Alkaline Picrate (Kinetic Jaffe~s Reaction))
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+:   
+:   
+:   
+258319049
+CITI CORP
+Mr. Vijendra Aswal
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+25 Years
+13/02/2018  /  09:27AM
+/   
+13/02/2018     /  01:38PM
+Male
+:   
+13/02/2018  /  09:17AM
+09:27 AM
+Erythrocyte Sedimentation Rate (ESR)
+Sample Type:
+EDTA Whole Blood
+UNITS
+Reference Range
+TEST
+ERYTHROCYTE SEDIMENTATION RATE
+OBSERVED VALUE
+ESR
+mm / 1hr.
+0 - 10
+:
+03
+Method : Westergren
+Done on Fully Automated Vesmatic 80 ESR Analyzer (Diesse)
+...
+- Although the ESR is a non-specific phenomenon,its measurement is clinically useful in disorders associated with an 
+increased production of acute-phase proteins.
+- In rheumatoid arthritis or tuberculosis, it provides an index of progress of the disease, and it is of value in diagnosis of 
+temporal arteritis and polymyalgia rheumatica.It is also useful as a screening test in the routine examination of patients.
+- The ESR is higher in women than in men,and correlates with sex differences in fibrinogen levels.
+- The ESR is influenced by age,stage of the menstrual cycle and drugs (eg:corticosteroids,contraceptive pills,etc),it is 
+especially low (0-1 mm) in polycythaemia, hypofibrinogenaemia and in congestive cardiac failure, and when there are 
+abnormalities of the red cells such as poikilocytosis, spherocytosis or sickle cells.
+**    END OF REPORT    **
+Page 1 of 1
+Verified By
+NOTE : This is Electronically generated report.Signature is not required.
+SUSHIL B
+Registration Id     
+Referred By        
+Patient Name       
+:   
+:   
+:   
+258319049
+CITI CORP
+Mr. Vijendra Aswal
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+25 Years
+13/02/2018  /  09:27AM
+/   
+13/02/2018     /  04:41PM
+:   
+Male
+13/02/2018  /  09:17AM
+09:27 AM
+Glycosylated Haemoglobin (HbA1c)
+Sample Type:
+EDTA Whole Blood
+Reference Range
+TEST
+OBSERVED VALUE
+HbA1c
+4.7
+  >8%   :   Action suggested 
+  <6%   :   Non-Diabetic Level
+  <7%   :   Goal
+:
+1.HbA1c is used for monitoring diabetic control. It reflects the mean plasma glucose over three months.
+which evaluates diabetes over 15 days.
+2.HbA1c is falsely low in diabetics with hemolytic disease.In these individuals a plasma fructosamine level may be used 
+3.Trends in HbA1c are a better indicator of diabetic control than a soliditary test.
+4.HbA1c should not be used to diagnose diabetes mellitus.
+NOTE:HbA1c PARAMETER IS NGSP LEVEL 1 CERTIFIED.
+**    END OF REPORT    **
+Verified By
+Page 1 of 1
+RAHUL D
+NOTE : This is Electronically generated report.Signature is not required.
+REF. NO.                : 258319049
+NAME                     : MR..VIJENDRA ASWAL
+REF.DOCTOR       : CITI CORP
+ AGE                 : 25 Years
+DATE               : 2/13/2018  12:00:00AM
+ SEX                  : M
+NOTE : This is Electronically generated report.Signature is not required.
+Page 2 of 3
+NOTE : This is Electronically generated report.Signature is not required.
+38
+24
+9
+9
+28
+Opening Amplitude
+E.P.S.S
+Mitral valve prolapse
+Vegetations
+Posterior leaflet
+EF Slope
+'A' Wave
+Midsyostolic notch
+Flutter
+Other Findings
+Cuspal Opening
+Closure Line
+Eccentricity index
+Other Findings
+1. Lvd. (Diastolic)
+2. Lvd. (Systolic)
+3. Rvd. (Diastolic)
+4. IVST. (Diastolic)
+5. IVST. (Systolic)
+6. LVPWT. (Diastolic)
+7. LVPWT. (Systolic)
+8.Aortic root
+9. Left Atrium
+MITRAL VALVE
+TRICUSPID VALVE
+PULMONARY VALVE
+AORTIC VALVE
+/
+/
+/
+/
+/
+/
+/
+/
+/
+/
+/
+/
+70 -150 mm/sec
+8 mm
+15 mm-26 mm
+35 - 56 mm
+6 -11 mm
+7 - 23 mm
+24 - 42 mm
+6 - 11 mm
+22 - 37 mm
+19 - 40 mm
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+EF Slope
+Anterior leaflet
+30
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+09:56 AM
+13/02/2018  /  12:05PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+Sample Type:
+SERUM
+7.42
+gm/dl
+6.3 - 8.4
+Total Proteins
+( Method :  Biuret)
+4.57
+3.8 - 5.0
+gm/dl
+( Method : Bromocresol Green)
+Albumin
+2.85
+gm/dl
+2.3 - 3.5
+Globulin
+( Method : Calculated)
+1.60
+1.10 - 2.20
+A/G Ratio
+( Method : Calculated)
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+09:56 AM
+13/02/2018  /  12:05PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+SERUM
+Sample Type:
+18.00
+U/L
+8 - 33
+SGOT/AST
+( Method : NADH (without P-5-P))
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+09:56 AM
+13/02/2018  /  12:30PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+Sample Type:
+SERUM
+25.00
+U/L
+0.0 - 55.0
+SGPT/ALT
+( Method : NADH (without P-5-P))
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Patient Name       
+Referred By        
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:
+:   
+:   
+:   
+258319049
+CITI CORP
+MR. VIJENDRA ASWAL
+Male
+25 Years
+13/02/2018
+/   
+  13/02/2018     /   11:48AM
+13/02/2018   9:17AM
+11:28 AM
+REAL TIME ABDOMINAL ULTRASOUND REPORT
+LIVER 
+                :
+Normal liver parenchymal echo pattern. No evidence of any solid or cystic intra- hepatic lesion is 
+noted. The portal and hepatic veins appear normal. No evidence of any dilated intra or extra hepatic  
+biliary radicals noted.
+GALL-BLADDER
+:
+The physiologically dilated gall bladder is visualized and appears normal. No evidence of any gall 
+stones noted.
+PANCREAS
+         :
+No evidence of any abnormality noted in the region of pancreas.
+SPLEEN
+               :
+The spleen shows normal parenchymal echo pattern.
+KIDNEYS
+            :
+Both the kidneys are anatomically normal.
+The right kidney measures 11.5 x 3.5 cm. 
+The left kidney measures 10.9 x 4.5 cm.
+No evidence of any renal mass, hydronephrosis or  renal calculi. No ascites or adenopathy. 
+REAL TIME PELVIS ULTRASOUND REPORT
+Anatomically normal urinary bladder.
+Prostate measures 3.9 x 3.5 x 3.4 cm corresponding to 25 gms.
+CONCLUSION
+ :    
+DR. CHANDRIMA CHUCKERBUTTY
+No significant abnormality is noted. 
+MD
+(
+Please
+note 
+: 
+Ultrasonographic
+findings 
+and 
+their 
+normalcy 
+is 
+subject 
+to 
+variables. 
+many 
+Possibility 
+of 
+a 
+false
+negative/ 
+false 
+positive 
+result 
+exists 
+with 
+any 
+imaging 
+modality 
+including 
+USG. 
+Diagnostic 
+discretion 
+is 
+recommended.
+)
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+:   
+:   
+:   
+258319049
+CITI CORP
+Mr. Vijendra Aswal
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+25 Years
+13/02/2018  /  09:27AM
+/   
+13/02/2018     /  02:35PM
+:   
+Male
+13/02/2018  /  09:17AM
+09:27 AM
+Thyroid Function Test
+Sample Type:
+SERUM
+Reference Range
+UNITS
+TEST
+OBSERVED VALUE
+Total T3 (Tri-iodothyronine)
+ng/dl
+64 - 152
+:
+75.43
+Total T4 (Thyroxine)
+ug/dl
+4.51 - 11.66
+Note:Laboratory estabilshed
+reference range
+:
+5.6
+Ultrasensitive TSH
+uIU/ml
+0.35 - 4.94
+:
+3.4794
+Method
+:
+CMIA
+...
+- In cases of primary hypothyroidism, T3 and T4 levels are low and TSH is significantly elevated. In the case of pituatary 
+dysfunction,either due to intrinsic hypothalamic or pituatary disease i.e central hypothyroidism, normal or marginally 
+elevated basal TSH levels are often seen despite  significant reduction in T4 and T3 levels.
+- Primary hyperthyroidism (eg: Grave~s disease,nodular goiter) is associated with high levels of thyroid hormones and 
+depressed or undetectable levels of TSH.
+**    END OF REPORT    **
+Verified By
+Page 1 of 1
+DIPTI J
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+258319049
+CITI CORP
+Male
+25 Years
+13/2/2018
+/   
+/   
+09:56 AM
+13/02/2018  /  12:05PM
+:   
+Mr. Vijendra Aswal
+13/02/2018  /  09:17AM
+Sample Type:
+SERUM
+21.40
+mg/dl
+19.0 - 44.0
+Blood Urea
+( Method : Urease, Kinetic)
+10.00
+mg/dl
+8 - 23
+Blood Urea Nitrogen
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:   
+:   
+:   
+CITI CORP
+258319049
+Male
+13/2/2018
+25 Years
+/   
+/   
+09:56 AM
+:   
+13/02/2018  /  12:05PM
+Mr. Vijendra Aswal
+Sample Type:
+13/02/2018  /  09:17AM
+5.6
+SERUM
+mg/dl
+3.4 - 7.0
+Uric Acid
+( Method : Enzyme Uricase)
+Verified By
+RAHUL D
+Page 1 of 1
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+:   
+:   
+:   
+258319048
+CITI CORP
+Mr. Vijendra Aswal
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+25 Years
+13/02/2018  /  11:01AM
+/   
+13/02/2018     /  05:15PM
+:   
+Male
+13/02/2018  /  10:34AM
+11:01 AM
+Urine Routine
+Sample Type:
+Urine
+Reference Range
+PHYSICAL EXAMINATION
+Quantity
+30 ml
+---
+:
+Colour
+PALE YELLOW
+---
+:
+Appearance
+CLEAR
+---
+:
+Deposit
+ABSENT
+---
+:
+CHEMICAL EXAMINATION
+pH
+7.0
+4.6 - 8.0
+:
+Specific Gravity
+1.005
+1.003 - 1.035
+:
+Albumin
+Negative
+NEGATIVE
+Negative
+:
+Sugar
+NEGATIVE
+:
+Negative
+Ketone Bodies
+NEGATIVE
+:
+Negative
+Nitrite
+NEGATIVE
+:
+Negative
+Blood
+ABSENT
+:
+Bile Pigments
+Negative
+NEGATIVE
+Bile Salts
+:
+Negative
+NEGATIVE
+:
+Urobilinogen
+Normal
+NORMAL
+:
+MICROSCOPIC EXAMINATION
+Epithelial Cells
+Occasional
+---
+:
+Pus Cells
+Occasional
+0 - 5 cells/hpf
+Red Blood Cells
+:
+ABSENT
+0 - 2 cells/hpf
+:
+Casts
+ABSENT
+:
+Crystals
+ABSENT
+:
+Amorphous Materials
+ABSENT
+:
+Bacteria
+ABSENT
+:
+Yeast Cells
+ABSENT
+:
+Trichomonas Vaginalis
+ABSENT
+:
+METHOD: Chemical Examination is done by Strip Method
+**    END OF REPORT    **
+Verified By
+Page 1 of 1
+ARVIND T
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+:   
+:   
+:   
+258319049
+CITI CORP
+Mr. Vijendra Aswal
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+13/02/2018  /  09:27AM
+25 Years
+/   
+13/02/2018     /  02:35PM
+:   
+Male
+13/02/2018  /  09:17AM
+09:27 AM
+Vitamin B 12 Level
+Sample Type:
+SERUM
+UNITS
+Reference Range
+OBSERVED VALUE
+TEST
+Cobalamin (Vitamin B12)
+pg/ml
+187 - 883
+:
+371
+Method
+:
+CMIA
+....
+- Vitamin B12 is a cofactor in the synthesis of methionine from homocystiene,is implicated in the formation of myelin and 
+along with folate, is required for DNA synthesis.
+- There are a number of conditions that are associated with low serum B12 levels including iron deficiency, normal 
+near-term pregnancy, vegetarianism, partial gasterectomy/ ileal damage, celiac disease, use of oral contraception, 
+parasitic competition, pancreatic deficiency, treated epilepsy and advancing age.
+**    END OF REPORT    **
+Verified By
+Page 1 of 1
+DIPTI J
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Referred By        
+Patient Name       
+:   
+:   
+:   
+258319049
+CITI CORP
+Mr. Vijendra Aswal
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+25 Years
+13/02/2018  /  09:27AM
+/   
+13/02/2018     /  02:35PM
+:   
+Male
+13/02/2018  /  09:17AM
+09:27 AM
+Vitamin B 12 Level
+Sample Type:
+SERUM
+UNITS
+Reference Range
+TEST
+OBSERVED VALUE
+Cobalamin (Vitamin B12)
+pg/ml
+187 - 883
+:
+371
+Method
+:
+CMIA
+....
+- Vitamin B12 is a cofactor in the synthesis of methionine from homocystiene,is implicated in the formation of myelin and 
+along with folate, is required for DNA synthesis.
+- There are a number of conditions that are associated with low serum B12 levels including iron deficiency, normal 
+near-term pregnancy, vegetarianism, partial gasterectomy/ ileal damage, celiac disease, use of oral contraception, 
+parasitic competition, pancreatic deficiency, treated epilepsy and advancing age.
+**    END OF REPORT    **
+Verified By
+Page 1 of 1
+DIPTI J
+NOTE : This is Electronically generated report.Signature is not required.
+Registration Id     
+Patient Name       
+Referred By        
+Registration Date/Time
+Collection Date / Time
+Reporting Date / Time
+Age /Sex
+:   
+:   
+:   
+:
+:   
+:   
+:   
+258319049
+CITI CORP
+MR. VIJENDRA ASWAL
+Male
+25 Years
+13/02/2018
+/   
+  13/02/2018     /   11:55AM
+13/02/2018   9:17AM
+10:13 AM
+DIGITAL X-RAY
+CHEST PA VIEW 
+Both the lung fields are equally translucent.
+The costo-phrenic angles are clear.
+No hilar or mediastinal mass is seen.
+Domes of diaphragm are normal in position and contour.
+The cardiac outline is normal.
+No obvious skeletal abnormality is seen.
+CONCLUSION
+   :    
+No significant abnormality is seen.
+DR. CHANDRIMA CHUCKERBUTTY
+M.D.
+(Please note : 
+Radiographic findings and their normalcy is subject to many variables. Possibility of a false 
+negative result exists with  radiography. Diagnostic discretion is recommended.
+) 
+NOTE : This is Electronically generated report.Signature is not required.
