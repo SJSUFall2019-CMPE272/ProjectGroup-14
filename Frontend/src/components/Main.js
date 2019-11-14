@@ -1,24 +1,35 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
-import Login from './Login/Login';
+import SignInBuyer from './Create/SignInBuyer';
+import SignUpBuyer from './Create/SignUpBuyer';
+import SignInOwner from './Create/SignInOwner';
+import SignUpOwner from './Create/SignUpOwner';
+import ProfileBuyer from './Profile/ProfileBuyer';
+import ProfileOwner from './Profile/ProfileOwner';
+import Navbar from './Navbar/Navbar';
 import Home from './Home/Home';
-import Delete from './Delete/Delete';
-import Create from './Create/Create';
-import Navbar from './LandingPage/Navbar';
+import OwnerLayout from './Layout/OwnerLayout';
+import BuyerLayout from './Layout/BuyerLayout';
+
 //Create a Main Component
 class Main extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                {/*Render Different Component based on Route*/}
-                <Route path="/" component={Navbar}/>
-                <Route path="/login" component={Login}/>
-                <Route path="/home" component={Home}/>
-                <Route path="/delete" component={Delete}/>
-                <Route path="/create" component={Create}/>
+                <Route path="/homeOwner" component={OwnerLayout}/>
+                <Route path="/homeBuyer" component={BuyerLayout}/>
+                <Route exact path="/" component={Navbar}/>
+                <Route exact path="/home" component={Home}/>
+                <Route exact path="/signUpBuyer" component={SignUpBuyer}/>
+                <Route exact path="/signInBuyer" component={SignInBuyer}/>
+                <Route exact path="/signInOwner" component={SignInOwner}/>
+                <Route exact path="/signUpOwner" component={SignUpOwner}/>
+                <Route exact path="/profileBuyer" component={ProfileBuyer}/>
+                <Route exact path="/profileOwner" component={ProfileOwner}/>
             </div>
         )
     }
 }
+
 //Export The Main Component
 export default Main;

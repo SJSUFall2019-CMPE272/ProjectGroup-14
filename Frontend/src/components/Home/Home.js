@@ -1,65 +1,63 @@
 import React, {Component} from 'react';
-import '../../App.css';
-import axios from 'axios';
-import cookie from 'react-cookies';
 import {Redirect} from 'react-router';
+import {Link} from 'react-router-dom';
+import logo from "../../images/medi-logo.png";
+import '../../styles/Navbar.css';
 
-class Home extends Component {
-    constructor(){
-        super();
-        this.state = {  
-            books : []
-        }
-    }  
-    //get the books data from backend  
-    componentDidMount(){
-        axios.get('http://localhost:3001/home')
-                .then((response) => {
-                //update the state with the response data
-                this.setState({
-                    books : this.state.books.concat(response.data) 
-                });
-            });
+class Navbar extends Component {
+    constructor(props) {
+        super(props);
     }
 
-    render(){
-        //iterate over books to create a table row
-        let details = this.state.books.map(book => {
-            return(
-                <tr>
-                    <td>{book.BookID}</td>
-                    <td>{book.Title}</td>
-                    <td>{book.Author}</td>
-                </tr>
-            )
-        })
-        //if not logged in go to login page
+    render() {
         let redirectVar = null;
-        if(!cookie.load('cookie')){
-            redirectVar = <Redirect to= "/login"/>
+
+        if (localStorage.getItem('userType') !== null) {
+            redirectVar = (localStorage.getItem('userType') === "buyer") ? <Redirect to="/homeBuyer"/> :
+                <Redirect to="/homeOwner/orders/"/>
         }
-        return(
+
+        const divStyle = {
+            position: "absolute",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            margin: 0,
+            padding: 0
+        };
+
+        const NavStyle = {
+            padding: 50
+        };
+
+        return (
             <div>
                 {redirectVar}
-                <div class="container">
-                    <h2>List of All Books</h2>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Book ID</th>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {/*Display the Tbale row based on data recieved*/}
-                                {details}
-                            </tbody>
-                        </table>
-                </div> 
-            </div> 
+                <div className="account-logo-container">
+                    <img className="quora-logo-account" src={logo} alt="Quora"/>
+                </div>
+
+                <div className="bg" style={divStyle}></div>
+
+                <div className="row">
+                    <Link to="/signInBuyer">
+                        <div className="half-row">
+                            <button type="button" className="signin-btn">Buyer Sign In</button>
+                        </div>
+                    </Link>
+                </div>
+
+                <div className="row">
+                    <Link to="/signInOwner">
+                        <div className="half-row">
+                            <button type="button" className="signin-btn">Owner Sign In</button>
+                        </div>
+                    </Link>
+                </div>
+            </div>
         )
     }
 }
-//export Home Component
-export default Home;
+
+export default Navbar;
