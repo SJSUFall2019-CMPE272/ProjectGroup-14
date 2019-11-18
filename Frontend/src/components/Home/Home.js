@@ -34,9 +34,9 @@ class Navbar extends Component {
         return (
             <div>
                 {redirectVar}
-                <div className="account-logo-container">
-                    <img className="quora-logo-account" src={logo} alt="Quora"/>
-                </div>
+                {/*<div className="account-logo-container">*/}
+                {/*    <img className="quora-logo-account" src={logo} alt="Quora"/>*/}
+                {/*</div>*/}
 
                 <div className="bg" style={divStyle}></div>
 

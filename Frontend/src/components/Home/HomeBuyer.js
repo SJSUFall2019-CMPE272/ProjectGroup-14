@@ -6,7 +6,7 @@ import logo from '../../images/medi-banner.jpg';
 import SearchBuyer from '../BuyerPages/SearchBuyer';
 import Restaurant from '../BuyerPages/Restaurant';
 import Upload from '../BuyerPages/Upload';
-import UpcomingOrdersDraggable from '../BuyerPages/UpcomingOrdersDraggable';
+import ReportView from '../BuyerPages/ReportView';
 import PastOrders from '../BuyerPages/PastOrders';
 import ProfileBuyer from '../Profile/ProfileBuyer';
 import SignOut from '../Create/SignOut';
@@ -61,14 +61,14 @@ class HomeBuyer extends Component {
                     pathname: "/homeBuyer/search",
                     state: {searchTerm: this.state.searchTerm}
                 }}/>}
-                <div className="account-logo-container">
-                    <img className="account-logo" src={grubhub_logo} alt="Quora"/>
-                </div>
+                {/*<div className="account-logo-container">*/}
+                {/*    <img className="account-logo" src={grubhub_logo} alt="Quora"/>*/}
+                {/*</div>*/}
                 <div>
                     <Navbar>
                         <Navbar.Brand as={Link} to='/'>Home</Navbar.Brand>
                         <Nav>
-                            <Nav.Link as={NavLink} to='/homeBuyer/upcomingOrders'>Upload</Nav.Link>
+                            <Nav.Link as={NavLink} to='/homeBuyer/upload'>Upload</Nav.Link>
                             <Nav.Link as={NavLink} to='/homeBuyer/pastOrders'>Past orders</Nav.Link>
                         </Nav>
                         <Nav className="ml-auto">
@@ -85,7 +85,8 @@ class HomeBuyer extends Component {
                         <Route exact path='/homeBuyer/search' component={SearchBuyer}/>
                         <Route exact path='/homeBuyer/restaurant' component={Restaurant}/>
                         <Route exact path='/homeBuyer/profileBuyer/' component={ProfileBuyer}/>
-                        <Route exact path='/homeBuyer/upcomingOrders/' component={Upload}/>
+                        <Route exact path='/homeBuyer/upload/' component={Upload}/>
+                        <Route exact path='/homeBuyer/reportView/' component={ReportView}/>
                         <Route exact path='/homeBuyer/pastOrders/' component={PastOrders}/>
                         <Route exact path='/homeBuyer/signOut/' component={SignOut}/>
                         <Route exact path='/homeBuyer/help' component={HelpPage}/>

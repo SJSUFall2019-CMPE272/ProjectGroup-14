@@ -50,28 +50,35 @@ queryMap.set("GET_RESTAURANTS", 'SELECT * from owner where id in (SELECT DISTINC
 queryMap.set("INSERT_IN_GRUBHUB_ORDER", 'INSERT INTO grubhub_order values (?, ?, ?, ?, ?, ?, ?)');
 //queryMap.set("INSERT_IN_MENU_ITEM", 'INSERT INTO menu_item VALUES (?, ?, ?, ?, ?, ?, ?)');
 
-const PdfReader =  require("pdfreader");
-const pdfreader = require("pdfreader");
-
-let text = "empty";
+const PDFParser = require("pdf2json");
+let pdfParser = new PDFParser(this,1);
+const axios = require('axios');
 
 router.post('/pdf/read', function (req, res) {
     console.log("pdf/read");
 
-    new pdfreader.PdfReader().parseFileItems("/Users/vijendra4/GoogleDrive/sjsu/272/MediReport/Backend/src/full-report.pdf", function(err, item) {
-        if (err) {console.log(err)}
-        else if (!item) {console.log(err)}
-        else if (item.text) {
-            fs.appendFile('message.txt', item.text + "\n", function (err) {
-                if (err) throw err;
-                console.log('Saved!');
-            });
-        }
+    let pdfParser = new PDFParser(this,1);
+
+    pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
+    pdfParser.on("pdfParser_dataReady", pdfData => {
+        console.log(pdfParser.getRawTextContent());
+
+        const payload = {}
+        payload.data = pdfParser.getRawTextContent();
+
+        console.log("pdfParser.getRawTextContent()")
+        console.log(pdfParser.getRawTextContent())
+
+        axios.post(`http://localhost:8080/getData`, payload)
+            .then((response) => {
+                console.log("response from Python")
+                console.log(response.data)
+
+                res.send(response.data);
+            })
     });
 
-
-
-    res.send("Ok");
+    pdfParser.loadPDF("/Users/vijendra4/GoogleDrive/sjsu/272/MediReport/Backend/src/lipid-profile.pdf");
 });
 
 router.post('/section/get', function (req, res) {

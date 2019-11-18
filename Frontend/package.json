@@ -29,6 +29,7 @@
     "react-cookies": "^0.1.1",
     "react-dom": "^16.11.0",
     "react-native-vector-icons": "^6.6.0",
+    "react-pdf": "^4.1.0",
     "react-redux": "^7.1.3",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
@@ -41,7 +42,8 @@
     "redux-thunk": "^2.3.0",
     "ret": "^0.3.1",
     "shebang-regex": "^3.0.0",
-    "uuid": "^3.3.3"
+    "uuid": "^3.3.3",
+    "virtuoso-sparql-client": "^0.2.2"
   },
   "scripts": {
     "start": "react-scripts start",

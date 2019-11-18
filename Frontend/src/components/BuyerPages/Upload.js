@@ -23,7 +23,7 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-class HelpPage extends Component {
+class Upload extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -85,20 +85,19 @@ class HelpPage extends Component {
     }
 
     _handleImageChange() {
-        const payload = {};
+       //Get file path and send it to ReportView
 
-        axios.post(`http://${HOSTNAME}:3001/orders/pdf/read`, payload)
-            .then((response) => {
-                console.log("_handleImageChange response")
-                console.log(response)
-                this.setState({data: response.data});
-            })
+        this.setState({redirectVar: true});
     }
 
     render() {
-
         return (
             <div>
+                {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
+                    pathname: "/homeBuyer/reportView",
+                    state: {searchTerm: this.state.searchTerm}
+                }}/>}
+
                 <h1>Upload</h1>
                 <div>
                     <form className="form" onSubmit={this.addMenuItem}>
@@ -144,4 +143,4 @@ const styles = {
     },
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HelpPage);
+export default connect(mapStateToProps, mapDispatchToProps)(Upload);
