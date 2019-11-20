@@ -8,6 +8,8 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 nlp = spacy.load("en_ner_bc5cdr_md")
 
 
+
+
 class ItemStore(object):
     app = Klein()
 
