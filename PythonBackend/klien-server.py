@@ -24,6 +24,12 @@ class ItemStore(object):
         request.setHeader('Content-Type', 'application/json')
         content = json.loads(request.content.read())
 
+        print("request content")
+        print(content)
+        print("123langCode")
+        print(content["langCode"])
+        langCode = content["langCode"]
+
         doc = nlp(json.dumps(content))
         entities = doc.ents
         data = {'entities': []}
@@ -38,13 +44,13 @@ class ItemStore(object):
 
         print(entitySet)
 
-        return self.getQueryResults(entitySet)
+        return self.getQueryResults(entitySet, langCode)
 
-    def getQueryResults(self, entitySet):
+    def getQueryResults(self, entitySet, langCode):
         data = {'entities': []}
 
         for entity in entitySet:
-            sparql = self.getAbstractQuery(entity)
+            sparql = self.getAbstractQuery(entity, langCode)
             results = sparql.query().convert()
 
             for result in results["results"]["bindings"]:
@@ -63,7 +69,7 @@ class ItemStore(object):
 
         return json.dumps(data)
 
-    def getAbstractQuery(self, entity):
+    def getAbstractQuery(self, entity, langCode):
         sparql = SPARQLWrapper("http://dbpedia.org/sparql")
         sparql.setReturnFormat(JSON)
         query = """
@@ -79,9 +85,12 @@ class ItemStore(object):
             ?chem rdfs:label ?label .
             ?chem rdfs:comment ?comment .
             FILTER regex(?label, "^%s$", "i")
-            FILTER (langMatches(lang(?comment),"en"))
+            FILTER (langMatches(lang(?comment),"%s"))
            }
-        """ % entity
+        """ % (entity, langCode)
+
+        print("query")
+        print(query)
 
         sparql.setQuery(query)
 

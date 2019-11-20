@@ -56,6 +56,8 @@ const axios = require('axios');
 
 router.post('/pdf/read', function (req, res) {
     console.log("pdf/read");
+    console.log("req");
+    console.log(req.body);
 
     let pdfParser = new PDFParser(this,1);
 
@@ -65,6 +67,7 @@ router.post('/pdf/read', function (req, res) {
 
         const payload = {}
         payload.data = pdfParser.getRawTextContent();
+        payload.langCode = req.body.langCode;
 
         console.log("pdfParser.getRawTextContent()")
         console.log(pdfParser.getRawTextContent())
