@@ -10,7 +10,7 @@ import Navbar from './Navbar/Navbar';
 import Home from './Home/Home';
 import OwnerLayout from './Layout/OwnerLayout';
 import BuyerLayout from './Layout/BuyerLayout';
-
+import Login from './Home/SignIn'
 //Create a Main Component
 class Main extends Component {
     render() {
@@ -20,6 +20,7 @@ class Main extends Component {
                 <Route path="/homeBuyer" component={BuyerLayout}/>
                 <Route exact path="/" component={Navbar}/>
                 <Route exact path="/home" component={Home}/>
+                <Route exact path="/login" component={Login}/>
                 <Route exact path="/signUpBuyer" component={SignUpBuyer}/>
                 <Route exact path="/signInBuyer" component={SignInBuyer}/>
                 <Route exact path="/signInOwner" component={SignInOwner}/>

@@ -11,7 +11,7 @@ nlp = spacy.load("en_ner_bc5cdr_md")
 class ItemStore(object):
     app = Klein()
 
-    def __init__(self):
+    def _init_(self):
         self._items = {}
 
     @app.route('/')
@@ -23,6 +23,12 @@ class ItemStore(object):
     def post_item(self, request, name):
         request.setHeader('Content-Type', 'application/json')
         content = json.loads(request.content.read())
+
+        print("request content")
+        print(content)
+        print("123langCode")
+        print(content["langCode"])
+        langCode = content["langCode"]
 
         doc = nlp(json.dumps(content))
         entities = doc.ents
@@ -38,13 +44,13 @@ class ItemStore(object):
 
         print(entitySet)
 
-        return self.getQueryResults(entitySet)
+        return self.getQueryResults(entitySet, langCode)
 
-    def getQueryResults(self, entitySet):
+    def getQueryResults(self, entitySet, langCode):
         data = {'entities': []}
 
         for entity in entitySet:
-            sparql = self.getAbstractQuery(entity)
+            sparql = self.getAbstractQuery(entity, langCode)
             results = sparql.query().convert()
 
             for result in results["results"]["bindings"]:
@@ -62,15 +68,8 @@ class ItemStore(object):
                 data['entities'].append(result_entity)
 
         return json.dumps(data)
-        # results = sparql.query().convert()
-        #
-        # data = {'data': []}
-        #
-        # for result in results["results"]["bindings"]:
-        #     print(result["chem"]["value"])
-        #     print(result["comment"]["value"])
 
-    def getAbstractQuery(self, entity):
+    def getAbstractQuery(self, entity, langCode):
         sparql = SPARQLWrapper("http://dbpedia.org/sparql")
         sparql.setReturnFormat(JSON)
         query = """
@@ -86,15 +85,18 @@ class ItemStore(object):
             ?chem rdfs:label ?label .
             ?chem rdfs:comment ?comment .
             FILTER regex(?label, "^%s$", "i")
-            FILTER (langMatches(lang(?comment),"en"))
+            FILTER (langMatches(lang(?comment),"%s"))
            }
-        """ % entity
+        """ % (entity, langCode)
+
+        print("query")
+        print(query)
 
         sparql.setQuery(query)
 
         return sparql
 
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     store = ItemStore()
     store.app.run('localhost', 8080)
