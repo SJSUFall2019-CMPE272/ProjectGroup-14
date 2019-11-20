@@ -8,8 +8,6 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 nlp = spacy.load("en_ner_bc5cdr_md")
 
 
-
-
 class ItemStore(object):
     app = Klein()
 
@@ -64,13 +62,6 @@ class ItemStore(object):
                 data['entities'].append(result_entity)
 
         return json.dumps(data)
-        # results = sparql.query().convert()
-        #
-        # data = {'data': []}
-        #
-        # for result in results["results"]["bindings"]:
-        #     print(result["chem"]["value"])
-        #     print(result["comment"]["value"])
 
     def getAbstractQuery(self, entity):
         sparql = SPARQLWrapper("http://dbpedia.org/sparql")
