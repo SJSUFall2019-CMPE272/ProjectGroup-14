@@ -117,7 +117,7 @@ class ReportView extends Component {
 
             return <li key={index}>
                 <Card style={{width: '50rem'}}>
-                    {/*<Card.Img variant="top" src={require("../../images/restaurant-logo.png")}/>*/}
+                    {/<Card.Img variant="top" src={require("../../images/restaurant-logo.png")}/>/}
                     <Card.Body>
                         <Card.Title>{this.getOrderStatusBadge("Ready", "Clinical term")}</Card.Title>
                         <Card.Text>

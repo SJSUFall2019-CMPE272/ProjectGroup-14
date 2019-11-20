@@ -11,7 +11,7 @@ nlp = spacy.load("en_ner_bc5cdr_md")
 class ItemStore(object):
     app = Klein()
 
-    def __init__(self):
+    def _init_(self):
         self._items = {}
 
     @app.route('/')
@@ -97,6 +97,6 @@ class ItemStore(object):
         return sparql
 
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     store = ItemStore()
     store.app.run('localhost', 8080)
