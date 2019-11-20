@@ -22,6 +22,39 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
+const enNameToLanguageCodeMap = new Map([
+    ["English", "en"],
+    ["Arabic", "ar"],
+    ["Spanish", "es"],
+    ["French", "fr"],
+    ["German", "de"],
+    ["Chinese", "zh"],
+    ["Italian", "it"],
+    ["Japanese", "ja"],
+    ["Dutch", "nl"],
+    ["Polish", "pl"],
+    ["Portuguese", "pt"],
+    ["Russian", "ru"],
+
+]);
+
+const enNameToLocalNameMap = [
+    {"enName": "English", "localName": "English"},
+    {"enName": "Arabic", "localName": "ٱلْعَرَبِيَّة‎"},
+    {"enName": "Spanish", "localName": "Español"},
+    {"enName": "French", "localName": "Le français‎"},
+    {"enName": "German", "localName": "Deutsch"},
+    {"enName": "Chinese", "localName": "官话"},
+    {"enName": "Italian", "localName": "Italiano"},
+    {"enName": "Japanese", "localName": "日本語"},
+    {"enName": "Dutch", "localName": "Nederlands"},
+    {"enName": "Polish", "localName": "Polski"},
+    {"enName": "Portuguese", "localName": "Português"},
+    {"enName": "Russian", "localName": "русский язык"},
+
+];
+
+
 class ReportView extends Component {
     constructor(props) {
         super(props);
@@ -29,7 +62,11 @@ class ReportView extends Component {
             data: [],
             numPages: null,
             pageNumber: 2,
+            langCode: "en"
+
         };
+
+        this.setLanguage = this.setLanguage.bind(this);
     }
 
     data = () => {
@@ -100,8 +137,9 @@ class ReportView extends Component {
         </div>;
     }
 
-    componentDidMount() {
+    getData() {
         const payload = {};
+        payload.langCode = this.state.langCode;
 
         axios.post(`http://${HOSTNAME}:3001/orders/pdf/read`, payload)
             .then((response) => {
@@ -110,6 +148,43 @@ class ReportView extends Component {
                 console.log(response.data)
                 this.setState({data: response.data.entities});
             })
+    }
+
+    componentDidMount() {
+        this.getData();
+    }
+
+    setLanguage = (enLanguageName) => {
+        return e => {
+            e.preventDefault();
+
+            const langCode = enNameToLanguageCodeMap.get(enLanguageName);
+            console.log("langCode")
+            console.log(langCode)
+
+            this.setState({langCode: langCode}, () => {
+                this.getData();
+            })
+        }
+    };
+
+    getLanguageOptions() {
+        const renderTodos = enNameToLocalNameMap.map((pair, index) => {
+        //const renderTodos = enNameToLocalNameMap.forEach(function(value, key){
+            console.log("pair")
+            console.log(pair)
+
+            return <li key={1} style={styles.languageButton}>
+                <Button onClick={this.setLanguage(pair.enName)} type="submit" variant="primary">{pair.localName}</Button>
+            </li>;
+        });
+
+        console.log("renderTodos")
+        console.log(renderTodos)
+
+        return <div >
+            <ul className="ul li" style={styles.languageContainer}>{renderTodos}</ul>
+        </div>
     }
 
     render() {
@@ -129,37 +204,22 @@ class ReportView extends Component {
                         {this.populateSection()}
                     </div>
                 </div>
+
+                {this.getLanguageOptions()}
             </div>
         );
     }
 }
 
 const styles = {
-    container: {
-        flex: 1,
+    languageContainer: {
         display: "flex",
         flexDirection: "row",
-        height: "100vh",
     },
-    channelList: {
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
+    languageButton: {
+        paddingRight: "5rem",
     },
-    chat: {
-        display: "flex",
-        flex: 3,
-        flexDirection: "column",
-        borderWidth: "1px",
-        borderColor: "#ccc",
-        borderRightStyle: "solid",
-        borderLeftStyle: "solid",
-    },
-    settings: {
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
-    },
+
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReportView);
