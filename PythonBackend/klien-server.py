@@ -1,12 +1,14 @@
 import json
 import scispacy
 import spacy
+
+import re
 from klein import Klein
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 
 nlp = spacy.load("en_ner_bc5cdr_md")
-
+sp = spacy.load('en_core_web_sm')
 
 class ItemStore(object):
     app = Klein()
@@ -24,13 +26,42 @@ class ItemStore(object):
         request.setHeader('Content-Type', 'application/json')
         content = json.loads(request.content.read())
 
-        print("request content")
-        print(content)
+
         print("123langCode")
         print(content["langCode"])
         langCode = content["langCode"]
+        text = content["data"]
 
-        doc = nlp(json.dumps(content))
+        print("pure text")
+        print(text)
+
+        text = text\
+            .replace("\r", " ")\
+            .replace("\n", " ")\
+            .replace("mg/dl", " ")\
+            .replace("high", " ") \
+            .lower()
+
+        text = re.sub(r'[^A-Za-z ]+', " ", text)
+        text = re.sub(' +', " ", text)
+
+        text = text \
+            .replace("high", " ")\
+            .replace("desirable", " ")\
+            .replace("borderline", " ")
+
+        text = re.sub(' +', " ", text)
+
+        print("regexed text")
+        print(text)
+
+        sentence = sp(text)
+        text = " ".join([token.lemma_ for token in sentence])
+
+        # print("lemmatized text")
+        # print(text)
+
+        doc = nlp(json.dumps(text))
         entities = doc.ents
         data = {'entities': []}
 
@@ -63,7 +94,7 @@ class ItemStore(object):
                 #result_entity['entityURI'] = str(result["chem"]["value"])
                 result_entity["comment"] = str(result["comment"]["value"])
 
-                print(result_entity)
+                #print(result_entity)
 
                 data['entities'].append(result_entity)
 
@@ -89,14 +120,14 @@ class ItemStore(object):
            }
         """ % (entity, langCode)
 
-        print("query")
-        print(query)
+        #print("query")
+        #print(query)
 
         sparql.setQuery(query)
 
         return sparql
 
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     store = ItemStore()
     store.app.run('localhost', 8080)

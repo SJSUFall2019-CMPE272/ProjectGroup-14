@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Numans');
+/*@import url('https://fonts.googleapis.com/css?family=Numans');*/
 
 .body {
     margin: 0;
@@ -9,7 +9,7 @@
     width: 100%;
     height: 100%;
     background-color: darkgrey;
-     background: url('../images/medi4.jpg');
+    /*background: url('../images/medi4.jpg');*/
     background-repeat: no-repeat;
     background-size: cover;
     /* background-position: 50% 50%; */
