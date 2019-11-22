@@ -72,7 +72,7 @@ submitSignUp = (e) => {
     console.log("signUpBuyer data")
     console.log(data)
 
-    this.props.signUpBuyer({"user": data});
+    this.props.submitSignUp({"user": data});
 };
     render() {
         return (
