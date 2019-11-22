@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Form, Button, FormGroup, Label, Input } from 'reactstrap';
 import { FacebookLoginButton, GoogleLoginButton } from "react-social-login-buttons";
-import cookie from 'react-cookies';
 import { Redirect } from 'react-router';
 import '../../styles/Signin.css';
 import Particles from 'react-particles-js'
+import {connect} from "react-redux";
+import {signInMongo} from "../../js/actions/accessActions";
+
 const particleOpt={
   particles:{
           "number":{
@@ -42,6 +44,21 @@ const particleOpt={
       }
     }}
 
+function mapStateToProps(store) {
+      return {
+          signinSuccess: store.account.signinSuccess,
+          signinMessage: store.account.signinMessage,
+          userType: store.account.userType,
+          userId: store.account.userId
+      }
+  }
+  
+function mapDispatchToProps(dispatch) {
+      return {
+          submitSignIn: (payload) => dispatch(signInMongo(payload))
+      };
+  }
+
 //Define a Login Component
 class Login extends Component {
   constructor(props) {
@@ -60,17 +77,21 @@ class Login extends Component {
     data.email = (e.target[0].value);
     data.password = (e.target[1].value);
     console.log("insumbitsign in", data);
-    this.props.signin(data);
+    this.props.submitSignIn(data);
   }
 
   render() {
-    let output = this.props.output;
-    let response = cookie.load('cookyou');
-    console.log(this.props.message);
-    console.log(output);
-    console.log("cookyou",response);
-    if (localStorage.getItem("token")!=null && localStorage.getItem("type")=="buyer") {
-      return (<Redirect to="/home" />);                                     
+    let message;
+    let redirectVar;
+
+    //if (this.props.signinSuccess != null && this.props.signinSuccess && localStorage.getItem('token') !== null) {
+    if (this.props.signinSuccess != null && this.props.signinSuccess && localStorage.getItem('token') !== null) {
+        console.log("Signin success");
+        redirectVar = (this.props.userType === "buyer") ? <Redirect to="/homeBuyer/upload"/> : <Redirect to="/homeOwner"/>
+    }
+
+    if (this.props.signinSuccess != null && !this.props.signinSuccess) {
+        message = <div className="unsuccess-signup"><span>{this.props.signinMessage}</span></div>
     }
     return (
         <div class="body">
@@ -114,4 +135,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
