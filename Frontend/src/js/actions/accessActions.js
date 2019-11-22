@@ -33,6 +33,29 @@ export function signUpMongo(payload) {
     }
 }
 
+export function facebookAuth() {
+    console.log("facebook payload")
+    console.log()
+
+    return (dispatch) => {
+        console.log("Inside  signUpMongo");
+
+        axios.get(`http://${HOSTNAME}:3001/access/auth/faceboook`)
+            .then((response) => dispatch(signUp(response.data)))
+    }
+}
+export function googleAuth() {
+    console.log("google payload")
+    console.log()
+
+    return (dispatch) => {
+        console.log("Inside  signUpMongo");
+
+        axios.get(`http://${HOSTNAME}:3001/access/auth/google`)
+            .then((response) => dispatch(signUp(response.data)))
+    }
+}
+
 export const signIn = (returnData) => {
     console.log("Inside signIn dispatch")
     console.log(returnData)

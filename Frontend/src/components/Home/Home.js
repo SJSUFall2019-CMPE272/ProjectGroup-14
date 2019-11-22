@@ -3,14 +3,77 @@ import { Form,Button,FormGroup,Label,Input } from 'reactstrap';
 import { FacebookLoginButton, GoogleLoginButton } from "react-social-login-buttons";
 import '../../styles/Navbar.css';
 // import FormPage from './FormPage.js'
+import {signUpMongo,facebookAuth,googleAuth} from "../../js/actions/accessActions";
+import {connect} from "react-redux";
 
+function mapStateToProps(store) {
+  return {
+      signupSuccess: store.account.signupSuccess,
+      signupMessage: store.account.signupMessage
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+      submitSignUp: (book) => dispatch(signUpMongo(book)),
+      facebookAuth: dispatch(facebookAuth),
+      googleAuth : dispatch(googleAuth)
+  };
+}
 
 
 class Navbar extends Component {
     constructor(props) {
         super(props);
-    }
+    //maintain the state required for this component
+    this.submitSignUp = this.submitSignUp.bind(this);
+    this.facebookAuth = this.facebookAuth.bind(this);
+    this.googleAuth = this.googleAuth.bind(this);
+  }
+//   submitSignUp(e) {
+//     let data = {
+//       'first' : null,
+//       'last' : null,
+//       'email' : null,
+//       'password' : null,
+//       'type':"buyer" 
+//     }
+//     e.preventDefault(); 
+//     data.first = (e.target[0].value);
+//     data.last = (e.target[1].value);
+//     data.email = (e.target[2].value);
+//     data.password = (e.target[3].value);
+//     console.log("insumbitsign in ", data);
+//     this.props.signup(data);
+// }
 
+facebookAuth = () => {
+    this.props.facebookAuth();
+ 
+};
+
+googleAuth = () => {
+ this.props.googleAuth();
+ 
+};
+
+submitSignUp = (e) => {
+    e.preventDefault();
+    //const data = new FormData(e.target);
+    const data = {};
+    for (let i = 0; i < e.target.length; i++) {
+        if (e.target[i].name !== "") {
+            data[e.target[i].name] = e.target[i].value;
+        }
+    }
+
+    data.userType = "buyer";
+
+    console.log("signUpBuyer data")
+    console.log(data)
+
+    this.props.signUpBuyer({"user": data});
+};
     render() {
         return (
 	  <div class="body">
@@ -39,14 +102,14 @@ class Navbar extends Component {
               <Label>Password</Label>
               <Input name="password" type="password" placeholder="Password" name="password" minlength="8" required></Input>
             </FormGroup>
-            <Button className="btn-lg btn-dark btn-block">Create your account</Button>
-            <div className="text-center pt-3">Or continue wtih</div>
-            <FacebookLoginButton/>
-            <GoogleLoginButton/>
-            <div className="text-centre">
-            <span>Have an account?</span> <a href="/login">Sign in</a>
-            </div> 
+            <Button className="btn-lg btn-dark btn-block">Create your account</Button> 
           </Form>
+          <div className="text-center pt-3">Or continue wtih</div>
+            <FacebookLoginButton onClick={this.facebookAuth}/>
+            <GoogleLoginButton onClick={this.googleAuth}/>
+            <div className="text-centre">
+            <h4>Have an account?</h4> <a style={{fontSize:"19px",color:"black"}} href="/login">Sign in</a>
+            </div>
 		  </div>
       </div>
       </div>
@@ -57,4 +120,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
