@@ -11,6 +11,8 @@ import Home from './Home/Home';
 import OwnerLayout from './Layout/OwnerLayout';
 import BuyerLayout from './Layout/BuyerLayout';
 import Login from './Home/SignIn'
+import SideBar from './Home/SideBar';
+import option from './Home/option';
 //Create a Main Component
 class Main extends Component {
     render() {
@@ -21,6 +23,8 @@ class Main extends Component {
                 <Route exact path="/" component={Navbar}/>
                 <Route exact path="/home" component={Home}/>
                 <Route exact path="/login" component={Login}/>
+                <Route exact path="/sidebar" component={SideBar}/>
+                <Route exact path="/option" component={option}/>
                 <Route exact path="/signUpBuyer" component={SignUpBuyer}/>
                 <Route exact path="/signInBuyer" component={SignInBuyer}/>
                 <Route exact path="/signInOwner" component={SignInOwner}/>

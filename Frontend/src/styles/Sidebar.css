@@ -1,0 +1,70 @@
+.App {
+
+}
+
+.App-logo {
+  height: 70px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.App-header {
+  background-color: #01b2b7;
+  height: 80px;
+  color: teal;
+}
+
+
+.App-title {
+  position: relative;
+  height: 100%;
+}
+
+.App-title-logo {
+  height: 100%;
+  width: 120px;
+  display: inline-block;
+}
+
+.App-title-logo a {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+.App-title h2 {
+  position: absolute;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.App-content {
+  height: 1000px;
+}
+
+.App-menu {
+  margin: 0 ;
+  width: 120px ;
+  float: left;
+  height: 100%;
+}
+
+.App-menu-image {
+  width: 80px ;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 9px;
+}
+
+.App-menu-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.App-container {
+  height: 100%;
+  background-color:teal;  
+  margin-left: 120px;
+}

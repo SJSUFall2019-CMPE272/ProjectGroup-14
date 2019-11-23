@@ -58,21 +58,24 @@ googleAuth = () => {
 };
 
 submitSignUp = (e) => {
-    e.preventDefault();
-    //const data = new FormData(e.target);
-    const data = {};
-    for (let i = 0; i < e.target.length; i++) {
-        if (e.target[i].name !== "") {
-            data[e.target[i].name] = e.target[i].value;
-        }
-    }
+  e.preventDefault();
+  //const data = new FormData(e.target);
+  const data = {};
+  for (let i = 0; i < e.target.length; i++) {
+      if (e.target[i].name !== "") {
+          data[e.target[i].name] = e.target[i].value;
+      }
+  }
 
-    data.userType = "buyer";
+  data.userType = "buyer";
 
-    console.log("signUpBuyer data")
-    console.log(data)
+  console.log("signUpBuyer data")
+  console.log(data)
 
-    this.props.submitSignUp({"user": data});
+  // this.props.signUpBuyer(data);
+  //this.props.signUpBuyer({"user": {"username": "x", "password": "x"}});
+  //this.props.signUpBuyer({"user": {firstName: "x", lastName: "x", emailId: "x", password: "x", userType: "buyer"}});
+  this.props.submitSignUp({"user": data});
 };
     render() {
         return (
@@ -88,15 +91,15 @@ submitSignUp = (e) => {
             <h4 className="text-centre">{this.props.message}</h4>
             <FormGroup>
               <Label>First name</Label>
-              <Input name="first" type="text" placeholder="First Name" required></Input>
+              <Input name="firstName" type="text" placeholder="First Name" required></Input>
               </FormGroup>
               <FormGroup>
               <Label>Last name</Label>
-              <Input name="last" type="text" placeholder="Last Name" required></Input>
+              <Input name="lastName" type="text" placeholder="Last Name" required></Input>
             </FormGroup>
             <FormGroup>
               <Label>Email</Label>
-              <Input name="email" type="email" placeholder="abc@example.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></Input>
+              <Input name="emailId" type="email" placeholder="abc@example.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></Input>
             </FormGroup>
             <FormGroup>
               <Label>Password</Label>

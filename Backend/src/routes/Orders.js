@@ -81,7 +81,7 @@ router.post('/pdf/read', function (req, res) {
             })
     });
 
-    pdfParser.loadPDF("/Users/vijendra4/GoogleDrive/sjsu/272/MediReport/Backend/src/lipid-profile.pdf");
+    pdfParser.loadPDF("/Users/sakshi/cmpe273-groupproject/project/MediReport/Backend/src/lipid-profile.pdf");
 });
 
 router.post('/section/get', function (req, res) {

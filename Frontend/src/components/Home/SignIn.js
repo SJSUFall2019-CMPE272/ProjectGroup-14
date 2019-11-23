@@ -68,17 +68,22 @@ class Login extends Component {
   }
 
   submitSignIn(e) {
-    let data = {
-      'email': null,
-      'password': null,
-      'type': "buyer"
-    }
     e.preventDefault();
-    data.email = (e.target[0].value);
-    data.password = (e.target[1].value);
-    console.log("insumbitsign in", data);
-    this.props.submitSignIn(data);
-  }
+      const data = {
+        'emailId': null,
+        'password': null,
+        'userType': "buyer"
+      }
+
+      data.emailId = (e.target[0].value);
+      data.password = (e.target[1].value);
+
+    console.log("signInBuyer payload")
+    console.log({"user": data})
+
+    //this.props.signInBuyer({"user": data});
+   this.props.submitSignIn({"user": data});
+}
 
   render() {
     let message;
