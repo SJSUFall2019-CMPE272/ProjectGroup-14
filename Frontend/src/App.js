@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import './App.css';
 import Main from './components/Main';
 import {BrowserRouter, Route} from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
+
 //App Component
 class App extends Component {
     render() {

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.6.1",
+    "@progress/kendo-react-upload": "^3.7.0",
     "axios": "^0.18.1",
     "bootstrap": "^4.3.1",
     "buffer": "^5.4.3",
@@ -13,6 +14,7 @@
     "filepond-plugin-image-preview": "^4.5.0",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
+    "mdbreact": "^4.22.1",
     "passport-local": "^1.0.0",
     "pdf2json": "^1.1.8",
     "pdfjs-dist": "^2.2.228",
@@ -44,9 +46,11 @@
     "react-web-gifted-chat": "^0.6.7",
     "reactjs-popup": "^1.5.0",
     "reactstrap": "^8.1.1",
+    "rebass": "^4.0.7",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "ret": "^0.3.1",
+    "semantic-ui-react": "^0.88.1",
     "shebang-regex": "^3.0.0",
     "uuid": "^3.3.3",
     "virtuoso-sparql-client": "^0.2.2"
