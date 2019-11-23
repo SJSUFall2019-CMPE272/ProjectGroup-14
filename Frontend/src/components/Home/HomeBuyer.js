@@ -2,12 +2,8 @@ import React, {Component} from 'react';
 import {Redirect, Switch} from 'react-router';
 import '../../styles/Navbar.css';
 import logo from '../../images/medi-banner.jpg';
-import SearchBuyer from '../BuyerPages/SearchBuyer';
-import Restaurant from '../BuyerPages/Restaurant';
 import Upload from '../BuyerPages/Upload';
 import ReportView from '../BuyerPages/ReportView';
-import PastOrders from '../BuyerPages/PastOrders';
-import ProfileBuyer from '../Profile/ProfileBuyer';
 import SignOut from '../Create/SignOut';
 import ChatPage from '../BuyerPages/ChatPage';
 import HelpPage from '../BuyerPages/HelpPage';
@@ -68,12 +64,10 @@ class HomeBuyer extends Component {
                         <Navbar.Brand as={Link} to='/'>Home</Navbar.Brand>
                         <Nav>
                             <Nav.Link as={NavLink} to='/homeBuyer/upload'>Upload</Nav.Link>
-                            <Nav.Link as={NavLink} to='/homeBuyer/pastOrders'>Past orders</Nav.Link>
                         </Nav>
                         <Nav className="ml-auto">
                             <Nav.Link as={NavLink} to='/homeBuyer/help'>Help</Nav.Link>
                             <Nav.Link as={NavLink} to='/homeBuyer/chat'>Chat</Nav.Link>
-                            <Nav.Link as={NavLink} to='/homeBuyer/profileBuyer/'>Profile</Nav.Link>
                             <Nav.Link as={NavLink} to='/homeBuyer/signOut/'>SignOut</Nav.Link>
                         </Nav>
                     </Navbar>
@@ -81,12 +75,8 @@ class HomeBuyer extends Component {
 
                 <div>
                     <Switch>
-                        <Route exact path='/homeBuyer/search' component={SearchBuyer}/>
-                        <Route exact path='/homeBuyer/restaurant' component={Restaurant}/>
-                        <Route exact path='/homeBuyer/profileBuyer/' component={ProfileBuyer}/>
                         <Route exact path='/homeBuyer/upload/' component={Upload}/>
                         <Route exact path='/homeBuyer/reportView/' component={ReportView}/>
-                        <Route exact path='/homeBuyer/pastOrders/' component={PastOrders}/>
                         <Route exact path='/homeBuyer/signOut/' component={SignOut}/>
                         <Route exact path='/homeBuyer/help' component={HelpPage}/>
                         <Route exact path='/homeBuyer/chat' component={ChatPage}/>
