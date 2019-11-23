@@ -11,8 +11,8 @@ const initialState = {
 };
 
 export default function accountReducer(state = initialState, action) {
-    console.log("action.payload")
-    console.log(action.payload)
+    console.log("action.payload");
+    console.log(action.payload);
 
     if (action.type === SIGN_IN) {
         return Object.assign({}, state, {

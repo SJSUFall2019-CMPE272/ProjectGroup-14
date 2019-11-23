@@ -38,8 +38,8 @@ class ConnectedSignUpBuyer extends Component {
 
         data.userType = "buyer";
 
-        console.log("signUpBuyer data")
-        console.log(data)
+        console.log("signUpBuyer data");
+        console.log(data);
 
         // this.props.signUpBuyer(data);
         //this.props.signUpBuyer({"user": {"username": "x", "password": "x"}});

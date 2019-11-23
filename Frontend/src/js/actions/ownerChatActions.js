@@ -14,11 +14,11 @@ export function getChats(payload) {
 }
 
 const getChatsUpdate = (returnedData) => {
-    console.log("getChatsUpdate")
-    console.log("returnedData")
-    console.log(returnedData)
+    console.log("getChatsUpdate");
+    console.log("returnedData");
+    console.log(returnedData);
     return {type: GET_CHAT_OWNER, payload: returnedData}
-}
+};
 
 export function sendMessage(payload) {
     return (dispatch) => {
@@ -28,10 +28,10 @@ export function sendMessage(payload) {
 }
 
 const sendMessageUpdate = (returnedData) => {
-    console.log("getChatsUpdate")
-    console.log("returnedData")
-    console.log(returnedData)
+    console.log("getChatsUpdate");
+    console.log("returnedData");
+    console.log(returnedData);
     return {type: SEND_MESSAGE_OWNER, payload: returnedData}
-}
+};
 
 

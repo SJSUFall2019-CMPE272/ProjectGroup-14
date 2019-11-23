@@ -29,11 +29,11 @@ class HelpPage extends Component {
     }
 
     goToChat = (order) => {
-        console.log("goToChat")
-        console.log("order")
-        console.log(order)
+        console.log("goToChat");
+        console.log("order");
+        console.log(order);
         this.setState({redirectVar: true, selectedOrder: order})
-    }
+    };
 
     componentDidMount() {
         const payload = {};
@@ -48,28 +48,28 @@ class HelpPage extends Component {
 
         switch (status) {
             case "New":
-                badge = <Badge style={{fontSize: 10}} variant="primary">New</Badge>
+                badge = <Badge style={{fontSize: 10}} variant="primary">New</Badge>;
                 break;
 
             case "Preparing":
-                badge = <Badge style={{fontSize: 10}} variant="info">Preparing</Badge>
+                badge = <Badge style={{fontSize: 10}} variant="info">Preparing</Badge>;
                 break;
 
             case "Ready":
-                badge = <Badge style={{fontSize: 10}} variant="dark">Ready</Badge>
+                badge = <Badge style={{fontSize: 10}} variant="dark">Ready</Badge>;
                 break;
 
             case "Delivered":
-                badge = <Badge style={{fontSize: 10}} variant="success">Delivered</Badge>
+                badge = <Badge style={{fontSize: 10}} variant="success">Delivered</Badge>;
                 break;
 
             case "Cancel":
-                badge = <Badge style={{fontSize: 10}} variant="danger">Cancel</Badge>
+                badge = <Badge style={{fontSize: 10}} variant="danger">Cancel</Badge>;
                 break;
         }
 
         return badge;
-    }
+    };
 
     populateSection = () => {
         console.log("populateSection");
@@ -94,8 +94,8 @@ class HelpPage extends Component {
 
         const renderTodos = this.props.allOrders.map((order, index) => {
             // const items = JSON.parse(order.items);
-            console.log("order")
-            console.log(order)
+            console.log("order");
+            console.log(order);
 
             return <li key={index}>
                 <Card style={{width: '22rem'}}>
@@ -121,7 +121,7 @@ class HelpPage extends Component {
             <ul className="ul li">{renderTodos}</ul>
         </div>;
 
-    }
+    };
 
     render() {
 

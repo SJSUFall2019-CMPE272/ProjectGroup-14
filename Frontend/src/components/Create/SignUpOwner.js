@@ -36,8 +36,8 @@ class ConnectedSignUpOwner extends Component {
 
         data.userType = "owner";
 
-        console.log("signUpOwner data")
-        console.log(data)
+        console.log("signUpOwner data");
+        console.log(data);
 
         this.props.signUpOwner({user: data});
         //this.props.signUpOwner({"user": {firstName: "x", lastName: "x", emailId: "x", password: "x", userType: "owner"}});

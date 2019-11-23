@@ -51,8 +51,8 @@ class PastOrders extends Component {
     }
 
     getOrderBasedOnStatus(response, status1, status2) {
-        console.log("Past order getOrderBasedOnStatus")
-        console.log(response)
+        console.log("Past order getOrderBasedOnStatus");
+        console.log(response);
         const ordersByStatus = response.data.filter(order => {
                 return (order.status === status1) || (order.status === status2)
             }

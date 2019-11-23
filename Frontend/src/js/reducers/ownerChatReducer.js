@@ -7,8 +7,8 @@ const initialState = {
 };
 
 export default function ownerChatReducer(state = initialState, action) {
-    console.log("action.payload")
-    console.log(action.payload)
+    console.log("action.payload");
+    console.log(action.payload);
 
     if (action.type === GET_CHAT_OWNER) {
         const sortedMessages = action.payload;
@@ -18,11 +18,11 @@ export default function ownerChatReducer(state = initialState, action) {
             return a > b ? -1 : a < b ? 1 : 0;
         });
 
-        console.log("sortedMessages")
-        console.log(sortedMessages)
+        console.log("sortedMessages");
+        console.log(sortedMessages);
 
-        console.log("sortedMessages[0]._id")
-        console.log(sortedMessages[0]._id)
+        console.log("sortedMessages[0]._id");
+        console.log(sortedMessages[0]._id);
 
         return Object.assign({}, state, {
             chats: action.payload,

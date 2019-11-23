@@ -1,15 +1,15 @@
 import {
+    CREATE_PAGES_SEARCH,
     FILTER_RESTAURANTS,
     GET_MENU_ITEMS,
     GET_ORDERS_BY_STATUS,
     ON_CLICK_SECTION,
     ON_DRAG_END,
     PAGE_CHANGED,
+    PAGE_CHANGED_SEARCH,
     PLACE_ORDER,
     PLACE_ORDER_ERROR,
-    SEARCH_ITEM,
-    CREATE_PAGES_SEARCH,
-    PAGE_CHANGED_SEARCH
+    SEARCH_ITEM
 } from "../constants/action-types";
 import {HOSTNAME} from "../../components/Constants/Constants";
 import axios from 'axios';
@@ -20,8 +20,7 @@ export function onDragEnd(payload) {
     return (dispatch) => {
         dispatch(onDragEndUpdate(payload));
     }
-};
-
+}
 export function setFilteredRestaurants(payload) {
     return (dispatch) => {
         dispatch(setFilteredRestaurantsUpdate(payload));
@@ -43,11 +42,11 @@ export function getOrdersByStatus(payload) {
         axios.post(`http://${HOSTNAME}:3001/orders/get/byBuyer`, payload)
             .then((response) => {
                 const responseEnriched = payload;
-                responseEnriched.data = response.data
+                responseEnriched.data = response.data;
 
                 // Object.assign({}, response, payload)
-                console.log("responseEnriched")
-                console.log(responseEnriched)
+                console.log("responseEnriched");
+                console.log(responseEnriched);
 
                 dispatch(getOrdersByStatusUpdate(responseEnriched))
             })
@@ -63,19 +62,19 @@ const getOrdersByStatusUpdate = (returnedData) => {
 
 const onDragEndUpdate = (returnedData) => {
     return {type: ON_DRAG_END, payload: returnedData}
-}
+};
 
 const searchItemUpdate = (returnedData) => {
     return {type: SEARCH_ITEM, payload: returnedData}
-}
+};
 
 const setFilteredRestaurantsUpdate = (returnedData) => {
     return {type: FILTER_RESTAURANTS, payload: returnedData}
-}
+};
 
 export function placeOrder(payload) {
-    console.log("placeOrder payload")
-    console.log(payload)
+    console.log("placeOrder payload");
+    console.log(payload);
 
     return (dispatch) => {
         console.log("Inside placeOrder");
@@ -87,8 +86,8 @@ export function placeOrder(payload) {
 }
 
 export function getMenuItems(payload) {
-    console.log("getMenuItems payload")
-    console.log(payload)
+    console.log("getMenuItems payload");
+    console.log(payload);
 
     return (dispatch) => {
         axios.post(`http://${HOSTNAME}:3001/orders/menu_item/get`, payload)
@@ -116,29 +115,33 @@ export function pageChanged(payload) {
 
 const pageChangedUpdate = (returnedData) => {
     return {type: PAGE_CHANGED, payload: returnedData}
-}
+};
 
 export function createPagesSearch(payload) {
     console.log("createPagesSearch payload");
     console.log(payload);
 
-    return (dispatch) => {dispatch(createPagesSearchUpdate(payload));}
+    return (dispatch) => {
+        dispatch(createPagesSearchUpdate(payload));
+    }
 }
 
 const createPagesSearchUpdate = (returnedData) => {
     return {type: CREATE_PAGES_SEARCH, payload: returnedData}
-}
+};
 
 export function pageChangedSearch(payload) {
     console.log("createPagesSearch payload");
     console.log(payload);
 
-    return (dispatch) => {dispatch(pageChangedSearchUpdate(payload));}
+    return (dispatch) => {
+        dispatch(pageChangedSearchUpdate(payload));
+    }
 }
 
 const pageChangedSearchUpdate = (returnedData) => {
     return {type: PAGE_CHANGED_SEARCH, payload: returnedData}
-}
+};
 
 const onClickSectionUpdate = (returnedData) => {
     console.log("onClickSectionUpdate");
@@ -148,7 +151,7 @@ const onClickSectionUpdate = (returnedData) => {
     payload.index = returnedData.index;
 
     return {type: ON_CLICK_SECTION, payload: payload}
-}
+};
 
 const getMenuItemsUpdate = (returnedData) => {
     console.log("getMenuItemsUpdate");
@@ -190,7 +193,7 @@ const getMenuItemsUpdate = (returnedData) => {
     payload.currentTab = tabSkeleton[0];
 
     return {type: GET_MENU_ITEMS, payload: payload}
-}
+};
 
 const placeOrderUpdate = (returnedData) => {
     console.log("placeOrderUpdate");

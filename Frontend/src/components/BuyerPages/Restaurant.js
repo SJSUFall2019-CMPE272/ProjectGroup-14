@@ -90,10 +90,10 @@ class Restaurant extends Component {
     placeOrder = (e) => {
         e.preventDefault();
 
-        console.log("this.props.placeOrderSuccess")
-        console.log(this.props.placeOrderSuccess)
-        console.log("this.props.placeOrderMessage")
-        console.log(this.props.placeOrderMessage)
+        console.log("this.props.placeOrderSuccess");
+        console.log(this.props.placeOrderSuccess);
+        console.log("this.props.placeOrderMessage");
+        console.log(this.props.placeOrderMessage);
         const payload = {};
 
         payload.customer_name = this.state.customer_name;
@@ -155,8 +155,8 @@ class Restaurant extends Component {
         const outerPayload = {};
         outerPayload.owner_id = this.props.location.state.selectedRestaurantId;
 
-        console.log("outerPayload")
-        console.log(outerPayload)
+        console.log("outerPayload");
+        console.log(outerPayload);
 
         this.props.getMenuItems(outerPayload);
     }
@@ -200,7 +200,7 @@ class Restaurant extends Component {
         const payload = {};
         payload.pageNumber = parseInt(e.target.text, 10);
         this.props.pageChanged(payload);
-    }
+    };
 
     paginationBasic = () => {
         return (<div>
@@ -212,8 +212,8 @@ class Restaurant extends Component {
     onClickSection = (e) => {
         e.preventDefault();
 
-        console.log("onClickSection")
-        console.log("e.target.text")
+        console.log("onClickSection");
+        console.log("e.target.text");
         const selectedSection = e.target.href.split("/").pop();
         console.log(selectedSection);
 
@@ -223,25 +223,25 @@ class Restaurant extends Component {
         payload.index = index;
 
         this.props.onClickSection(payload);
-    }
+    };
 
     createSectionList = () => {
         if (!this.props.allSections) {
             return [];
         }
 
-        console.log("this.state.allSections")
+        console.log("this.state.allSections");
         console.log(this.props.allSections);
         const sections = this.props.allSections;
         const list = [];
 
         for (let section of sections) {
-            console.log("section.name")
-            console.log(section)
+            console.log("section.name");
+            console.log(section);
             list.push(<ListGroup.Item action href={section} onClick={this.onClickSection}>{section}</ListGroup.Item>)
         }
         return list;
-    }
+    };
 
     populateSection = (currentTab) => {
         if (!this.props.allItems) {
@@ -250,17 +250,17 @@ class Restaurant extends Component {
             </div>;
         }
 
-        console.log("currentTab")
-        console.log(currentTab)
+        console.log("currentTab");
+        console.log(currentTab);
 
-        console.log("this.state.tabs")
-        console.log(this.props.tabs)
+        console.log("this.state.tabs");
+        console.log(this.props.tabs);
         const items = this.props.allItems.filter(item => {
             return (item.section === currentTab.name)
         });
 
-        console.log("this.state.pageItems")
-        console.log(this.props.pageItems)
+        console.log("this.state.pageItems");
+        console.log(this.props.pageItems);
 
         const {active, todosPerPage} = this.props;
 
@@ -331,7 +331,7 @@ class Restaurant extends Component {
             <ul className="ul li">{renderTodos}</ul>
         </div>;
 
-    }
+    };
 
     render() {
         const redirectVar = (localStorage.getItem('userType') === null) ? <Redirect to="/home"/> : null;

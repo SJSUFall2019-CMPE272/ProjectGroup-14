@@ -24,9 +24,9 @@ const initialState = {
 };
 
 const getOrderBasedOnStatus = (response, status) => {
-    console.log("getOrderBasedOnStatus")
-    console.log("response")
-    console.log(response)
+    console.log("getOrderBasedOnStatus");
+    console.log("response");
+    console.log(response);
 
 
     const ordersByStatus = response.filter(order => {
@@ -55,12 +55,12 @@ const getOrderBasedOnStatus = (response, status) => {
     });
 
     return displayOrders;
-}
+};
 
 
 export default function ownerReducer(state = initialState, action) {
-    console.log("ownerReducer action.payload")
-    console.log(action.payload)
+    console.log("ownerReducer action.payload");
+    console.log(action.payload);
 
     if (action.type === GET_ORDERS_OF_ALL_STATUS_OWNER) {
         return Object.assign({}, state, {
@@ -82,7 +82,7 @@ export default function ownerReducer(state = initialState, action) {
             canceledOrders: getOrderBasedOnStatus(action.payload, "Cancel"),
         });
     } else if (action.type === ADD_SECTION_NO_SAVE) {
-        console.log("Inside ADD_SECTION")
+        console.log("Inside ADD_SECTION");
         return Object.assign({}, state, {
             tabs: action.payload.tabs,
             currentTab: action.payload.currentTab,

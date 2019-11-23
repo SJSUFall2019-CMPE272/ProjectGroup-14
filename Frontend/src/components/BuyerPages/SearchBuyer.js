@@ -5,7 +5,12 @@ import {Button, Card, Pagination} from "react-bootstrap";
 import {connect} from "react-redux";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Checkbox from "./Checkbox";
-import {searchItem, setFilteredRestaurants, createPagesSearch, pageChangedSearch} from "../../js/actions/restaurantActions";
+import {
+    createPagesSearch,
+    pageChangedSearch,
+    searchItem,
+    setFilteredRestaurants
+} from "../../js/actions/restaurantActions";
 
 function mapStateToProps(store) {
     return {
@@ -117,7 +122,7 @@ class SearchBuyer extends Component {
 
         console.log("this.props.filteredRestaurants");
         console.log(this.props.filteredRestaurants);
-        console.log("createRestaurants numOfFilteredRestaurants: " + this.props.filteredRestaurants.length)
+        console.log("createRestaurants numOfFilteredRestaurants: " + this.props.filteredRestaurants.length);
 
         const allTabs = this.props.filteredRestaurants.map(restaurant => {
             return (
@@ -214,7 +219,7 @@ class SearchBuyer extends Component {
 
         this.props.pageChangedSearch(payload);
         this.createRestaurants();
-    }
+    };
 
     createPagesSearch(numOfFilteredRestaurants, activePage) {
         console.log("1numOfFilteredRestaurants: " + numOfFilteredRestaurants);
@@ -261,8 +266,8 @@ class SearchBuyer extends Component {
     }
 
     render() {
-        console.log("this.state.pageItems")
-        console.log(this.state.pageItems)
+        console.log("this.state.pageItems");
+        console.log(this.state.pageItems);
         return (
             <div>
                 {this.state.redirectVar != null && <Redirect to={{

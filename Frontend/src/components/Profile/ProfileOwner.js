@@ -278,7 +278,7 @@ class ConnectedOwnerProfile extends Component {
         if (localStorage.getItem('userType') !== null) {
             console.log("Inside componentWillMount");
             const payload = {};
-            payload.userId = localStorage.getItem('userId')
+            payload.userId = localStorage.getItem('userId');
             payload.userType = "owner";
 
             this.getProfile(payload);

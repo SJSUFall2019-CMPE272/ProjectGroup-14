@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Redirect, Switch} from 'react-router';
 import '../../styles/Navbar.css';
-import grubhub_logo from "../../images/medi-logo.png";
 import logo from '../../images/medi-banner.jpg';
 import SearchBuyer from '../BuyerPages/SearchBuyer';
 import Restaurant from '../BuyerPages/Restaurant';
@@ -14,7 +13,7 @@ import ChatPage from '../BuyerPages/ChatPage';
 import HelpPage from '../BuyerPages/HelpPage';
 
 import {Link, NavLink, Route} from "react-router-dom";
-import {Button, Nav, Navbar} from "react-bootstrap";
+import {Nav, Navbar} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 
 class HomeBuyer extends Component {

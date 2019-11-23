@@ -10,7 +10,7 @@ import {getProfileAction, updateProfileAction} from "../../js/actions/profileAct
 import axios from 'axios';
 import {HOSTNAME} from "../../components/Constants/Constants";
 
-global.Buffer = global.Buffer || require('buffer').Buffer
+global.Buffer = global.Buffer || require('buffer').Buffer;
 
 function mapStateToProps(store) {
     return {

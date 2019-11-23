@@ -53,10 +53,10 @@ class ChatPage extends Component {
 
     onSend(messages) {
         //message.preventDefault();
-        console.log("messages")
-        console.log(messages)
+        console.log("messages");
+        console.log(messages);
 
-        const selectedOrder = this.props.location.state.selectedOrder
+        const selectedOrder = this.props.location.state.selectedOrder;
         const payload = {};
         payload.buyer_id = selectedOrder.buyer_id;
         payload.chat_id = this.props.currentChatId;
@@ -68,7 +68,7 @@ class ChatPage extends Component {
 
     componentDidMount() {
         console.log("ChatPage");
-        const selectedOrder = this.props.location.state.selectedOrder
+        const selectedOrder = this.props.location.state.selectedOrder;
         console.log(selectedOrder);
 
         // buyer_id: "5dae0aa889ba4d39c3c194ee"

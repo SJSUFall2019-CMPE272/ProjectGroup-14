@@ -4,7 +4,6 @@ import "../../styles/Menu.css"
 import {getOrdersByStatus, onDragEnd} from "../../js/actions/restaurantActions";
 import {connect} from "react-redux";
 import {Redirect} from "react-router";
-import {HOSTNAME} from "../Constants/Constants";
 
 import axios from 'axios';
 
@@ -37,11 +36,11 @@ class Upload extends Component {
     }
 
     goToChat = (order) => {
-        console.log("goToChat")
-        console.log("order")
-        console.log(order)
+        console.log("goToChat");
+        console.log("order");
+        console.log(order);
         this.setState({redirectVar: true, selectedOrder: order})
-    }
+    };
 
     componentDidMount() {
         const payload = {};
@@ -56,8 +55,8 @@ class Upload extends Component {
 
         const renderTodos = this.props.allOrders.map((order, index) => {
             // const items = JSON.parse(order.items);
-            console.log("order")
-            console.log(order)
+            console.log("order");
+            console.log(order);
 
             return <li key={index}>
                 <Card style={{width: '22rem'}}>
@@ -82,10 +81,10 @@ class Upload extends Component {
         return <div>
             <ul className="ul li">{renderTodos}</ul>
         </div>;
-    }
+    };
 
     _handleImageChange() {
-       //Get file path and send it to ReportView
+        //Get file path and send it to ReportView
 
         this.setState({redirectVar: true});
     }

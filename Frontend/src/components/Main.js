@@ -13,6 +13,7 @@ import BuyerLayout from './Layout/BuyerLayout';
 import Login from './Home/SignIn'
 import SideBar from './Home/SideBar';
 import option from './Home/option';
+
 //Create a Main Component
 class Main extends Component {
     render() {

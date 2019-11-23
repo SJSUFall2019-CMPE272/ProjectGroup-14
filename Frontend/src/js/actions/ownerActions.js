@@ -16,12 +16,12 @@ import axios from 'axios';
 axios.defaults.withCredentials = true;
 
 export function getOrders(payload) {
-    console.log("getOrders")
-    console.log("payload")
-    console.log(payload)
+    console.log("getOrders");
+    console.log("payload");
+    console.log(payload);
 
     return (dispatch) => {
-        console.log("Making rest call")
+        console.log("Making rest call");
         axios.post(`http://${HOSTNAME}:3001/orders/getByOwner`, payload)
             .then((response) => dispatch(getOrdersUpdate(response.data)))
     }
@@ -29,12 +29,12 @@ export function getOrders(payload) {
 
 const getOrdersUpdate = (returnedData) => {
     return {type: GET_ORDERS_OF_ALL_STATUS_OWNER, payload: returnedData}
-}
+};
 
 export function deleteSection(payload) {
-    console.log("deleteSection")
-    console.log("payload")
-    console.log(payload)
+    console.log("deleteSection");
+    console.log("payload");
+    console.log(payload);
 
     return (dispatch) => {
         axios.post(`http://${HOSTNAME}:3001/orders/section/delete`, payload)
@@ -44,12 +44,12 @@ export function deleteSection(payload) {
 
 const deleteSectionUpdate = (returnedData) => {
     return {type: DELETE_SECTION, payload: returnedData}
-}
+};
 
 export function addSection(payload) {
-    console.log("addSection")
-    console.log("payload")
-    console.log(payload)
+    console.log("addSection");
+    console.log("payload");
+    console.log(payload);
 
     return (dispatch) => {
         dispatch(addSectionUpdate(payload))
@@ -58,10 +58,10 @@ export function addSection(payload) {
 
 const addSectionUpdate = (returnedData) => {
     return {type: ADD_SECTION_NO_SAVE, payload: returnedData}
-}
+};
 
 export function setEditMode(payload) {
-    console.log(payload)
+    console.log(payload);
 
     return (dispatch) => {
         dispatch(setEditModeUpdate(payload))
@@ -70,10 +70,10 @@ export function setEditMode(payload) {
 
 const setEditModeUpdate = (returnedData) => {
     return {type: SET_EDIT_MODE, payload: returnedData}
-}
+};
 
 export function handleContentChange(payload) {
-    console.log(payload)
+    console.log(payload);
 
     return (dispatch) => {
         dispatch(handleContentChangeUpdate(payload))
@@ -82,12 +82,12 @@ export function handleContentChange(payload) {
 
 const handleContentChangeUpdate = (returnedData) => {
     return {type: HANDLE_CONTENT_CHANGE, payload: returnedData}
-}
+};
 
 export function saveSection(payload) {
-    console.log("saveSection")
-    console.log("payload")
-    console.log(payload)
+    console.log("saveSection");
+    console.log("payload");
+    console.log(payload);
 
     return (dispatch) => {
         axios.post(`http://${HOSTNAME}:3001/orders/section/add`, payload)
@@ -97,11 +97,11 @@ export function saveSection(payload) {
 
 const saveSectionUpdate = (returnedData) => {
     return {type: SAVE_SECTION, payload: returnedData}
-}
+};
 
 export function getMenuItems(payload) {
-    console.log("getMenuItems payload")
-    console.log(payload)
+    console.log("getMenuItems payload");
+    console.log(payload);
 
     return (dispatch) => {
         axios.post(`http://${HOSTNAME}:3001/orders/menu_item/get`, payload)
@@ -221,15 +221,15 @@ const getMenuItemsUpdate = (returnedData) => {
     // payload.currentTab = tabSkeleton[0];
 
     return {type: GET_MENU_ITEMS_OWNER, payload: payload}
-}
+};
 
 
 export function changeOrderStatus(payload) {
-    console.log("changeOrderStatus")
-    console.log("payload")
-    console.log(payload)
+    console.log("changeOrderStatus");
+    console.log("payload");
+    console.log(payload);
 
-    const mongoPayload = {}
+    const mongoPayload = {};
     mongoPayload._id = payload._id;
     mongoPayload.status = payload.newStatus;
     mongoPayload.owner_id = payload.owner_id;
@@ -248,4 +248,4 @@ const changeOrderStatusUpdate = (returnedData) => {
     getOrders(payload);
 
     return {type: CHANGE_ORDER_STATUS, payload: returnedData}
-}
+};

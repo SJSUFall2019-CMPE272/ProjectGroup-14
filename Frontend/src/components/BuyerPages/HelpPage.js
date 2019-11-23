@@ -30,11 +30,11 @@ class HelpPage extends Component {
     }
 
     goToChat = (order) => {
-        console.log("goToChat")
-        console.log("order")
-        console.log(order)
+        console.log("goToChat");
+        console.log("order");
+        console.log(order);
         this.setState({redirectVar: true, selectedOrder: order})
-    }
+    };
 
     componentDidMount() {
         const payload = {};
@@ -49,8 +49,8 @@ class HelpPage extends Component {
 
         const renderTodos = this.props.allOrders.map((order, index) => {
             // const items = JSON.parse(order.items);
-            console.log("order")
-            console.log(order)
+            console.log("order");
+            console.log(order);
 
             return <li key={index}>
                 <Card style={{width: '22rem'}}>
@@ -76,7 +76,7 @@ class HelpPage extends Component {
             <ul className="ul li">{renderTodos}</ul>
         </div>;
 
-    }
+    };
 
     render() {
 

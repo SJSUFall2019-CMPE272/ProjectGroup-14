@@ -7,8 +7,8 @@ axios.defaults.withCredentials = true;
 //axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 export function signInMongo(payload) {
-    console.log("signInMongo payload")
-    console.log(payload)
+    console.log("signInMongo payload");
+    console.log(payload);
 
     return (dispatch) => {
         console.log("Inside signInMongo");
@@ -22,8 +22,8 @@ export function signInMongo(payload) {
 }
 
 export function signUpMongo(payload) {
-    console.log("signUpMongo payload")
-    console.log(payload)
+    console.log("signUpMongo payload");
+    console.log(payload);
 
     return (dispatch) => {
         console.log("Inside  signUpMongo");
@@ -34,8 +34,8 @@ export function signUpMongo(payload) {
 }
 
 export function facebookAuth() {
-    console.log("facebook payload")
-    console.log()
+    console.log("facebook payload");
+    console.log();
 
     return (dispatch) => {
         console.log("Inside  signUpMongo");
@@ -44,9 +44,10 @@ export function facebookAuth() {
             .then((response) => dispatch(signUp(response.data)))
     }
 }
+
 export function googleAuth() {
-    console.log("google payload")
-    console.log()
+    console.log("google payload");
+    console.log();
 
     return (dispatch) => {
         console.log("Inside  signUpMongo");
@@ -57,8 +58,8 @@ export function googleAuth() {
 }
 
 export const signIn = (returnData) => {
-    console.log("Inside signIn dispatch")
-    console.log(returnData)
+    console.log("Inside signIn dispatch");
+    console.log(returnData);
     localStorage.setItem('token', returnData.user.token);
     localStorage.setItem('_id', returnData.user._id);
     localStorage.setItem('userType', returnData.user.userType);
@@ -66,8 +67,8 @@ export const signIn = (returnData) => {
 };
 
 export const signUp = (returnData) => {
-    console.log("Inside signUp dispatch")
-    console.log(returnData)
+    console.log("Inside signUp dispatch");
+    console.log(returnData);
     localStorage.setItem('token', returnData.token);
     localStorage.setItem('_id', returnData._id);
     localStorage.setItem('userType', returnData.userType);

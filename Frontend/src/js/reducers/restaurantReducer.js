@@ -1,6 +1,7 @@
 import React from 'react';
-import {Badge, Button, Card, Pagination} from "react-bootstrap";
+import {Badge, Pagination} from "react-bootstrap";
 import {
+    CREATE_PAGES_SEARCH,
     FILTER_RESTAURANTS,
     GET_MENU_ITEMS,
     GET_ORDERS_BY_STATUS,
@@ -8,12 +9,11 @@ import {
     ON_CLICK_SECTION,
     ON_DRAG_END,
     PAGE_CHANGED,
+    PAGE_CHANGED_SEARCH,
     PLACE_ORDER,
     PLACE_ORDER_ERROR,
-    SEARCH_ITEM,
-    CREATE_PAGES_SEARCH, PAGE_CHANGED_SEARCH
+    SEARCH_ITEM
 } from "../constants/action-types";
-import Checkbox from "../../components/BuyerPages/Checkbox";
 
 const initialState = {
     placeOrderSuccess: null,
@@ -67,31 +67,31 @@ const getOrderStatusBadge = (status) => {
 
     switch (status) {
         case "New":
-            badge = <Badge style={{fontSize: 10}} variant="primary">New</Badge>
+            badge = <Badge style={{fontSize: 10}} variant="primary">New</Badge>;
             break;
 
         case "Preparing":
-            badge = <Badge style={{fontSize: 10}} variant="info">Preparing</Badge>
+            badge = <Badge style={{fontSize: 10}} variant="info">Preparing</Badge>;
             break;
 
         case "Ready":
-            badge = <Badge style={{fontSize: 10}} variant="dark">Ready</Badge>
+            badge = <Badge style={{fontSize: 10}} variant="dark">Ready</Badge>;
             break;
 
         case "Delivered":
-            badge = <Badge style={{fontSize: 10}} variant="success">Delivered</Badge>
+            badge = <Badge style={{fontSize: 10}} variant="success">Delivered</Badge>;
             break;
 
         case "Cancel":
-            badge = <Badge style={{fontSize: 10}} variant="danger">Cancel</Badge>
+            badge = <Badge style={{fontSize: 10}} variant="danger">Cancel</Badge>;
             break;
     }
 
     return badge;
-}
+};
 
 const getOrderBasedOnStatus = (data, statusSet) => {
-    console.log("getOrderBasedOnStatus")
+    console.log("getOrderBasedOnStatus");
     console.log(data);
 
     const ordersByStatus = data.filter(order => {
@@ -131,8 +131,7 @@ const getOrderBasedOnStatus = (data, statusSet) => {
     });
 
     return displayOrders;
-}
-
+};
 
 
 const createPages = (state, currentTab, activePage) => {
@@ -141,10 +140,10 @@ const createPages = (state, currentTab, activePage) => {
     const numberOfItems = currentTab.numberOfItems;
     const todosPerPage = state.todosPerPage;
 
-    const numberOfPages = ((numberOfItems % todosPerPage) === 0) ? numberOfItems / todosPerPage : ((numberOfItems / todosPerPage) + 1)
+    const numberOfPages = ((numberOfItems % todosPerPage) === 0) ? numberOfItems / todosPerPage : ((numberOfItems / todosPerPage) + 1);
 
-    console.log("numberOfPages")
-    console.log(numberOfPages)
+    console.log("numberOfPages");
+    console.log(numberOfPages);
 
     for (let number = 1; number <= numberOfPages; number++) {
         //for (let number = 1; number <= 5; number++) {
@@ -156,16 +155,16 @@ const createPages = (state, currentTab, activePage) => {
     }
 
     return newItems;
-}
+};
 
 export default function restaurantReducer(state = initialState, action) {
-    console.log("action.payload")
-    console.log(action.payload)
+    console.log("action.payload");
+    console.log(action.payload);
 
     if (action.type === PLACE_ORDER) {
-        console.log("restaurantReducer PLACE_ORDER")
-        console.log("action.payload.placeOrderSuccess")
-        console.log(action.payload.placeOrderSuccess)
+        console.log("restaurantReducer PLACE_ORDER");
+        console.log("action.payload.placeOrderSuccess");
+        console.log(action.payload.placeOrderSuccess);
 
         //this.setState({cartItems: [], orderSuccess: true});
         //this.getMenuItems();
@@ -191,30 +190,30 @@ export default function restaurantReducer(state = initialState, action) {
     } else if (action.type === ON_CLICK_SECTION) {
         //this.setState({currentTab: this.props.tabs[index]}, () => {this.createPages()});
 
-        console.log("ON_CLICK_SECTION")
-        console.log("state")
-        console.log(state)
-        console.log("action.payload.index")
-        console.log(action.payload.index)
+        console.log("ON_CLICK_SECTION");
+        console.log("state");
+        console.log(state);
+        console.log("action.payload.index");
+        console.log(action.payload.index);
 
-        console.log("state.tabs[action.payload.index]")
-        console.log(state.tabs[action.payload.index])
+        console.log("state.tabs[action.payload.index]");
+        console.log(state.tabs[action.payload.index]);
 
         const newItems = createPages(state, state.tabs[action.payload.index], state.active);
 
-        console.log("newItems")
-        console.log(newItems)
+        console.log("newItems");
+        console.log(newItems);
 
         return Object.assign({}, state, {
             currentTab: state.tabs[action.payload.index],
             pageItems: newItems
         });
     } else if (action.type === PAGE_CHANGED) {
-        console.log("PAGE_CHANGED action.payload.index")
-        console.log(action.payload.pageNumber)
+        console.log("PAGE_CHANGED action.payload.index");
+        console.log(action.payload.pageNumber);
 
-        console.log("PAGE_CHANGED state.tabs[action.payload.index]")
-        console.log(state.tabs[action.payload.pageNumber])
+        console.log("PAGE_CHANGED state.tabs[action.payload.index]");
+        console.log(state.tabs[action.payload.pageNumber]);
 
         const newItems = createPages(state, state.currentTab, action.payload.pageNumber);
 
@@ -235,19 +234,19 @@ export default function restaurantReducer(state = initialState, action) {
         return Object.assign({}, state, {
             filteredRestaurants: action.payload
         });
-    }  else if (action.type === CREATE_PAGES_SEARCH) {
+    } else if (action.type === CREATE_PAGES_SEARCH) {
         const numOfFilteredRestaurants = action.payload.numOfFilteredRestaurants;
-        const activePage = action.payload.activePage
-        console.log("CREATE_PAGES_SEARCH numOfFilteredRestaurants: " + numOfFilteredRestaurants)
+        const activePage = action.payload.activePage;
+        console.log("CREATE_PAGES_SEARCH numOfFilteredRestaurants: " + numOfFilteredRestaurants);
         const newItems = [];
         //const currentTab = state.tabs[action.payload.index];
         const numberOfItems = numOfFilteredRestaurants;
         const todosPerPage = state.todosPerPage;
 
-        const numberOfPages = ((numberOfItems % todosPerPage) === 0) ? numberOfItems / todosPerPage : ((numberOfItems / todosPerPage) + 1)
+        const numberOfPages = ((numberOfItems % todosPerPage) === 0) ? numberOfItems / todosPerPage : ((numberOfItems / todosPerPage) + 1);
 
-        console.log("numberOfPages")
-        console.log(numberOfPages)
+        console.log("numberOfPages");
+        console.log(numberOfPages);
 
         for (let number = 1; number <= numberOfPages; number++) {
             //for (let number = 1; number <= 5; number++) {
@@ -262,19 +261,19 @@ export default function restaurantReducer(state = initialState, action) {
             pageItemsSearch: newItems
         });
 
-    }  else if (action.type === PAGE_CHANGED_SEARCH) {
+    } else if (action.type === PAGE_CHANGED_SEARCH) {
         const numOfFilteredRestaurants = state.filteredRestaurants.length;
-        const activePage = action.payload.activePage
-        console.log("PAGE_CHANGED_SEARCH numOfFilteredRestaurants: " + numOfFilteredRestaurants)
+        const activePage = action.payload.activePage;
+        console.log("PAGE_CHANGED_SEARCH numOfFilteredRestaurants: " + numOfFilteredRestaurants);
         const newItems = [];
         //const currentTab = state.tabs[action.payload.index];
         const numberOfItems = numOfFilteredRestaurants;
         const todosPerPage = state.todosPerPage;
 
-        const numberOfPages = ((numberOfItems % todosPerPage) === 0) ? numberOfItems / todosPerPage : ((numberOfItems / todosPerPage) + 1)
+        const numberOfPages = ((numberOfItems % todosPerPage) === 0) ? numberOfItems / todosPerPage : ((numberOfItems / todosPerPage) + 1);
 
-        console.log("numberOfPages")
-        console.log(numberOfPages)
+        console.log("numberOfPages");
+        console.log(numberOfPages);
 
         for (let number = 1; number <= numberOfPages; number++) {
             //for (let number = 1; number <= 5; number++) {
@@ -292,7 +291,7 @@ export default function restaurantReducer(state = initialState, action) {
     } else if (action.type === GET_ORDERS_BY_STATUS) {
         if ("Upcoming" === action.payload.statusCode) {
             const filteredOrders = getOrderBasedOnStatus(action.payload.data, action.payload.statusSet);
-            let halfWayThough = Math.ceil(filteredOrders.length / 2)
+            let halfWayThough = Math.ceil(filteredOrders.length / 2);
 
             const arrayFirstHalf = filteredOrders.slice(0, halfWayThough);
             const arraySecondHalf = filteredOrders.slice(halfWayThough, filteredOrders.length);
@@ -318,15 +317,15 @@ export default function restaurantReducer(state = initialState, action) {
         const getList = id => state[id2List[id]];
 
 
-        console.log("onDragEnd")
-        console.log("result")
-        console.log(action.payload)
+        console.log("onDragEnd");
+        console.log("result");
+        console.log(action.payload);
 
         const {source, destination} = action.payload;
-        console.log("source")
-        console.log(source)
-        console.log("destination")
-        console.log(destination)
+        console.log("source");
+        console.log(source);
+        console.log("destination");
+        console.log(destination);
 
         // dropped outside the list
         if (!destination) {
@@ -346,11 +345,11 @@ export default function restaurantReducer(state = initialState, action) {
                 state = {selected: items};
             }
 
-            console.log("Intra list movement")
-            console.log("state")
-            console.log(state)
-            console.log("this.getList(source.droppableId")
-            console.log(getList(source.droppableId))
+            console.log("Intra list movement");
+            console.log("state");
+            console.log(state);
+            console.log("this.getList(source.droppableId");
+            console.log(getList(source.droppableId));
 
             //this.setState(state);
 
@@ -359,14 +358,14 @@ export default function restaurantReducer(state = initialState, action) {
             });
 
         } else {
-            console.log("(source.droppableId)")
-            console.log(source.droppableId)
+            console.log("(source.droppableId)");
+            console.log(source.droppableId);
 
-            console.log("this.getList(source.droppableId)")
-            console.log(getList(source.droppableId))
+            console.log("this.getList(source.droppableId)");
+            console.log(getList(source.droppableId));
 
-            console.log("this.getList(\"droppable\")")
-            console.log(getList("droppable"))
+            console.log("this.getList(\"droppable\")");
+            console.log(getList("droppable"));
 
             const result = move(
                 getList(source.droppableId),

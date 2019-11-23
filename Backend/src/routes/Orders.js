@@ -168,7 +168,7 @@ router.post('/order/get', function (req, res) {
         .catch(res.send("Error in saving section"));
 });
 
-const storage = multer.diskStorage({menu_item/add
+const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         //cb(null, '/Users/vijendra4/GoogleDrive/sjsu/273/lab1/grubhub/Frontend/src/images/grubhub')
         cb(null, imageStorePath)
