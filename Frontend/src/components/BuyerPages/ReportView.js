@@ -139,7 +139,7 @@ class ReportView extends Component {
     getData() {
         const payload = {};
         payload.langCode = this.state.langCode;
-
+        payload.ownerId = "1";
         axios.post(`http://${HOSTNAME}:3001/orders/pdf/read`, payload)
             .then((response) => {
                 console.log("_handleImageChange response");

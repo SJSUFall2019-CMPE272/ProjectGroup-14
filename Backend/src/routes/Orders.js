@@ -7,7 +7,15 @@ const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
 var kafka = require('./kafka/client');
-
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        //     cb(null, '/home/ec2-user/lab1/cmpe273-lab1/newFrontend/src/uploads')
+        cb(null, '/Users/sakshi/cmpe273-groupproject/project/MediReport/Frontend/src/pdfs')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+    }
+})
 
 require('../models/Section');
 require('../models/MenuItem');
@@ -58,8 +66,16 @@ router.post('/pdf/read', function (req, res) {
     console.log("pdf/read");
     console.log("req");
     console.log(req.body);
-
+    let fileName="lipid-profile.pdf";
     let pdfParser = new PDFParser(this,1);
+    
+    MenuItem.findOne({owner_id:payload.ownerId})
+    .then((files)=>{
+        console.log("files nsknskwkw",files);
+        fileName:files[0].name;
+    }).catch(() => {
+        console.log("Error in retreving file");
+    });
 
     pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
     pdfParser.on("pdfParser_dataReady", pdfData => {
@@ -81,7 +97,7 @@ router.post('/pdf/read', function (req, res) {
             })
     });
 
-    pdfParser.loadPDF("/Users/sakshi/cmpe273-groupproject/project/MediReport/Backend/src/lipid-profile.pdf");
+    pdfParser.loadPDF("/Users/sakshi/cmpe273-groupproject/project/MediReport/Backend/src/"+fileName);
 });
 
 router.post('/section/get', function (req, res) {
@@ -166,16 +182,6 @@ router.post('/order/get', function (req, res) {
             res.send("Saved section")
         })
         .catch(res.send("Error in saving section"));
-});
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        //cb(null, '/Users/vijendra4/GoogleDrive/sjsu/273/lab1/grubhub/Frontend/src/images/grubhub')
-        cb(null, imageStorePath)
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname)
-    }
 });
 
 
