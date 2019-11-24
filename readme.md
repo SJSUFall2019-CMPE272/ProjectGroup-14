@@ -2,7 +2,7 @@
 Easy and understandable medical records
 
 
-<h1>Description</h1>
+<h1>Hill Statement/Description</h1>
 An application that enables end-users who have don't have a medical background, to interpret the meanings of various medical/physiological parameters that are present in their medical reports or prescriptions in an easy to underestand and informative format which can be presented in multiple lanuguages.
 
 
@@ -22,6 +22,7 @@ Limited literacy skills are one of the strongest predictors of poor health outco
 
 Overall, studies of patient-accessible medical records suggest modest improvements in doctor-patient communication, adherence, patient empowerment, and patient education<sup>[2]</sup>. 
 
+<h1>Persona</h1>
 MediReport will solve the following use cases - 
 
 | Actor      | Use case |
