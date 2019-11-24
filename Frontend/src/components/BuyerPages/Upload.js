@@ -3,6 +3,8 @@ import "../../styles/Menu.css"
 import {Redirect} from "react-router";
 import {HOSTNAME} from "../Constants/Constants";
 import axios from 'axios';
+import {Document, Page} from 'react-pdf';
+import sample from '../../pdfs/full-report.pdf'
 
 axios.defaults.withCredentials = true;
 

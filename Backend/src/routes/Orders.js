@@ -68,15 +68,8 @@ router.post('/pdf/read', function (req, res) {
     console.log(req.body);
     let fileName="lipid-profile.pdf";
     let pdfParser = new PDFParser(this,1);
-    
-    MenuItem.findOne({owner_id:payload.ownerId})
-    .then((files)=>{
-        console.log("files nsknskwkw",files);
-        fileName:files[0].name;
-    }).catch(() => {
-        console.log("Error in retreving file");
-    });
-
+  
+    getReportName(req.owner_id);
     pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
     pdfParser.on("pdfParser_dataReady", pdfData => {
         console.log(pdfParser.getRawTextContent());
@@ -100,6 +93,21 @@ router.post('/pdf/read', function (req, res) {
     pdfParser.loadPDF("/Users/sakshi/cmpe273-groupproject/project/MediReport/Backend/src/"+fileName);
 });
 
+router.post('/pdf/view', function (req, res) {
+       res.send(getReportName(req.owner_id));
+});
+
+function getReportName(data){
+      let fileName="";
+    MenuItem.findOne({owner_id:data})
+    .then((files)=>{
+        console.log("files nsknskwkw",files);
+        fileName:files[0];
+    }).catch(() => {
+        console.log("Error in retreving file");
+    });
+    return fileName;
+}
 router.post('/section/get', function (req, res) {
     console.log("section/get req.body");
     console.log(req.body);
@@ -197,7 +205,13 @@ router.post('/menu_item/add', function (req, res) {
         console.log("File");
         console.log(req.file);
 
-        const menuItem = MenuItem(req.body);
+        const menuItem = MenuItem({
+            name:req.body.name,
+            file:req.body.image,
+            description:"new file",
+            section:"report",
+            owner_id:req.body.owner_id
+        });
 
         return menuItem.save()
             .then(() => {
