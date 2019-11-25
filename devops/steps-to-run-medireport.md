@@ -4,7 +4,7 @@
 
 2. Verify that both are installed by running ```node -v``` and ```python3 --version```. Set JAVA_HOME and your bash profile and confirm it by ```echo $JAVA_HOME```
 
-3. Go inside Backend, Frontend, and kafka-backend and run ```npm start``` in each case
+3. Go inside Backend, Frontend, and kafka-backend and run ```npm install``` in each case
 
 4. a) Go inside PythonBackend and run ```python3 klien-server.py```
 
