@@ -3,11 +3,50 @@ import "../../styles/Menu.css"
 import {Redirect} from "react-router";
 import {HOSTNAME} from "../Constants/Constants";
 import axios from 'axios';
+import '../../styles/Signin.css';
 import {Document, Page} from 'react-pdf';
 import sample from '../../pdfs/full-report.pdf'
+import Particles from 'react-particles-js'
 
 axios.defaults.withCredentials = true;
 
+const particleOpt = {
+    particles: {
+        "number": {
+            value: 150
+        },
+        "color": {
+            value: "#f9f3f4"
+        },
+        "shape": {
+            type: "circle",
+            stroke: {
+                width: 1,
+                color: "#ccc"
+            }
+        },
+        "opacity": {
+            value: 0.5,
+            random: true
+        },
+        "size": {
+            value: 2
+        },
+        "line_linked": {
+            enable: true,
+            distance: 110
+        },
+        "interactivity": {
+            "detect_on": "window",
+            "events": {
+                "onhover": {
+                    "enable": false,
+                    "mode": "grab"
+                }
+            }
+        }
+    }
+};
 
 class Upload extends Component {
     constructor(props) {
@@ -54,6 +93,13 @@ class Upload extends Component {
     render() {
         return (
             <div>
+            <div>
+                    <Particles
+                        params={{
+                            particleOpt
+                        }}/>
+                </div>
+            <div>
                 {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
                     pathname: "/homeBuyer/reportView",
                     state: {searchTerm: this.state.searchTerm}
@@ -74,6 +120,7 @@ class Upload extends Component {
                     </form>
                 </div>
                 {this.state.data}
+            </div>
             </div>
         );
     }

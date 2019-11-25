@@ -114,15 +114,17 @@ class Login extends Component {
             message = <div className="unsuccess-signup"><span>{this.props.signinMessage}</span></div>
         }
         return (
-            <div class="body">
-                {redirectVar}
-                <div>
+            <div>
+            <div style={{width:"58%",float:"left"}} class="body">
+                </div>
+                {/* <div>
                     <Particles
                         params={{
                             particleOpt
                         }}/>
-                </div>
-                <div class="text-overlay">
+                </div> */}
+                <div style={{width:"42%",float:"right"}}>
+                {/* <div class="text-overlay"> */}
                     <React.Fragment>
                         <div class="header">
                             <a href="/" class="logo">MEDIREPORT</a>
@@ -146,13 +148,14 @@ class Login extends Component {
                             <div className="text-center pt-3">Or</div>
                             <FacebookLoginButton onClick={this.facebookAuth}/>
                             <GoogleLoginButton onClick={this.googleAuth}/>
-                            <div className="text-centre">
+                            <div className="text-centre" style={{color:"black"}}>
                                 <a href="/create">Create your account</a>
                             </div>
                         </Form>
                     </React.Fragment>
                 </div>
-            </div>
+                {/* </div> */}
+            // </div>
 
         )
     }

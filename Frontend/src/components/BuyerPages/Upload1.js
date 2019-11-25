@@ -4,8 +4,47 @@ import {HOSTNAME} from "../Constants/Constants";
 import axios from 'axios';
 import sample from '../../pdfs/full-report.pdf';
 import {Document, Page} from 'react-pdf';
+import Particles from 'react-particles-js'
 
 axios.defaults.withCredentials = true;
+
+const particleOpt = {
+  particles: {
+      "number": {
+          value: 150
+      },
+      "color": {
+          value: "#f9f3f4"
+      },
+      "shape": {
+          type: "circle",
+          stroke: {
+              width: 1,
+              color: "#dfc"
+          }
+      },
+      "opacity": {
+          value: 0.5,
+          random: true
+      },
+      "size": {
+          value: 2
+      },
+      "line_linked": {
+          enable: true,
+          distance: 110
+      },
+      "interactivity": {
+          "detect_on": "window",
+          "events": {
+              "onhover": {
+                  "enable": false,
+                  "mode": "grab"
+              }
+          }
+      }
+  }
+};
 
 class ImageUpload extends React.Component {
     constructor(props) {
@@ -73,6 +112,8 @@ class ImageUpload extends React.Component {
             <p>Page {this.state.pageNumber} of {this.state.numPages}</p>
         </div>
           )
+        }else{
+            return(<div className="previewText">Please select an Image for Preview</div>);
         }
     }
   
@@ -86,8 +127,19 @@ class ImageUpload extends React.Component {
       }
   
       return (
-          <div>
-        <div className="previewComponent">
+        <div class="body">
+        <div>
+            <Particles
+                params={{
+                    particleOpt
+                }}/>
+        </div>
+        <div class="text-overlay">
+                <div class="header">
+                    <a href="/" class="logo">MEDIREPORT</a>
+                    <div class="header-right">
+                    </div>
+                </div>
           <form onSubmit={(e)=>this._handleSubmit(e)}>
             <input className="fileInput" 
               type="file" 

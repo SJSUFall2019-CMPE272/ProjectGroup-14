@@ -10,10 +10,10 @@ class Navbar extends Component {
 
     renderRedirect = () => {
         if (!cookie.load('cookie')) {
-            return <Redirect to="/home"/>
+            return <Redirect to="/land"/>
         }
 
-        return (cookie.load('cookie').userType === "buyer") ? <Redirect to="/homeBuyer"/> : <Redirect to="/homeOwner"/>
+        return (cookie.load('cookie').userType === "buyer") ? <Redirect to="/home"/> : <Redirect to="/homeOwner"/>
     };
 
     render() {

@@ -81,12 +81,20 @@ class Navbar extends Component {
 
     render() {
         return (
-            <div class="body">
+            <div>
+            <div style={{width:"58%",float:"left"}} class="body">
+                </div>
                 {/* <Particles
-				 params={particleOpt}/> */}
+                 params={particleOpt}/> */}
+                 {/* <div style={{width:"43%",height:"100%",float:"right",background:"rgb(20, 206, 190)",backgroundRepeat:"no-repeat",backgroundSize:"cover"}} > */}
+                 <div style={{width:"42%",float:"right"}}>
                 <React.Fragment>
-                    <div>
-                        <div class="text">
+                <div class="header">
+                            <a href="/" class="logo">MEDIREPORT</a>
+                            <div class="header-right">
+                            </div>
+                        </div>
+                        {/* <div class="text"> */}
                             <div className="create">
                                 <Form className="create-buyer" onSubmit={this.submitSignUp}>
                                     <h3><span className="font-weight-bold">Create your account</span></h3>
@@ -121,10 +129,9 @@ class Navbar extends Component {
                                                                  href="/login">Sign in</a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        {/* </div> */}
                 </React.Fragment>
-
+            </div>
             </div>
         )
     }
