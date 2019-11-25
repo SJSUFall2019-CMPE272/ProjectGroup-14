@@ -7,12 +7,16 @@ const GITHUB = {
     clientSecret: "a9428e7a75c59e24a32c0f473da2dbd42d5fbb89"
 };
 const FACEBOOK = {
-    clientID: "2503599789703821",
-    clientSecret: "645088b310270cf3abbda58e01f65e96"
+    // clientID: "2503599789703821",
+    // clientSecret: "645088b310270cf3abbda58e01f65e96"
+    clientID: "421006045244971",
+    clientSecret: "65e16d4ed88b8463baa50cf22a8a6a8c"
 };
 const GOOGLE = {
-    clientID: "767059472934-s7s2rfm1ck3auiq620h2amls0d1rucs9.apps.googleusercontent.com",
-    clientSecret: "NlNvTx6kCSq7B2_YLAog8jtG"
+    clientID:"986335033587-3sjcnb8lqm06tgkifhsc5bshipp9ldga.apps.googleusercontent.com",
+    // "767059472934-s7s2rfm1ck3auiq620h2amls0d1rucs9.apps.googleusercontent.com",
+    clientSecret: "uklMWF1LFuAfWxC9RZ7_i808"
+    //"NlNvTx6kCSq7B2_YLAog8jtG"
 };
 const INSTAGRAM = {
     clientID: "0d517fd22d63445181091e63578caf92",

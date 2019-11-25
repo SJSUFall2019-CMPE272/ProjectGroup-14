@@ -5,7 +5,7 @@ import {Redirect} from 'react-router';
 import '../../styles/Signin.css';
 import Particles from 'react-particles-js'
 import {connect} from "react-redux";
-import {signInMongo} from "../../js/actions/accessActions";
+import {signInMongo,facebookAuth,googleAuth} from "../../js/actions/accessActions";
 
 const particleOpt = {
     particles: {
@@ -56,7 +56,9 @@ function mapStateToProps(store) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        submitSignIn: (payload) => dispatch(signInMongo(payload))
+        submitSignIn: (payload) => dispatch(signInMongo(payload)),
+        facebookAuth: dispatch(facebookAuth),
+        googleAuth: dispatch(googleAuth)
     };
 }
 
@@ -66,8 +68,19 @@ class Login extends Component {
         //Call the constructor of Super class i.e The Component
         super(props);
         this.submitSignIn = this.submitSignIn.bind(this);
+        this.facebookAuth = this.facebookAuth.bind(this);
+        this.googleAuth = this.googleAuth.bind(this);
     }
 
+    facebookAuth = () => {
+        this.props.facebookAuth();
+
+    };
+
+    googleAuth = () => {
+        this.props.googleAuth();
+
+    };
     submitSignIn(e) {
         e.preventDefault();
         const data = {
@@ -131,8 +144,8 @@ class Login extends Component {
                             </FormGroup>
                             <Button className="btn-lg btn-dark btn-block">Sign in</Button>
                             <div className="text-center pt-3">Or</div>
-                            <FacebookLoginButton/>
-                            <GoogleLoginButton/>
+                            <FacebookLoginButton onClick={this.facebookAuth}/>
+                            <GoogleLoginButton onClick={this.googleAuth}/>
                             <div className="text-centre">
                                 <a href="/create">Create your account</a>
                             </div>

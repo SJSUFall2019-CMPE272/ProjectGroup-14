@@ -27,18 +27,15 @@ export function signUpMongo(payload) {
 
     return (dispatch) => {
         console.log("Inside  signUpMongo");
-
-        axios.post(`http://${HOSTNAME}:3001/access/savemongo`, payload)
+        axios.post(`http://${HOSTNAME}:3001/access/savemongo`, { credentials: 'include' },payload)
             .then((response) => dispatch(signUp(response.data)))
     }
 }
 
 export function facebookAuth() {
     console.log("facebook payload");
-    console.log();
-
     return (dispatch) => {
-        console.log("Inside  signUpMongo");
+        console.log("Inside  facebook signUpMongo");
 
         axios.get(`http://${HOSTNAME}:3001/access/auth/faceboook`)
             .then((response) => dispatch(signUp(response.data)))
@@ -47,10 +44,9 @@ export function facebookAuth() {
 
 export function googleAuth() {
     console.log("google payload");
-    console.log();
 
     return (dispatch) => {
-        console.log("Inside  signUpMongo");
+        console.log("Inside  google signUpMongo");
 
         axios.get(`http://${HOSTNAME}:3001/access/auth/google`)
             .then((response) => dispatch(signUp(response.data)))

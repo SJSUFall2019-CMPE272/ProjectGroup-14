@@ -113,8 +113,9 @@ class Navbar extends Component {
                                     <Button className="btn-lg btn-dark btn-block">Create your account</Button>
                                 </Form>
                                 <div className="text-center pt-3">Or continue wtih</div>
-                                <FacebookLoginButton onClick={this.facebookAuth}/>
+                               
                                 <GoogleLoginButton onClick={this.googleAuth}/>
+                                <FacebookLoginButton onClick={this.facebookAuth}/>
                                 <div className="text-centre">
                                     <h4>Have an account?</h4> <a style={{fontSize: "19px", color: "black"}}
                                                                  href="/login">Sign in</a>

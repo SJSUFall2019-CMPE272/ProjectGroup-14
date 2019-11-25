@@ -4,8 +4,8 @@ var router = express.Router();
 const pool = require("../DbConnection");
 const uuid = require("uuid");
 const passport = require('passport');
-const facebookStrategy = require('passport-facebook').Strategy;
-const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const FacebookStrategy = require("passport-facebook").Strategy;
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const mongoose = require('mongoose');
 const auth = require('./Auth');
 require('../models/Buyer');
@@ -26,10 +26,10 @@ passport.deserializeUser((user,cb)=>{
 });
 
 //FACEBOOK STRATEGY
-passport.use(new facebookStrategy({
+passport.use(new FacebookStrategy({
     clientID: keys.FACEBOOK.clientID,
     clientSecret: keys.FACEBOOK.clientSecret,
-    callbackUrl: "access/auth/facebook/callback"
+    callbackUrl: "http://localhost:3001/access/auth/facebook/callback"
 },(accessToken,refreshToken,profile,cb)=>{
     console.log(chalk.blue(JSON.stringify(profile)));
            user={...profile};
@@ -38,7 +38,8 @@ passport.use(new facebookStrategy({
 ));
 
 router.get("/auth/faceboook",passport.authenticate("facebook"));
-router.get("/auth/faceboook/callback",passport.authenticate("facebook"),(req,res)=>{
+router.get("/auth/faceboook/callback",passport.authenticate("facebook"),
+(req,res)=>{
     res.send({
         signupSuccess: true,
         signupMessage: "Successful SignUp"
@@ -46,10 +47,10 @@ router.get("/auth/faceboook/callback",passport.authenticate("facebook"),(req,res
 });
 
 // Google Strategy
-passport.use(new googleStrategy({
+passport.use(new GoogleStrategy({
     clientID: keys.GOOGLE.clientID,
     clientSecret: keys.GOOGLE.clientSecret,
-    callbackURL: "access/auth/google/callback"
+    callbackURL: "http://localhost:3001/access/auth/google/callback"
 },
 (accessToken, refreshToken, profile, cb) => {
     console.log(chalk.blue(JSON.stringify(profile)));

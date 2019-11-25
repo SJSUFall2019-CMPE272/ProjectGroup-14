@@ -22,44 +22,46 @@ class LandingPage extends Component {
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     {/* <!-- Links */}
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       {/* <!-- Left */}
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/home">Home
+          <a class="nav-link" href="/land">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">About MDB</a>
+          <a class="nav-link" href="/upload">Upload</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://mdbootstrap.com/getting-started/" target="_blank">Free download</a>
+          <a class="nav-link" href="/homeBuyer/reportView/" >Report View</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank">Free tutorials</a>
+          <a class="nav-link" href="/chart" >BMI Chart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/chat" >Chat</a>
         </li>
       </ul>
 
       {/* <!-- Right */}
       <ul class="navbar-nav nav-flex-icons">
         <li class="nav-item">
-          <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+          <a href="https://www.facebook.com/mdbootstrap" class="nav-link" >
             <i class="fab fa-facebook-f"></i>
           </a>
-        </li>
+        </li> 
         <li class="nav-item">
-          <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+          <a href="https://twitter.com/MDBootstrap" class="nav-link" >
             <i class="fab fa-twitter"></i>
           </a>
         </li>
         <li class="nav-item">
-          <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded"
-            target="_blank">
-            <i class="fab fa-github mr-2"></i>MDB GitHub
+          <a href="/home" class="nav-link border border-light rounded"
+            >
+            <i class="fab fa-github mr-2"></i>LOGIN
           </a>
         </li>
       </ul>
@@ -108,7 +110,7 @@ class LandingPage extends Component {
                 available. Create your own, stunning website.</strong>
             </p>
 
-            <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white btn-lg">Start
+            <a  href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white btn-lg">Start
               free tutorial
               <i class="fas fa-graduation-cap ml-2"></i>
             </a>
@@ -144,7 +146,7 @@ class LandingPage extends Component {
                 available. Create your own, stunning website.</strong>
             </p>
 
-            <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white btn-lg">Start
+            <a  href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white btn-lg">Start
               free tutorial
               <i class="fas fa-graduation-cap ml-2"></i>
             </a>
@@ -181,7 +183,7 @@ class LandingPage extends Component {
                 available. Create your own, stunning website.</strong>
             </p>
 
-            <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white btn-lg">Start
+            <a  href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white btn-lg">Start
               free tutorial
               <i class="fas fa-graduation-cap ml-2"></i>
             </a>
@@ -251,10 +253,10 @@ class LandingPage extends Component {
           </p>
 
           {/* <!-- CTA */}
-          <a target="_blank" href="https://mdbootstrap.com/getting-started/" class="btn btn-indigo btn-md">Download
+          <a  href="https://mdbootstrap.com/getting-started/" class="btn btn-indigo btn-md">Download
             <i class="fas fa-download ml-1"></i>
           </a>
-          <a target="_blank" href="https://mdbootstrap.com/components/" class="btn btn-indigo btn-md">Live demo
+          <a  href="https://mdbootstrap.com/components/" class="btn btn-indigo btn-md">Live demo
             <i class="fas fa-image ml-1"></i>
           </a>
 
@@ -661,11 +663,11 @@ class LandingPage extends Component {
 
   {/* <!--Call to action*/}
   <div class="pt-4">
-    <a class="btn btn-outline-white" href="https://mdbootstrap.com/getting-started/" target="_blank" role="button">Download
+    <a class="btn btn-outline-white" href="https://mdbootstrap.com/getting-started/"  role="button">Download
       MDB
       <i class="fas fa-download ml-2"></i>
     </a>
-    <a class="btn btn-outline-white" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank" role="button">Start
+    <a class="btn btn-outline-white" href="https://mdbootstrap.com/bootstrap-tutorial/"  role="button">Start
       free tutorial
       <i class="fas fa-graduation-cap ml-2"></i>
     </a>
@@ -676,35 +678,35 @@ class LandingPage extends Component {
 
   {/* <!-- Social icons */}
   <div class="pb-4">
-    <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+    <a href="https://www.facebook.com/mdbootstrap" >
       <i class="fab fa-facebook-f mr-3"></i>
     </a>
 
-    <a href="https://twitter.com/MDBootstrap" target="_blank">
+    <a href="https://twitter.com/MDBootstrap" >
       <i class="fab fa-twitter mr-3"></i>
     </a>
 
-    <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+    <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" >
       <i class="fab fa-youtube mr-3"></i>
     </a>
 
-    <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+    <a href="https://plus.google.com/u/0/b/107863090883699620484" >
       <i class="fab fa-google-plus-g mr-3"></i>
     </a>
 
-    <a href="https://dribbble.com/mdbootstrap" target="_blank">
+    <a href="https://dribbble.com/mdbootstrap" >
       <i class="fab fa-dribbble mr-3"></i>
     </a>
 
-    <a href="https://pinterest.com/mdbootstrap" target="_blank">
+    <a href="https://pinterest.com/mdbootstrap" >
       <i class="fab fa-pinterest mr-3"></i>
     </a>
 
-    <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+    <a href="https://github.com/mdbootstrap/bootstrap-material-design" >
       <i class="fab fa-github mr-3"></i>
     </a>
 
-    <a href="http://codepen.io/mdbootstrap/" target="_blank">
+    <a href="http://codepen.io/mdbootstrap/" >
       <i class="fab fa-codepen mr-3"></i>
     </a>
   </div>
@@ -713,7 +715,7 @@ class LandingPage extends Component {
   {/* <!--Copyright*/}
   <div class="footer-copyright py-3">
     © 2018 Copyright:
-    <a href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank"> MDBootstrap.com </a>
+    <a href="https://mdbootstrap.com/bootstrap-tutorial/" > MDBootstrap.com </a>
   </div>
   {/* <!--/.Copyright*/}
 
