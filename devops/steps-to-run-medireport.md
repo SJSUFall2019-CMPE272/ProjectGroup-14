@@ -10,7 +10,7 @@
 
    b) You will get an error such as ```klien is missing```
 
-   c) Run ```pip3 install <name_of_the_package>``` till all such errors are resolved. Once you see the server starting, kill the server by Ctrl + C. For example, ```pip3 install klien```.
+   c) Run ```pip3 install <name_of_the_package>``` to install the missing dependency. For example, ```pip3 install klien```. Run ```python3 klien-server.py``` till all such errors are resolved. Once you see the server starting, kill the server by Ctrl + C. 
 
 5. a) Unzip ```kafka_2.11-1.1.0.zip``` and ```cd``` to kafka_2.11-1.1.0
 
