@@ -9,6 +9,12 @@
 4. a) Go inside PythonBackend and run ```python3 klien-server.py```
 
    b) You will get an error such as ```klien is missing```
+   
+   d) Run the below two commands -
+   ```
+   pip3 install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.4/en_ner_bc5cdr_md-0.2.4.tar.gz
+   python3 -m spacy download en_core_web_sm
+   ```
 
    c) Run ```pip3 install <name_of_the_package>``` to install the missing dependency. For example, ```pip3 install klien```. Run ```python3 klien-server.py``` till all such errors are resolved. Once you see the server starting, kill the server by Ctrl + C. 
 
