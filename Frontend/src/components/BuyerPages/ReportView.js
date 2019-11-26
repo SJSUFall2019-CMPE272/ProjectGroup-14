@@ -101,15 +101,28 @@ class ReportView extends Component {
         return badge;
     };
 
+    getListOfFoodItems = (foodArr) => {
+        console.log("foodArr")
+        console.log(foodArr)
+
+        const renderTodos = foodArr.map((food, index) => {
+            return <li style={{fontSize: 12}} key={index}>
+                {food}
+                <br/>
+            </li>;
+        });
+
+        return <div>
+            <ul className="ul li">{renderTodos}</ul>
+        </div>;
+    }
+
     populateSection = () => {
         console.log("populateSection");
 
-        const renderTodos = this.state.data.map((order, index) => {
-            // const items = JSON.parse(order.items);
-            console.log("order");
-
-            console.log(order);
-            const jsonOrder = order;
+        const renderTodos = this.state.data.map((jsonOrder, index) => {
+            console.log("jsonOrder");
+            console.log(jsonOrder);
 
             return <li key={index}>
                 <Card style={{width: '50rem'}}>
@@ -121,11 +134,25 @@ class ReportView extends Component {
                             {this.getOrderStatusBadge("Preparing", "Term")} - <div
                             style={{fontSize: 12}}>{jsonOrder.entityName}</div>
                             <br/>
+
                             {this.getOrderStatusBadge("Preparing", "Explanation")} - <div
                             style={{fontSize: 12}}>{jsonOrder.comment}</div>
+                            <br/>
+
+                            {this.getOrderStatusBadge("Preparing", "Dietary recommendations")} -
+                            <br/>
+                            <div style={{fontSize: 12}}>Below food items may impact your {jsonOrder.entityName} levels -</div>
+                            <br/>
+                            {this.getListOfFoodItems(jsonOrder.foods)}
+
+                            {this.getOrderStatusBadge("Preparing", "Potential diagnosis")} -
+                            <br/>
+                            <div style={{fontSize: 12}}>{jsonOrder.entityName} imbalance can lead to the following conditions -</div>
+                            <br/>
+                            {this.getListOfFoodItems(jsonOrder.diseases)}
 
                         </Card.Text>
-                        <Button onClick={() => this.goToChat(order)} type="button" variant="primary">Learn more</Button>
+                        <Button onClick={() => this.goToChat(jsonOrder)} type="button" variant="primary">Learn more</Button>
                     </Card.Body>
                 </Card>
             </li>;

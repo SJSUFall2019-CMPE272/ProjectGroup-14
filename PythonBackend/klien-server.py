@@ -26,7 +26,6 @@ class ItemStore(object):
         request.setHeader('Content-Type', 'application/json')
         content = json.loads(request.content.read())
 
-
         print("123langCode")
         print(content["langCode"])
         langCode = content["langCode"]
@@ -70,9 +69,6 @@ class ItemStore(object):
         for entity in entities:
             entitySet.add(str(entity))
 
-                # for entity in entities:
-        #     data['entities'].append(str(entity))
-
         print(entitySet)
 
         return self.getQueryResults(entitySet, langCode)
@@ -81,22 +77,38 @@ class ItemStore(object):
         data = {'entities': []}
 
         for entity in entitySet:
-            sparql = self.getAbstractQuery(entity, langCode)
-            results = sparql.query().convert()
+            # result_entity = dict()
+            result_entity = {"entityName": "", "comment": "", "foods": [], "diseases": []}
 
-            for result in results["results"]["bindings"]:
-                # print(result["chem"]["value"])
-                # print(result["comment"]["value"])
+            abstract_sparql_query = self.getAbstractQuery(entity, langCode)
+            abstract_query_results = abstract_sparql_query.query().convert()
 
-                #result = {'entityURI': '', 'entityName': '', 'comment': ''}
-                result_entity = dict()
+            print("abstract_query_results")
+            print(abstract_query_results)
+
+            if len(abstract_query_results["results"]["bindings"]) == 0:
+                continue
+
+            for result in abstract_query_results["results"]["bindings"]:
                 result_entity["entityName"] = entity
                 #result_entity['entityURI'] = str(result["chem"]["value"])
                 result_entity["comment"] = str(result["comment"]["value"])
-
                 #print(result_entity)
 
-                data['entities'].append(result_entity)
+            food_sparql_query = self.getFoodQuery(entity, langCode)
+            food_query_results = food_sparql_query.query().convert()
+
+            for result in food_query_results["results"]["bindings"]:
+                result_entity["foods"].append(str(result["label"]["value"]))
+
+
+            disease_sparql_query = self.getDiseaseQuery(entity, langCode)
+            disease_query_results = disease_sparql_query.query().convert()
+
+            for result in disease_query_results["results"]["bindings"]:
+                result_entity["diseases"].append(str(result["label"]["value"]))
+
+            data['entities'].append(result_entity)
 
         return json.dumps(data)
 
@@ -122,6 +134,57 @@ class ItemStore(object):
 
         #print("query")
         #print(query)
+
+        sparql.setQuery(query)
+
+        return sparql
+
+    def getFoodQuery(self, entity, langCode):
+        sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+        sparql.setReturnFormat(JSON)
+        query = """
+            PREFIX dbo: <http://dbpedia.org/ontology/>
+        PREFIX dbp: <http://dbpedia.org/resource/>
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+        SELECT distinct(?food) ?label where 
+           { 
+            ?food rdf:type dbo:Food .
+            ?food rdfs:label ?label .
+            ?food dbo:abstract ?abstract .
+            FILTER regex(?abstract, "%s", "i")
+            FILTER (langMatches(lang(?label),"%s"))
+            FILTER (langMatches(lang(?abstract),"%s"))
+           }
+        """ % (entity, langCode, langCode)
+
+        sparql.setQuery(query)
+
+        return sparql
+
+
+    def getDiseaseQuery(self, entity, langCode):
+        sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+        sparql.setReturnFormat(JSON)
+        query = """
+        PREFIX dbo: <http://dbpedia.org/ontology/>
+        PREFIX dbp: <http://dbpedia.org/resource/>
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+        SELECT distinct(?chem) ?label where 
+           { 
+            ?chem rdf:type dbo:Disease .
+            ?chem rdfs:label ?label .
+            ?chem dbo:abstract ?abstract .
+            FILTER regex(?abstract, "%s", "i")
+            FILTER (langMatches(lang(?label),"%s"))
+            FILTER (langMatches(lang(?abstract),"%s"))
+           }
+        """ % (entity, langCode, langCode)
 
         sparql.setQuery(query)
 

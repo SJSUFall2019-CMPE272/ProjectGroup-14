@@ -8,6 +8,7 @@ import SideBar from './Home/SideBar';
 import option from './Home/option';
 import LandingPage from './Home/LandingPage';
 import Upload1 from './BuyerPages/Upload1';
+import ReportView from './BuyerPages/ReportView';
 
 //Create a Main Component
 class Main extends Component {
@@ -22,6 +23,9 @@ class Main extends Component {
                 <Route exact path="/sidebar" component={SideBar}/>
                 <Route exact path="/option" component={option}/>
                 <Route exact path="/upload" component={Upload1}/>
+                <Route exact path="/reportView" component={ReportView}/>
+
+
             </div>
         )
     }

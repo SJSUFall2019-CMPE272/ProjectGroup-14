@@ -110,11 +110,9 @@ class Login extends Component {
                 <Redirect to="/homeOwner"/>
         }
 
-        if (this.props.signinSuccess != null && !this.props.signinSuccess) {
-            message = <div className="unsuccess-signup"><span>{this.props.signinMessage}</span></div>
-        }
         return (
             <div>
+                {redirectVar}
             <div style={{width:"58%",float:"left"}} class="body">
                 </div>
                 {/* <div>
