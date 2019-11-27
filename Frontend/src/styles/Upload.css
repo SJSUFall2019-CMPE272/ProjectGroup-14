@@ -1,11 +1,23 @@
 h3{
   margin-left: 15px
 }
+
+.body1 { 
+  background-image: url(http://ppcdn.500px.org/75319705/1991f76c0c6a91ae1d23eb94ac5c7a9f7e79c480/2048.jpg) ;
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size:  cover;
+  background-color: #999;
+}
+
 .fileInput{
   border-bottom: 4px solid lightgray;
   border-right: 4px solid lightgray;
   border-top: 1px solid black;
   border-left: 1px solid black;
+  font-weight: 700;
+  font-size: 12pt;
   padding: 10px;
   margin: 15px;
   cursor: pointer;

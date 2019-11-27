@@ -131,15 +131,15 @@ class ImageUpload extends React.Component {
       }
   
       return (
-        <div class="body">
-        <div>
+        <div class="body1">
+        {/* <div>
             <Particles
                 params={{
                     particleOpt
                 }}/>
-        </div>
-        <div class="text-overlay">
-                <div class="header">
+        </div> */}
+        <div className="text-overlay1">
+                <div className="header">
                     <a href="/" class="logo">MEDIREPORT</a>
                     <div class="header-right">
                     </div>
