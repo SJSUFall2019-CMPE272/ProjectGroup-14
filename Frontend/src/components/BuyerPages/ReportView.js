@@ -5,8 +5,8 @@ import {connect} from "react-redux";
 import {HOSTNAME} from "../Constants/Constants";
 import {Document, Page} from 'react-pdf';
 import sample from '../../pdfs/full-report.pdf'
-
 import axios from 'axios';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 axios.defaults.withCredentials = true;
 
@@ -143,13 +143,21 @@ class ReportView extends Component {
                             <br/>
                             <div style={{fontSize: 12}}>Below food items may impact your {jsonOrder.entityName} levels -</div>
                             <br/>
-                            {this.getListOfFoodItems(jsonOrder.foods)}
+                            <div>
+                                <Scrollbars
+                                    style={{ height: 200 }}>
+                                    {this.getListOfFoodItems(jsonOrder.foods)}
+                                </Scrollbars>
+                            </div>
 
+                            <br/><br/>
                             {this.getOrderStatusBadge("Preparing", "Potential diagnosis")} -
-                            <br/>
                             <div style={{fontSize: 12}}>{jsonOrder.entityName} imbalance can lead to the following conditions -</div>
                             <br/>
-                            {this.getListOfFoodItems(jsonOrder.diseases)}
+                            <Scrollbars
+                                style={{ height: 200 }}>
+                                {this.getListOfFoodItems(jsonOrder.diseases)}
+                            </Scrollbars>
 
                         </Card.Text>
                         <Button onClick={() => this.goToChat(jsonOrder)} type="button" variant="primary">Learn more</Button>
@@ -230,6 +238,9 @@ class ReportView extends Component {
                     <div>
                         {this.populateSection()}
                     </div>
+
+
+
                 </div>
 
                 {this.getLanguageOptions()}
