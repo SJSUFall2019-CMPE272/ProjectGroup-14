@@ -11,6 +11,7 @@ import Upload1 from './BuyerPages/Upload1';
 import bmi from '../components/Charts/bmi'
 import bmi2 from '../components/Charts/bmi2'
 import ReportView from './BuyerPages/ReportView';
+import ChatInput from './ChatInput/ChatInput';
 //Create a Main Component
 class Main extends Component {
     render() {
@@ -21,6 +22,7 @@ class Main extends Component {
                 <Route exact path="/land" component={LandingPage}/>
                 <Route exact path="/bmi" component={bmi}/>
                 <Route exact path="/chart" component={bmi2}/>
+                <Route exact path="/chat" component={ChatInput  }/>
                 <Route exact path="/home" component={Home}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/sidebar" component={SideBar}/>

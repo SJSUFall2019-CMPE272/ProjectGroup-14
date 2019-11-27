@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './Chat.css';
 import { connect } from 'react-redux';
 import History from './ChatHistory';
-import { updateChat,getChat } from '../Redux/actions/messageActions';
-
+import { updateChat,getChat } from '../../js/actions/messageActions';
 
 
 class ChatInput extends Component {
@@ -11,25 +10,25 @@ class ChatInput extends Component {
     super(props);
 
   this.state = {
-    orderId : props.location.state.orderId,
-    userID: props.location.state.userId,
-    userID2 : props.location.state.userId2,
-    id: props.location.state.id,
-    imgURL:'//robohash.org/' + props.location.state.userId + '?set=set2&bgset=bg2&size=70x70'
+    orderId : "#123",
+    userID: 'Ankit',
+    userID2 : 'MediReport',
+    id: '12',
+    imgURL:'//robohash.org/' + '11' + '?set=set2&bgset=bg2&size=70x70'
   };
   }
 
-  componentDidMount() {
-    console.log("order id",this.state.orderId);
-    localStorage.setItem("restaurant_name",this.state.orderId.restaurant_name);
-    localStorage.setItem("restaurant_id",this.state.orderId.restaurant_id);
-    this.refs.txtMessage.focus();
-    this.renderMyData();
-  }
+//   componentDidMount() {
+//     console.log("order id",this.state.orderId);
+//     localStorage.setItem("restaurant_name",this.state.orderId.restaurant_name);
+//     localStorage.setItem("restaurant_id",this.state.orderId.restaurant_id);
+//     this.refs.txtMessage.focus();
+//     this.renderMyData();
+//   }
 
-  async renderMyData() {
-    await this.props.getChat(this.state.orderId._id);
-}
+//   async renderMyData() {
+//     await this.props.getChat(this.state.orderId._id);
+// }
 
   sendMessage = (message) => {
     console.log("current chat",this.props.chat)
@@ -64,13 +63,13 @@ this.refs.txtMessage.focus()
         return (
           <div>
             <div class="header">
-          <a href="/" class="logo">GRUBHUB</a>
-          <a style={{position: 'absolute', right: 0}} href="/order" class="logo">BACK</a>
+          <a href="/land" class="logo"> ||HOME||</a>
+          <a style={{position: 'absolute', right: 0}} href="/land" class="logo">BACK</a>
           <div class="header-right">
           </div>
         </div>
         <div>
-        <span className="chip2">Welcome {this.state.userID}!! Thankyou for contacting GRUBHUB!! </span>
+        <span className="chip2">Welcome {this.state.userID}!! Thankyou for contacting MEDIREPORT!! </span>
         </div>
         <link rel="stylsheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" media="screen,projection" />
