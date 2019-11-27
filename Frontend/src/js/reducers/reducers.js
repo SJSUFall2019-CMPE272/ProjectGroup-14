@@ -3,7 +3,7 @@ import AccountReducer from './accountReducer';
 import ProfileReducer from './profileReducer';
 import RestaurantReducer from './restaurantReducer';
 import OwnerReducer from './ownerReducer';
-import ChatReducer from './chatReducer';
+import messageReducer from './messageReducer';
 import OwnerChatReducer from './ownerChatReducer';
 
 const rootReducer = combineReducers({
@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
     profile: ProfileReducer,
     restaurant: RestaurantReducer,
     owner: OwnerReducer,
-    chat: ChatReducer,
+    msg: messageReducer,
     ownerChat: OwnerChatReducer
 });
 

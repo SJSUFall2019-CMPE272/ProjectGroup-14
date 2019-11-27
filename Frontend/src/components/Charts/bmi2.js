@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Line, Pie } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
 const colors = ["#78ce90", "#b977ce", "#fac76e", "#de4d4d"];
 const data = {
