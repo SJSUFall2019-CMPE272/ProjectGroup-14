@@ -34,10 +34,23 @@ export function signUpMongo(payload) {
 
 export function facebookAuth() {
     console.log("facebook payload");
+    const params = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "http://localhost:3001",
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+            "Access-Control-Allow-Headers": "X-Requested-With,content-type",
+            "Access-Control-Allow-Credentials": true,
+        },
+        withCredentials: true,
+        data: undefined
+    }
+
     return (dispatch) => {
         console.log("Inside  facebook signUpMongo");
-
-        axios.get(`http://${HOSTNAME}:3001/access/auth/faceboook`)
+        axios.defaults.withCredentials = false;
+        axios.get(`http://${HOSTNAME}:3001/access/auth/faceboook`,params)
             .then((response) => dispatch(signUp(response.data)))
     }
 }

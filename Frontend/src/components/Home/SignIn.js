@@ -143,11 +143,12 @@ class Login extends Component {
                                 <Input type="password" placeholder="Password" name="password" required></Input>
                             </FormGroup>
                             <Button className="btn-lg btn-dark btn-block">Sign in</Button>
-                            <div className="text-center pt-3">Or</div>
-                            <FacebookLoginButton onClick={this.facebookAuth}/>
+                            <div className="text-center pt-3">Or
+                            <div className="text-center pt-3" style={{color:"black"}}>
+                            <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true"></div>
                             <GoogleLoginButton onClick={this.googleAuth}/>
-                            <div className="text-centre" style={{color:"black"}}>
                                 <a href="/signup">Create your account</a>
+                                </div>
                             </div>
                         </Form>
                     </React.Fragment>

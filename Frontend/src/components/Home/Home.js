@@ -53,6 +53,7 @@ class Navbar extends Component {
     // }
 
     facebookAuth = () => {
+        console.log("test");
         this.props.facebookAuth();
 
     };
@@ -142,13 +143,14 @@ class Navbar extends Component {
                                 </FormGroup>
                                 <Button className="btn-lg btn-dark btn-block">Create your account</Button>
                             </Form>
-                            <div className="text-center pt-3">Or continue wtih</div>
+                            <div className="text-center pt-3">Or continue wtih
 
                             <GoogleLoginButton onClick={this.googleAuth} />
-                            <FacebookLoginButton onClick={this.facebookAuth} />
-                            <div className="text-centre">
+                            <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true" ></div>
+                                <div className="text-centre">
                                 <h4>Have an account?</h4> <a style={{ fontSize: "19px", color: "black" }}
                                     href="/login">Sign in</a>
+                                    </div>
                             </div>
                         </div>
                         {/* </div> */}
