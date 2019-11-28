@@ -3,7 +3,7 @@ Easy and understandable medical records
 
 
 <h1>Hill Statement/Description</h1>
-An application that enables end-users who have don't have a medical background, to interpret the meanings of various medical/physiological parameters that are present in their medical reports or prescriptions in an easy to underestand and informative format which can be presented in multiple lanuguages.
+An application that enables end-users who have don't have a medical background, to interpret the meanings of various medical/physiological parameters that are present in their medical reports or prescriptions in an easy to understand and informative format which can be presented in multiple languages.
 
 
 <h1>Abstract</h1>
