@@ -6,8 +6,7 @@ const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
-var kafka = require('./kafka/client');
-const pdfStorePath = path.join(__dirname, '..', '..', '..', 'Frontend', 'src', 'pdfs');
+const pdfStorePath = path.join(__dirname, '..', 'pdfs');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -83,8 +82,7 @@ router.post('/pdf/read', function (req, res) {
         console.log("pdfParser.getRawTextContent()")
         console.log(pdfParser.getRawTextContent())
 
-        //axios.post(`http://localhost:8080/getData`, payload)
-        axios.post(`http://54.191.180.87:8080/getData`, payload)
+        axios.post(`http://localhost:8080/getData`, payload)
             .then((response) => {
                 console.log("response from Python")
                 console.log(response.data)
@@ -93,10 +91,10 @@ router.post('/pdf/read', function (req, res) {
             })
     });
 
-    const pdfStorePath = path.join(__dirname, '..', '..', '..', 'Frontend', 'src', 'pdfs', req.body.name);
-    console.log("pdfStorePath", pdfStorePath)
+    const pdfReadPath = path.join(__dirname, '..', 'pdfs', req.body.name);
+    console.log("pdfReadPath", pdfReadPath)
     //pdfParser.loadPDF(imageStorePath+req.body.name);
-    pdfParser.loadPDF(pdfStorePath);
+    pdfParser.loadPDF(pdfReadPath);
 
 
     //pdfParser.loadPDF("/Users/sakshi/cmpe273-groupproject/project/MediReport/Backend/src/"+fileName);
