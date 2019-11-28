@@ -169,7 +169,6 @@ router.post('/loginkafka', auth.optional, function (req, res) {
     });
 });
 
-
 //Route to handle Post Request Call
 router.post('/login', function (req, res) {
     console.log("Inside Login Post Request");

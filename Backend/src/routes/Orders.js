@@ -7,10 +7,11 @@ const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
 var kafka = require('./kafka/client');
+const pdfStorePath = path.join(__dirname, '..', '..', '..', 'Frontend', 'src', 'pdfs');
+
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        //     cb(null, '/home/ec2-user/lab1/cmpe273-lab1/newFrontend/src/uploads')
-        cb(null, '/Users/sakshi/cmpe273-groupproject/project/MediReport/Frontend/src/pdfs')
+        cb(null, pdfStorePath)
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname)
