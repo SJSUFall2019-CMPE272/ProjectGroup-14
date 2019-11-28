@@ -149,9 +149,6 @@ class ReportView extends Component {
         console.log(diseaseList)
 
         const renderList = diseaseList.map((disease, index) => {
-            console.log("123456");
-            console.log(disease);
-
             return <li key={1} key={index}>
                 {disease}
             </li>;

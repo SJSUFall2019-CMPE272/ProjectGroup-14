@@ -1,11 +1,9 @@
 import json
-import scispacy
 import spacy
 
 import re
 from klein import Klein
 from SPARQLWrapper import SPARQLWrapper, JSON
-
 
 nlp = spacy.load("en_ner_bc5cdr_md")
 sp = spacy.load('en_core_web_sm')
