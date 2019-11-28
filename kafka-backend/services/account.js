@@ -35,7 +35,7 @@ function next() {
 }
 
 function signup(msg, callback) {
-    console.log("orderAdd req");
+    console.log("signup req");
     console.log(msg);
 
     // const {body: {user}} = msg;
@@ -43,6 +43,7 @@ function signup(msg, callback) {
 
     console.log("save user");
     console.log(user);
+
 
     const finalUser = ("buyer" === user.userType ? new Buyer(user) : new Owner(user));
 

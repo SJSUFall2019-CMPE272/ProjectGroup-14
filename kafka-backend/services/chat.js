@@ -1,90 +1,101 @@
-var express = require('express');
-const mysql = require('mysql');
-var router = express.Router();
-const uuid = require("uuid");
-const passport = require('passport');
-const mongoose = require('mongoose');
+const express = require('express');
+const router = express.Router();
+const Message = require('../models/Chat')
 
-require('../models/Chat');
-const Chat = mongoose.model('chat');
-
-exports.followService = function followService(msg, callback) {
-    console.log("Inside kafka backend account.js");
-    // console.log("msg"+ msg);
-    console.log("msg", msg);
-    console.log("In Property Service path:", msg.path);
-
+function handle_request(msg,callback){
+    console.log("/messages-mongo-kafkabackend");
+    console.log("msg", msg.req);
+    console.log("In Service path:", msg.path);
     switch (msg.path) {
         case "get":
-            get(msg.body, callback);
+            getMsg(msg.req, callback);
             break;
-
-        case "message/add":
-            messageAdd(msg.body, callback);
+        case "put":
+            putMsg(msg.req, callback);
             break;
+        default:
+            doNothing();
     }
 };
 
 
-function messageAdd(msg, callback) {
-    console.log("orderAdd req");
-    console.log(msg);
-
-    Chat.updateOne(
-        {_id: msg.chat_id},
-        {$push: {messages: msg.message}})
-        .then(() => {
-            Chat.find({buyer_id: msg.buyer_id})
-                .then((chatResult) => {
-                    console.log("chatResult /message/add");
-                    console.log(chatResult);
-                    callback(null, chatResult);
-                })
-        });
+function getMsg(req,callback){
+    console.log(req.body);
+     console.log("/getMsg/");
+     var query = {'order_id':req.body.order_id}
+      // Find the document
+     Message.findOne(query, function(error, result) {
+             if(error){
+            callback(null, {
+                "output" : false,
+                "message" : error })
+           }else{
+               console.log(result);
+               callback(null, {
+                output: true,
+                message: result})
+           }
+    });
+}
+ 
+ 
+function putMsg(req,callback) {
+    console.log(req.body);
+    console.log("/putMsg/");
+    
+    var query = { 'order_id': req.body.order_id }
+    update = { $set : {
+        'order_id':req.body.order_id,
+        'buyer_id': req.body.id,
+        'buyer_email': req.body.email,
+        'restaurant_id': req.body.restaurant_id,
+        'restaurant_name': req.body.restaurant_name,
+        'items': req.body.cart,
+    },$push: { 'messages': req.body.chat}}
+    
+    options = { upsert: true, new: true, setDefaultsOnInsert: true };
+    Message.findOneAndUpdate(query,update, options ,function(error, result) {
+             if(error){
+            callback(null, {
+                "output" : false,
+                "message" : error })
+           }else {
+               console.log("found",result);
+               callback(null, {
+                output: true,
+                message: result})
+               }
+        //    }else{
+        //     console.log("not found");
+        //     const msg= new Message({
+        //         'order_id':req.body.order_id,
+        //         'buyer_id': req.body.id,
+        //         'buyer_email': req.body.email,
+        //         'restaurant_id': req.body.restaurant_id,
+        //         'restaurant_name': req.body.restaurant_name,
+        //         'items': req.body.cart,
+        //         'messages':req.body.chat
+        //     })
+        //     msg
+        //     .save()
+        //     .then(chat =>  
+        //         callback(null, {
+        //       output:true,
+        //       message:chat
+        //     }))
+        //     .catch(err => 
+        //         {console.log(err)
+        //             callback(null, {
+        //                 output:true,
+        //                 message:"Something went wrong"}
+        //          )});
+        //    }
+    });
 }
 
-function get(msg, callback) {
-    console.log("orderAdd req");
-    console.log(msg);
-
-    const field = msg.userType === "buyer" ? "buyer_id" : "owner_id";
-    const value = msg.userType === "buyer" ? msg.buyer_id : msg.owner_id;
-
-    //If order_id is not present, insert chat for order and return all chats
-    Chat.findOne({order_id: msg.order_id})
-        .then((chat) => {
-            if (chat === null) {
-                const chat = Chat(msg);
-                chat.save()
-                    .then(() => {
-                        // Chat.find({buyer_id: msg.buyer_id})
-                        Chat.find({[field]: value})
-                            .then((chatResults) => {
-                                console.log("chatResult 1");
-                                console.log(chatResults);
-                                callback(null, chatResults);
-                            });
-                    });
-                //If order_id is present, find and update to change TS and return all chats
-            } else {
-                const chatObj = {};
-                chatObj.customer_name = msg.customer_name;
-
-                Chat.findOneAndUpdate({order_id: msg.order_id}, chatObj)
-                    .then(() => {
-                        Chat.find({[field]: value})
-                            .then((chatResult) => {
-                                console.log("chatResult 2");
-                                console.log(chatResult);
-                                callback(null, chatResult);
-                            });
-                    })
-
-            }
-
-        })
-        .catch((err) => {
-            console.log("Error in getByOwnerMongo");
-            console.log(err)
-        })
+function doNothing(){
+    console.log("do nothing");
 }
+
+  
+ exports.handle_request = handle_request;

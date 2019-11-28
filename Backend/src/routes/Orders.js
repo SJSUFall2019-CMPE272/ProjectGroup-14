@@ -109,4 +109,36 @@ function getReportName(data){
     return fileName;
 }
 
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '/Users/sakshi/cmpe273-groupproject/project/MediReport/Frontend/src/pdfs')
+       // cb(null, imageStorePath)
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+    }
+});
+
+
+const upload = multer({storage: storage}).single('file');
+
+router.post('/menu_item/add', function (req, res) {
+    upload(req, res, function (err) {
+        console.log("Inside saveMenuItemImage");
+        console.log(req.body);
+        console.log("req.body.image");
+        console.log(req.body.image);
+        console.log("File");
+        console.log(req.file);
+
+        const menuItem = MenuItem(req.body);
+
+        return menuItem.save()
+            .then(() => {
+                res.send("Saved menu_item")
+            })
+            .catch(() => res.send("Error in saving menu_item"));
+    })
+});
+
 module.exports = router;
