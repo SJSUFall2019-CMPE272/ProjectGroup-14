@@ -83,7 +83,8 @@ router.post('/pdf/read', function (req, res) {
         console.log("pdfParser.getRawTextContent()")
         console.log(pdfParser.getRawTextContent())
 
-        axios.post(`http://localhost:8080/getData`, payload)
+        //axios.post(`http://localhost:8080/getData`, payload)
+        axios.post(`http://54.191.180.87:8080/getData`, payload)
             .then((response) => {
                 console.log("response from Python")
                 console.log(response.data)

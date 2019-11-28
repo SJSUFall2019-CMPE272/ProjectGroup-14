@@ -39,23 +39,23 @@ app.use(session({
     activeDuration      :  5 * 60 * 1000
 }));
 
-// app.use(function(req, res, next) {
-//     res.setHeader('Access-Control-Allow-Origin', 'http://54.149.48.114:3000');
-//     res.setHeader('Access-Control-Allow-Credentials', 'true');
-//     res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
-//     res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
-//     res.setHeader('Cache-Control', 'no-cache');
-//     next();
-// });
-
 app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'http://18.236.136.221:3000');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
     res.setHeader('Cache-Control', 'no-cache');
     next();
 });
+
+// app.use(function(req, res, next) {
+//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+//     res.setHeader('Access-Control-Allow-Credentials', 'true');
+//     res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
+//     res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
+//     res.setHeader('Cache-Control', 'no-cache');
+//     next();
+// });
 
 const accessBasePath = '/access';
 const profileBasePath = '/profile';
@@ -68,8 +68,8 @@ const orderRoutes = require('./src/routes/Orders');
 const chatRoutes = require('./src/routes/Chat');
 
 //use cors to allow cross origin resource sharing
-//app.use(cors({ origin: 'http://54.149.48.114:3000', credentials: true }));
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: 'http://18.236.136.221:3000', credentials: true }));
+//app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
 app.use(bodyParser.json({ limit: "50MB" }));
 
