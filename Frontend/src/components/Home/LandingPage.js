@@ -97,11 +97,11 @@ class LandingPage extends Component {
           {/* <!-- Content */}
           <div class="text-center white-text mx-5 wow fadeIn">
             <h1 class="mb-4">
-              <strong>Learn Bootstrap 4 with MDB</strong>
+              <strong>MediReport</strong>
             </h1>
 
             <p>
-              <strong>Best & free guide of responsive web design</strong>
+              <strong>Easy and understandable medical records</strong>
             </p>
 
             <p class="mb-4 d-none d-md-block">
@@ -237,27 +237,22 @@ class LandingPage extends Component {
         <div class="col-md-6 mb-4">
 
           {/* <!-- Main heading */}
-          <h3 class="h3 mb-3">Material Design for Bootstrap</h3>
-          <p>This template is created with Material Design for Bootstrap (
-            <strong>MDB</strong> ) framework.</p>
-          <p>Read details below to learn more about MDB.</p>
+          <h3 class="h3 mb-3">MediReport</h3>
+          <p>Easy and understandable medical records</p>
           {/* <!-- Main heading */}
-
           <hr/>
 
           <p>
-            <strong>400+</strong> material UI elements,
-            <strong>600+</strong> material icons,
-            <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
-            <strong>Free for personal and commercial use.</strong>
+            An application that enables end-users who have don't have a medical background,
+            to <strong>interpret the meanings</strong> of various <strong>medical/physiological parameters</strong> that are
+            present in their <strong>medical reports or prescriptions</strong> in an easy to understand and
+            <strong>informative format</strong> which can be presented in <strong>multiple languages</strong>.
           </p>
 
           {/* <!-- CTA */}
-          <a  href="https://mdbootstrap.com/getting-started/" class="btn btn-indigo btn-md">Download
+          <a  href="https://github.com/SJSUFall2019-CMPE272/MediReport/blob/master/readme.md"
+              class="btn btn-indigo btn-md">Read more
             <i class="fas fa-download ml-1"></i>
-          </a>
-          <a  href="https://mdbootstrap.com/components/" class="btn btn-indigo btn-md">Live demo
-            <i class="fas fa-image ml-1"></i>
           </a>
 
         </div>
@@ -274,7 +269,7 @@ class LandingPage extends Component {
     {/* <!--Section: Main features & Quick Start*/}
     <section>
 
-      <h3 class="h3 text-center mb-5">About MDB</h3>
+      <h3 class="h3 text-center mb-5">About MediReport</h3>
 
       {/* <!--Grid row*/}
       <div class="row wow fadeIn">
