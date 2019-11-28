@@ -109,16 +109,6 @@ function getReportName(data){
     return fileName;
 }
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, '/Users/sakshi/cmpe273-groupproject/project/MediReport/Frontend/src/pdfs')
-       // cb(null, imageStorePath)
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname)
-    }
-});
-
 
 const upload = multer({storage: storage}).single('file');
 

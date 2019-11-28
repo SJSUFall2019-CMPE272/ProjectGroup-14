@@ -8,11 +8,11 @@ import OwnerChatReducer from './ownerChatReducer';
 
 const rootReducer = combineReducers({
     account: AccountReducer,
-    profile: ProfileReducer,
-    restaurant: RestaurantReducer,
+    // profile: ProfileReducer,
+    // restaurant: RestaurantReducer,
     owner: OwnerReducer,
     msg: messageReducer,
-    ownerChat: OwnerChatReducer
+    // ownerChat: OwnerChatReducer
 });
 
 export default rootReducer;

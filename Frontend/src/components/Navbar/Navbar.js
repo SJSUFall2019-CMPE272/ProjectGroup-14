@@ -13,7 +13,7 @@ class Navbar extends Component {
             return <Redirect to="/land"/>
         }
 
-        return (cookie.load('cookie').userType === "buyer") ? <Redirect to="/home"/> : <Redirect to="/homeOwner"/>
+        return (cookie.load('cookie').userType === "buyer") ? <Redirect to="/land"/> : <Redirect to="/land"/>
     };
 
     render() {
