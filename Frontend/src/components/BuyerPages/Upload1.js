@@ -33,9 +33,10 @@ class ImageUpload extends React.Component {
           console.log(response);
           alert("Pdf uploaded Successfully!!");
           this.setState({
-             sample:true
+             sample:true,
+             redirectVar:true
           });
-          this.getPreview(this.state.file.name);
+          //this.getPreview(this.state.file.name);
       })
       .catch((error) => {
           this.setState({addItemSuccess: false});
@@ -100,9 +101,10 @@ class ImageUpload extends React.Component {
       // }
       return (
         <div class="body1">
+
           {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
                     pathname: "/homeBuyer/reportView",
-                    state: {searchTerm: this.state.file.name}
+                    state: {searchTerm: this.state.file}
                 }}/>}
         <div className="text-overlay1">
                 <div className="header">
@@ -118,7 +120,7 @@ class ImageUpload extends React.Component {
               type="submit">Upload Report</button>
           </form>
           </div>
-                 {this.getPreview()}   
+                 {/* {this.getPreview()}    */}
         </div>
       )
     }
