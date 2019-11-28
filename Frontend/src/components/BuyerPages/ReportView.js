@@ -76,9 +76,9 @@ class ReportView extends Component {
             pageNumber: 2,
             langCode: "en",
             isOpenModal: true,
-            name: "Sita",
-            gender: "female",
-            age: 19,
+            name: localStorage.getItem('name'),
+            gender: localStorage.getItem('gender'),
+            age: localStorage.getItem('age'),
             searchTerm: this.props.location.state.searchTerm
         };
         console.log("searchTerm",this.props.searchTerm);
@@ -142,7 +142,8 @@ class ReportView extends Component {
     }
 
     getAgeGenderBasesDiseaseList() {
-        const key = this.state.gender + ":" + this.getAgeGroup(this.state.age)
+        const key = this.state.gender.toLowerCase() + ":" + this.getAgeGroup(this.state.age)
+        console.log("mapkey", key)
         const diseaseList = diseaseDataMap.get(key)
 
         console.log("diseaseList")
@@ -250,7 +251,8 @@ class ReportView extends Component {
         }
     };
 
-    getAgeGroup(age) {
+    getAgeGroup(ageVar) {
+        const age = parseInt(ageVar, 10);
         let ageGroup = "";
         if (age < 5) {
             ageGroup = "<5"
