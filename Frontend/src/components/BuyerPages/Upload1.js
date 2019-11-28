@@ -35,6 +35,7 @@ class ImageUpload extends React.Component {
           console.log("addMenuItem");
           console.log(response);
           alert("Pdf uploaded Successfully!!");
+          localStorage.setItem("filename", this.state.file.name);
           this.setState({
              sample: true,
               fileName: this.state.file.name,
@@ -108,7 +109,7 @@ class ImageUpload extends React.Component {
         <div class="body1">
 
           {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
-                    pathname: "/homeBuyer/reportView",
+                    pathname: "/reportView",
                     state: {searchTerm: this.state.fileName}
                 }}/>}
         <div className="text-overlay1">

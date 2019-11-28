@@ -7,6 +7,7 @@ import {Document, Page} from 'react-pdf';
 import sample from '../../pdfs/full-report.pdf'
 import axios from 'axios';
 import { Scrollbars } from 'react-custom-scrollbars';
+import {Redirect} from "react-router";
 
 axios.defaults.withCredentials = true;
 
@@ -79,9 +80,10 @@ class ReportView extends Component {
             name: localStorage.getItem('name'),
             gender: localStorage.getItem('gender'),
             age: localStorage.getItem('age'),
-            searchTerm: this.props.location.state.searchTerm
+            //searchTerm: this.props.location.state.searchTerm,
+            searchTerm: localStorage.getItem('filename'),
+            redirectVar: null
         };
-        console.log("searchTerm",this.props.searchTerm);
         this.setLanguage = this.setLanguage.bind(this);
     }
 
@@ -292,6 +294,10 @@ class ReportView extends Component {
     render() {
         return (
             <div>
+                {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
+                    pathname: "/live",
+                }}/>}
+
                 <Modal
                     show={this.state.isOpenModal}
                     onHide={this.closeModal}
@@ -312,7 +318,8 @@ class ReportView extends Component {
                     </Modal.Body>
                     <Modal.Footer>
                         <div class="btn-tweet">
-                            <button class="btn btn-primary submit-btn" type="button">
+                            <button class="btn btn-primary submit-btn" type="button"
+                            onClick={() => {this.setState({redirectVar: true})}}>
                                 Create
                             </button>
                         </div>

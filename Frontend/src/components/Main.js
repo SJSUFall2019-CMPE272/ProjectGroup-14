@@ -11,6 +11,7 @@ import Upload1 from './BuyerPages/Upload1';
 import bmi from '../components/Charts/bmi'
 import bmi2 from '../components/Charts/bmi2'
 import ReportView from './BuyerPages/ReportView';
+import Live from './BuyerPages/Live';
 import ChatInput from './ChatInput/ChatInput';
 //Create a Main Component
 class Main extends Component {
@@ -28,9 +29,8 @@ class Main extends Component {
                 <Route exact path="/sidebar" component={SideBar}/>
                 <Route exact path="/option" component={option}/>
                 <Route exact path="/upload" component={Upload1}/>
+                <Route exact path="/live" component={Live}/>
                 <Route exact path="/reportView" component={ReportView}/>
-
-
             </div>
         )
     }
