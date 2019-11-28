@@ -79,7 +79,7 @@ class ReportView extends Component {
             name: "Sita",
             gender: "female",
             age: 19,
-            searchTerm: this.props.searchTerm
+            searchTerm: this.props.location.state.searchTerm
         };
         console.log("searchTerm",this.props.searchTerm);
         this.setLanguage = this.setLanguage.bind(this);
@@ -222,7 +222,10 @@ class ReportView extends Component {
     getData() {
         const payload = {};
         payload.langCode = this.state.langCode;
-        payload.name=this.state.searchTerm;
+        payload.name = this.state.searchTerm;
+        console.log("payload")
+        console.log(payload)
+
         axios.post(`http://${HOSTNAME}:3001/orders/pdf/read`, payload)
             .then((response) => {
                 console.log("_handleImageChange response");
@@ -252,7 +255,13 @@ class ReportView extends Component {
 
     getAgeGroup(age) {
         let ageGroup = "";
-        if (age >= 50 && age <= 69) {
+        if (age < 5) {
+            ageGroup = "<5"
+        } else if (age >= 5 && age <= 14) {
+            ageGroup = "5-14"
+        } else if (age >= 15 && age <= 49) {
+            ageGroup = "15-49"
+        } else if (age >= 50 && age <= 69) {
             ageGroup = "50-69"
         } else if (age >= 70) {
             ageGroup = "70+"

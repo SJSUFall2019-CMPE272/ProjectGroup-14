@@ -27,7 +27,7 @@ export function signUpMongo(payload) {
 
     return (dispatch) => {
         console.log("Inside  signUpMongo");
-        axios.post(`http://${HOSTNAME}:3001/access/savemongo`, { credentials: 'include' },payload)
+        axios.post(`http://${HOSTNAME}:3001/access/savemongo`, payload)
             .then((response) => dispatch(signUp(response.data)))
     }
 }

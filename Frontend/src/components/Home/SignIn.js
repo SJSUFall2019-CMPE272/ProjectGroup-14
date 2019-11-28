@@ -106,7 +106,7 @@ class Login extends Component {
         //if (this.props.signinSuccess != null && this.props.signinSuccess && localStorage.getItem('token') !== null) {
         if (this.props.signinSuccess !== null && this.props.signinSuccess === true && localStorage.getItem('token') !== null) {
             console.log("Signin success");
-            redirectVar = (this.props.userType === "buyer") ? <Redirect to="/homeBuyer/upload"/> :
+            redirectVar = (this.props.userType === "buyer") ? <Redirect to="/upload"/> :
                 <Redirect to="/homeOwner"/>
         }
 

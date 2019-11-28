@@ -12,7 +12,7 @@ axios.defaults.withCredentials = true;
 class ImageUpload extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {file: '',imagePreviewUrl: '', pageNumber: 2,sample:'',  redirectVar: null,sample:false};
+      this.state = {file: '',imagePreviewUrl: '', pageNumber: 2, redirectVar: null, sample:false, fileName: ''};
       this.handleClick = this.handleClick.bind(this);
     }
   
@@ -20,29 +20,34 @@ class ImageUpload extends React.Component {
       e.preventDefault();
       console.log('handle uploading-', this.state.file);
       let data = new FormData();
-      console.log("selectedFile and index",this.state.file);
+      console.log("selectedFile and index", this.state.file);
+      console.log("selectedFile and index", this.state.file["name"]);
+      console.log("selectedFile and index", this.state.file.name);
       data.append('file', this.state.file);
       data.append('name', this.state.file.name);
       data.append('image', this.state.file.name);
       data.append('description', "new file");
       data.append('section', "report");
       data.append('owner_id', "1");
+
       axios.post(`http://${HOSTNAME}:3001/orders/menu_item/add`, data)
       .then((response) => {
           console.log("addMenuItem");
           console.log(response);
           alert("Pdf uploaded Successfully!!");
           this.setState({
-             sample:true,
-             redirectVar:true
+             sample: true,
+              fileName: this.state.file.name,
+          }, () => {
+              console.log("123fileName")
+              console.log(this.state.fileName)
+              this.setState({redirectVar:true});
           });
           //this.getPreview(this.state.file.name);
       })
       .catch((error) => {
           this.setState({addItemSuccess: false});
       });
-      
-        e.target.reset();
     }
   
     _handleImageChange(e) {
@@ -104,7 +109,7 @@ class ImageUpload extends React.Component {
 
           {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
                     pathname: "/homeBuyer/reportView",
-                    state: {searchTerm: this.state.file}
+                    state: {searchTerm: this.state.fileName}
                 }}/>}
         <div className="text-overlay1">
                 <div className="header">
