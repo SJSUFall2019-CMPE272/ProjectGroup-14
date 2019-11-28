@@ -66,7 +66,6 @@ router.post('/pdf/read', function (req, res) {
     console.log("pdf/read");
     console.log("req");
     console.log(req.body);
-    let fileName="lipid-profile.pdf";
     let pdfParser = new PDFParser(this,1);
   
     getReportName(req.owner_id);
@@ -90,7 +89,7 @@ router.post('/pdf/read', function (req, res) {
             })
     });
 
-    pdfParser.loadPDF("/Users/vijendra4/GoogleDrive/sjsu/272/MediReport/Backend/src/lipid-profile.pdf");
+    pdfParser.loadPDF(imageStorePath+req.body.name);
     //pdfParser.loadPDF("/Users/sakshi/cmpe273-groupproject/project/MediReport/Backend/src/"+fileName);
 });
 

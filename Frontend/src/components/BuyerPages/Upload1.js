@@ -5,51 +5,15 @@ import axios from 'axios';
 import sample from '../../pdfs/full-report.pdf';
 import {Document, Page} from 'react-pdf';
 import Particles from 'react-particles-js'
+import {Redirect} from "react-router";
 
 axios.defaults.withCredentials = true;
-
-const particleOpt = {
-  particles: {
-      "number": {
-          value: 150
-      },
-      "color": {
-          value: "#f9f3f4"
-      },
-      "shape": {
-          type: "circle",
-          stroke: {
-              width: 1,
-              color: "#dfc"
-          }
-      },
-      "opacity": {
-          value: 0.5,
-          random: true
-      },
-      "size": {
-          value: 2
-      },
-      "line_linked": {
-          enable: true,
-          distance: 110
-      },
-      "interactivity": {
-          "detect_on": "window",
-          "events": {
-              "onhover": {
-                  "enable": false,
-                  "mode": "grab"
-              }
-          }
-      }
-  }
-};
 
 class ImageUpload extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {file: '',imagePreviewUrl: '', pageNumber: 2,sample:''};
+      this.state = {file: '',imagePreviewUrl: '', pageNumber: 2,sample:'',  redirectVar: null,sample:false};
+      this.handleClick = this.handleClick.bind(this);
     }
   
     _handleSubmit(e) {
@@ -68,7 +32,10 @@ class ImageUpload extends React.Component {
           console.log("addMenuItem");
           console.log(response);
           alert("Pdf uploaded Successfully!!");
-          this.getPreview();
+          this.setState({
+             sample:true
+          });
+          this.getPreview(this.state.file.name);
       })
       .catch((error) => {
           this.setState({addItemSuccess: false});
@@ -93,51 +60,50 @@ class ImageUpload extends React.Component {
       reader.readAsDataURL(file)
     }
 
-    getPreview(){
-        const payload = {};
-        payload.langCode = this.state.langCode;
-        payload.owner_id = "1";
-        axios.post(`http://${HOSTNAME}:3001/orders/pdf/view`, payload)
-        .then((response) => {
-            console.log(response);
-        })
-        if(this.state.sample!=undefined){
-          return(<div>
+    getPreview(fileName){
+      let name= '../../pdfs/'+fileName;
+      let preview;
+        if(this.state.sample){
+         preview= <div>
             <Document
-                file={this.state.sample}
+                file={name}
                 onLoadSuccess={this.onDocumentLoadSuccess}
             >
                 <Page pageNumber={this.state.pageNumber}/>
             </Document>
             <p>Page {this.state.pageNumber} of {this.state.numPages}</p>
+            <button type="button" class="btn btn-primary" onClick={this.handleClick()}>Next</button>
         </div>
-          )
         }else{
-            return(<div className="previewText">Please select an Image for Preview</div>);
+           preview=<div className="previewText">Please select an Image for Preview</div>
         }
+        return preview;
     }
+
+    handleClick(){
+      this.setState({
+        redirectVar: true
+      });
+   }
 
     componentDidMount() {
         //this._handleSubmit();
     }
 
     render() {
-      let {imagePreviewUrl} = this.state;
-      let $imagePreview = null;
-      if (imagePreviewUrl) {
-        $imagePreview = (<img src={imagePreviewUrl} />);
-      } else {
-        $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
-      }
-  
+      // let {imagePreviewUrl} = this.state;
+      // let $imagePreview = null;
+      // if (imagePreviewUrl) {
+      //   $imagePreview = (<img src={imagePreviewUrl} />);
+      // } else {
+      //   $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+      // }
       return (
         <div class="body1">
-        {/* <div>
-            <Particles
-                params={{
-                    particleOpt
-                }}/>
-        </div> */}
+          {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
+                    pathname: "/homeBuyer/reportView",
+                    state: {searchTerm: this.state.file.name}
+                }}/>}
         <div className="text-overlay1">
                 <div className="header">
                     <a href="/" class="logo">MEDIREPORT</a>
@@ -151,14 +117,8 @@ class ImageUpload extends React.Component {
             <button className="submitButton" 
               type="submit">Upload Report</button>
           </form>
-
-
           </div>
-          {/* <div className="imgPreview">
-            {$imagePreview}
-          </div> */}
-
-                 {this.getPreview}   
+                 {this.getPreview()}   
         </div>
       )
     }
