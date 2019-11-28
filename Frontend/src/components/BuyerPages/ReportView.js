@@ -78,7 +78,8 @@ class ReportView extends Component {
             isOpenModal: true,
             name: "Sita",
             gender: "female",
-            age: 19
+            age: 19,
+            searchTerm: this.props.searchTerm
         };
 
         this.setLanguage = this.setLanguage.bind(this);
@@ -221,7 +222,7 @@ class ReportView extends Component {
     getData() {
         const payload = {};
         payload.langCode = this.state.langCode;
-        payload.owner_id = "1";
+        payload.name=this.state.searchTerm;
         axios.post(`http://${HOSTNAME}:3001/orders/pdf/read`, payload)
             .then((response) => {
                 console.log("_handleImageChange response");
