@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Badge, Button, Card} from "react-bootstrap";
+import {Badge, Button, Card, Modal} from "react-bootstrap";
 import "../../styles/Menu.css"
 import {connect} from "react-redux";
 import {HOSTNAME} from "../Constants/Constants";
@@ -47,9 +47,25 @@ const enNameToLocalNameMap = [
     {"enName": "Polish", "localName": "Polski"},
     {"enName": "Portuguese", "localName": "Português"},
     {"enName": "Russian", "localName": "русский язык"},
-
 ];
 
+const diseaseData = [
+    {"male:70+": ["Cardiovascular diseases","Neoplasms","Chronic respiratory diseases","Neurological disorders","Respiratory infections and tuberculosis","Diabetes and kidney diseases","Digestive diseases","Unintentional injuries","Enteric infections","Other non-communicable diseases","Transport injuries","Self-harm and interpersonal violence","Other infectious diseases","Nutritional deficiencies","Substance use disorders","Skin and subcutaneous diseases","Neglected tropical diseases and malaria","Musculoskeletal disorders","HIV/AIDS and sexually transmitted infections"]},
+    {"male:50-69": ["Cardiovascular diseases", "Neoplasms", "Chronic respiratory diseases", "Digestive diseases", "Respiratory infections and tuberculosis", "Diabetes and kidney diseases", "Unintentional injuries", "Transport injuries", "Self-harm and interpersonal violence", "Neurological disorders", "Enteric infections", "Substance use disorders", "HIV/AIDS and sexually transmitted infections", "Other non-communicable diseases", "Other infectious diseases", "Neglected tropical diseases and malaria", "Skin and subcutaneous diseases", "Nutritional deficiencies", "Musculoskeletal disorders"]}
+]
+
+const diseaseDataMap = new Map();
+diseaseDataMap.set("male:70+", ["Cardiovascular diseases","Neoplasms","Chronic respiratory diseases","Neurological disorders","Respiratory infections and tuberculosis","Diabetes and kidney diseases","Digestive diseases","Unintentional injuries","Enteric infections","Other non-communicable diseases","Transport injuries","Self-harm and interpersonal violence","Other infectious diseases","Nutritional deficiencies","Substance use disorders","Skin and subcutaneous diseases","Neglected tropical diseases and malaria","Musculoskeletal disorders","HIV/AIDS and sexually transmitted infections"]);
+diseaseDataMap.set("male:50-69", ["Cardiovascular diseases", "Neoplasms", "Chronic respiratory diseases", "Digestive diseases", "Respiratory infections and tuberculosis", "Diabetes and kidney diseases", "Unintentional injuries", "Transport injuries", "Self-harm and interpersonal violence", "Neurological disorders", "Enteric infections", "Substance use disorders", "HIV/AIDS and sexually transmitted infections", "Other non-communicable diseases", "Other infectious diseases", "Neglected tropical diseases and malaria", "Skin and subcutaneous diseases", "Nutritional deficiencies", "Musculoskeletal disorders"]);
+diseaseDataMap.set("male:15-49", ["Cardiovascular diseases", "Self-harm and interpersonal violence", "Transport injuries", "Neoplasms", "Unintentional injuries", "HIV/AIDS and sexually transmitted infections", "Respiratory infections and tuberculosis", "Digestive diseases", "Diabetes and kidney diseases", "Substance use disorders", "Enteric infections", "Chronic respiratory diseases", "Other infectious diseases", "Neglected tropical diseases and malaria", "Other non-communicable diseases", "Neurological disorders", "Nutritional deficiencies", "Skin and subcutaneous diseases", "Musculoskeletal disorders", "Mental disorders"])
+diseaseDataMap.set("male:5-14", ["Unintentional injuries", "Enteric infections", "Transport injuries", "Neglected tropical diseases and malaria", "Neoplasms", "Other infectious diseases", "Respiratory infections and tuberculosis", "HIV/AIDS and sexually transmitted infections", "Other non-communicable diseases", "Self-harm and interpersonal violence", "Digestive diseases", "Cardiovascular diseases", "Neurological disorders", "Diabetes and kidney diseases", "Nutritional deficiencies", "Chronic respiratory diseases", "Musculoskeletal disorders", "Skin and subcutaneous diseases", "Mental disorders"])
+diseaseDataMap.set("male:<5", ["Maternal and neonatal disorders", "Respiratory infections and tuberculosis", "Enteric infections", "Other non-communicable diseases", "Other infectious diseases", "Neglected tropical diseases and malaria", "Unintentional injuries", "HIV/AIDS and sexually transmitted infections", "Nutritional deficiencies", "Transport injuries", "Neoplasms", "Digestive diseases", "Cardiovascular diseases", "Self-harm and interpersonal violence", "Neurological disorders", "Diabetes and kidney diseases", "Chronic respiratory diseases", "Skin and subcutaneous diseases"])
+
+diseaseDataMap.set("female:70+", ["Cardiovascular diseases", "Neoplasms", "Neurological disorders", "Chronic respiratory diseases", "Diabetes and kidney diseases", "Respiratory infections and tuberculosis", "Digestive diseases", "Enteric infections", "Unintentional injuries", "Other non-communicable diseases", "Transport injuries", "Other infectious diseases", "Self-harm and interpersonal violence", "Musculoskeletal disorders", "Nutritional deficiencies", "Skin and subcutaneous diseases", "Neglected tropical diseases and malaria", "Substance use disorders", "HIV/AIDS and sexually transmitted infections"]);
+diseaseDataMap.set("female:50-69", ["Cardiovascular diseases", "Neoplasms", "Diabetes and kidney diseases", "Chronic respiratory diseases", "Respiratory infections and tuberculosis", "Digestive diseases", "Unintentional injuries", "Enteric infections", "Neurological disorders", "Transport injuries", "Self-harm and interpersonal violence", "Other non-communicable diseases", "HIV/AIDS and sexually transmitted infections", "Other infectious diseases", "Neglected tropical diseases and malaria", "Substance use disorders", "Musculoskeletal disorders", "Nutritional deficiencies", "Skin and subcutaneous diseases", "Maternal and neonatal disorders"]);
+diseaseDataMap.set("female:15-49", ["Neoplasms", "Cardiovascular diseases", "HIV/AIDS and sexually transmitted infections", "Self-harm and interpersonal violence", "Respiratory infections and tuberculosis", "Maternal and neonatal disorders", "Transport injuries", "Digestive diseases", "Diabetes and kidney diseases", "Unintentional injuries", "Enteric infections", "Chronic respiratory diseases", "Other non-communicable diseases", "Other infectious diseases", "Neglected tropical diseases and malaria", "Substance use disorders", "Neurological disorders", "Musculoskeletal disorders", "Nutritional deficiencies", "Skin and subcutaneous diseases", "Mental disorders"]);
+diseaseDataMap.set("female:5-14", ["Enteric infections", "Unintentional injuries", "Other infectious diseases", "Neglected tropical diseases and malaria", "Respiratory infections and tuberculosis", "Neoplasms", "Transport injuries", "HIV/AIDS and sexually transmitted infections", "Other non-communicable diseases", "Self-harm and interpersonal violence", "Digestive diseases", "Cardiovascular diseases", "Neurological disorders", "Diabetes and kidney diseases", "Nutritional deficiencies", "Chronic respiratory diseases", "Musculoskeletal disorders", "Maternal and neonatal disorders", "Skin and subcutaneous diseases", "Mental disorders"]);
+diseaseDataMap.set("female:<5", ["Maternal and neonatal disorders", "Respiratory infections and tuberculosis", "Other non-communicable diseases", "Enteric infections", "Other infectious diseases", "Neglected tropical diseases and malaria", "Unintentional injuries", "HIV/AIDS and sexually transmitted infections", "Nutritional deficiencies", "Transport injuries", "Neoplasms", "Digestive diseases", "Self-harm and interpersonal violence", "Cardiovascular diseases", "Neurological disorders", "Diabetes and kidney diseases", "Chronic respiratory diseases", "Skin and subcutaneous diseases"]);
 
 class ReportView extends Component {
     constructor(props) {
@@ -58,12 +74,19 @@ class ReportView extends Component {
             data: [],
             numPages: null,
             pageNumber: 2,
-            langCode: "en"
-
+            langCode: "en",
+            isOpenModal: true,
+            name: "Sita",
+            gender: "female",
+            age: 19
         };
 
         this.setLanguage = this.setLanguage.bind(this);
     }
+
+    closeModal = e => {
+        this.setState({isOpenModal: false});
+    };
 
     data = () => {
         return {"_id": "1", "customer_address": "Some address", "status": "New"}
@@ -115,6 +138,30 @@ class ReportView extends Component {
         return <div>
             <ul className="ul li">{renderTodos}</ul>
         </div>;
+    }
+
+    getAgeGenderBasesDiseaseList() {
+        const key = this.state.gender + ":" + this.getAgeGroup(this.state.age)
+        const diseaseList = diseaseDataMap.get(key)
+
+        console.log("diseaseList")
+        console.log(diseaseList)
+
+        const renderList = diseaseList.map((disease, index) => {
+            console.log("123456");
+            console.log(disease);
+
+            return <li key={1} key={index}>
+                {disease}
+            </li>;
+        });
+
+        console.log("renderList");
+        console.log(renderList);
+
+        return <div>
+            <ul className="ul li">{renderList}</ul>
+        </div>
     }
 
     populateSection = () => {
@@ -202,13 +249,24 @@ class ReportView extends Component {
         }
     };
 
+    getAgeGroup(age) {
+        let ageGroup = "";
+        if (age >= 50 && age <= 69) {
+            ageGroup = "50-69"
+        } else if (age >= 70) {
+            ageGroup = "70+"
+        }
+
+        return ageGroup;
+    }
+
     getLanguageOptions() {
         const renderTodos = enNameToLocalNameMap.map((pair, index) => {
             //const renderTodos = enNameToLocalNameMap.forEach(function(value, key){
             console.log("pair");
             console.log(pair);
 
-            return <li key={1} style={styles.languageButton}>
+            return <li key={1} style={styles.languageButton} key={index}>
                 <Button onClick={this.setLanguage(pair.enName)} type="submit"
                         variant="primary">{pair.localName}</Button>
             </li>;
@@ -225,6 +283,33 @@ class ReportView extends Component {
     render() {
         return (
             <div>
+                <Modal
+                    show={this.state.isOpenModal}
+                    onHide={this.closeModal}
+                    animation={false}
+                >
+                    <Modal.Header closeButton>{this.getOrderStatusBadge("Ready", "MediReport's personalized recommendation")}</Modal.Header>
+                    <Modal.Body>
+                        <div style={{fontSize: 14}}>
+                            Hi {this.state.name}! For a {this.state.gender} in the age group {this.getAgeGroup(this.state.age)}, below are the most common diseases. We want you to be healthy.
+                            Please close this box to see the food items and complications associated with your medical test.
+                        </div>
+
+                        <br/>
+                        <Scrollbars
+                            style={{ height: 200 }}>
+                            {this.getAgeGenderBasesDiseaseList()}
+                        </Scrollbars>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <div class="btn-tweet">
+                            <button class="btn btn-primary submit-btn" type="button">
+                                Create
+                            </button>
+                        </div>
+                    </Modal.Footer>
+                </Modal>
+
                 <div className='rowC'>
                     <div>
                         <Document
@@ -238,9 +323,6 @@ class ReportView extends Component {
                     <div>
                         {this.populateSection()}
                     </div>
-
-
-
                 </div>
 
                 {this.getLanguageOptions()}
