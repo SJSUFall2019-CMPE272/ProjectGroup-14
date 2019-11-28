@@ -36,16 +36,18 @@ class ImageUpload extends React.Component {
           console.log(response);
           alert("Pdf uploaded Successfully!!");
           this.setState({
-             sample:true,
-             redirectVar:true
+             sample: true,
+              fileName: this.state.file.name,
+          }, () => {
+              console.log("123fileName")
+              console.log(this.state.fileName)
+              this.setState({redirectVar:true});
           });
           //this.getPreview(this.state.file.name);
       })
       .catch((error) => {
           this.setState({addItemSuccess: false});
       });
-      
-        e.target.reset();
     }
   
     _handleImageChange(e) {
@@ -107,7 +109,7 @@ class ImageUpload extends React.Component {
 
           {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
                     pathname: "/homeBuyer/reportView",
-                    state: {searchTerm: this.state.file}
+                    state: {searchTerm: this.state.fileName}
                 }}/>}
         <div className="text-overlay1">
                 <div className="header">

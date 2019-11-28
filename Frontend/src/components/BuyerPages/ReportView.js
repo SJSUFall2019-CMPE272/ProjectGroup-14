@@ -79,7 +79,7 @@ class ReportView extends Component {
             name: "Sita",
             gender: "female",
             age: 19,
-            searchTerm: this.props.searchTerm
+            searchTerm: this.props.location.state.searchTerm
         };
         console.log("searchTerm",this.props.searchTerm);
         this.setLanguage = this.setLanguage.bind(this);

@@ -66,10 +66,13 @@ router.post('/pdf/read', function (req, res) {
     console.log("pdf/read");
     console.log("req");
     console.log(req.body);
-    let pdfParser = new PDFParser(this,1);
-  
+    let pdfParser = new PDFParser(this, 1);
+
     getReportName(req.owner_id);
-    pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
+    pdfParser.on("pdfParser_dataError", errData => {
+        console.log("pdfParser_dataError")
+        console.error(errData)
+    });
     pdfParser.on("pdfParser_dataReady", pdfData => {
         console.log(pdfParser.getRawTextContent());
 
@@ -89,7 +92,12 @@ router.post('/pdf/read', function (req, res) {
             })
     });
 
-    pdfParser.loadPDF(imageStorePath+req.body.name);
+    const pdfStorePath = path.join(__dirname, '..', '..', '..', 'Frontend', 'src', 'pdfs', req.body.name);
+    console.log("pdfStorePath", pdfStorePath)
+    //pdfParser.loadPDF(imageStorePath+req.body.name);
+    pdfParser.loadPDF(pdfStorePath);
+
+
     //pdfParser.loadPDF("/Users/sakshi/cmpe273-groupproject/project/MediReport/Backend/src/"+fileName);
 });
 
