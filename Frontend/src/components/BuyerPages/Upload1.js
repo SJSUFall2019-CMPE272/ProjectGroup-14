@@ -12,7 +12,7 @@ axios.defaults.withCredentials = true;
 class ImageUpload extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {file: '',imagePreviewUrl: '', pageNumber: 2,sample:'',  redirectVar: null,sample:false};
+      this.state = {file: '',imagePreviewUrl: '', pageNumber: 2, redirectVar: null, sample:false, fileName: ''};
       this.handleClick = this.handleClick.bind(this);
     }
   
@@ -20,13 +20,16 @@ class ImageUpload extends React.Component {
       e.preventDefault();
       console.log('handle uploading-', this.state.file);
       let data = new FormData();
-      console.log("selectedFile and index",this.state.file);
+      console.log("selectedFile and index", this.state.file);
+      console.log("selectedFile and index", this.state.file["name"]);
+      console.log("selectedFile and index", this.state.file.name);
       data.append('file', this.state.file);
       data.append('name', this.state.file.name);
       data.append('image', this.state.file.name);
       data.append('description', "new file");
       data.append('section', "report");
       data.append('owner_id', "1");
+
       axios.post(`http://${HOSTNAME}:3001/orders/menu_item/add`, data)
       .then((response) => {
           console.log("addMenuItem");
