@@ -95,6 +95,19 @@ class ItemStore(object):
                 result_entity["comment"] = str(result["comment"]["value"])
                 #print(result_entity)
 
+            # food_sparql_query = self.getFoodQuery(entity, langCode)
+            # food_query_results = food_sparql_query.query().convert()
+            #
+            # for result in food_query_results["results"]["bindings"]:
+            #     result_entity["foods"].append(str(result["label"]["value"]))
+
+            food_dict = dict()
+            food_sparql_query = self.getLowFoodQuery(entity, langCode)
+            food_query_results = food_sparql_query.query().convert()
+
+            for result in food_query_results["results"]["bindings"]:
+                result_entity["foods"].append(str(result["label"]["value"]))
+
             food_sparql_query = self.getFoodQuery(entity, langCode)
             food_query_results = food_sparql_query.query().convert()
 
@@ -140,6 +153,31 @@ class ItemStore(object):
         return sparql
 
     def getFoodQuery(self, entity, langCode):
+        sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+        sparql.setReturnFormat(JSON)
+        query = """
+            PREFIX dbo: <http://dbpedia.org/ontology/>
+        PREFIX dbp: <http://dbpedia.org/resource/>
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+        SELECT distinct(?food) ?label where 
+           { 
+            ?food rdf:type dbo:Food .
+            ?food rdfs:label ?label .
+            ?food dbo:abstract ?abstract .
+            FILTER regex(?abstract, "%s", "i")
+            FILTER (langMatches(lang(?label),"%s"))
+            FILTER (langMatches(lang(?abstract),"%s"))
+           }
+        """ % (entity, langCode, langCode)
+
+        sparql.setQuery(query)
+
+        return sparql
+
+    def getLowFoodQuery(self, entity, langCode):
         sparql = SPARQLWrapper("http://dbpedia.org/sparql")
         sparql.setReturnFormat(JSON)
         query = """
