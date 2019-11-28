@@ -251,7 +251,13 @@ class ReportView extends Component {
 
     getAgeGroup(age) {
         let ageGroup = "";
-        if (age >= 50 && age <= 69) {
+        if (age < 5) {
+            ageGroup = "<5"
+        } else if (age >= 5 && age <= 14) {
+            ageGroup = "5-14"
+        } else if (age >= 15 && age <= 49) {
+            ageGroup = "15-49"
+        } else if (age >= 50 && age <= 69) {
             ageGroup = "50-69"
         } else if (age >= 70) {
             ageGroup = "70+"
