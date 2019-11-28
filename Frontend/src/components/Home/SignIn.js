@@ -147,7 +147,7 @@ class Login extends Component {
                             <FacebookLoginButton onClick={this.facebookAuth}/>
                             <GoogleLoginButton onClick={this.googleAuth}/>
                             <div className="text-centre" style={{color:"black"}}>
-                                <a href="/create">Create your account</a>
+                                <a href="/signup">Create your account</a>
                             </div>
                         </Form>
                     </React.Fragment>

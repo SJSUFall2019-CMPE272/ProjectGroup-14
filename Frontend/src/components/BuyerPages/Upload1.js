@@ -149,7 +149,7 @@ class ImageUpload extends React.Component {
               type="file" 
               onChange={(e)=>this._handleImageChange(e)}  required/>
             <button className="submitButton" 
-              type="submit">Upload Image</button>
+              type="submit">Upload Report</button>
           </form>
 
 

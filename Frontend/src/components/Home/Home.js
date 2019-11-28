@@ -5,6 +5,7 @@ import '../../styles/Navbar.css';
 // import FormPage from './FormPage.js'
 import {facebookAuth, googleAuth, signUpMongo} from "../../js/actions/accessActions";
 import {connect} from "react-redux";
+import {Redirect} from 'react-router';
 
 function mapStateToProps(store) {
     return {
@@ -80,8 +81,10 @@ class Navbar extends Component {
     };
 
     render() {
+        const redirectVar = (this.props.signupSuccess==true) ? <Redirect to="/login"/> : null;
         return (
             <div>
+                {redirectVar}
             <div style={{width:"58%",float:"left"}} class="body">
                 </div>
                 {/* <Particles

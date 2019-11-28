@@ -59,7 +59,7 @@ class LandingPage extends Component {
           </a>
         </li>
         <li class="nav-item">
-          <a href="/home" class="nav-link border border-light rounded"
+          <a href="/login" class="nav-link border border-light rounded"
             >
             <i class="fab fa-github mr-2"></i>LOGIN
           </a>
