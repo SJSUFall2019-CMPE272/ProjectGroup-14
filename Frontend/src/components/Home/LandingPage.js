@@ -239,6 +239,9 @@ class LandingPage extends Component {
           {/* <!-- Main heading */}
           <hr/>
 
+          <p style={{font:"'Numans', sans-serif"}}>Perplexed about the complicated medical terms??
+             in your prescription or medical reports.<br/>
+             Worry not, we at MediReport have just the solution to ease your pain!</p>
           <p>
             An application that enables end-users who have don't have a medical background,
             to <strong>interpret the meanings</strong> of various <strong>medical/physiological parameters</strong> that are
@@ -280,8 +283,8 @@ class LandingPage extends Component {
               <i class="fas fa-code fa-2x indigo-text"></i>
             </div>
             <div class="col-10">
-              <h5 class="feature-title">Bootstrap 4</h5>
-              <p class="grey-text">Thanks to MDB you can take advantage of all feature of newest Bootstrap 4.</p>
+              <h5 class="feature-title">Upload</h5>
+              <p class="grey-text">Upload your prescription in pdf format</p>
             </div>
           </div>
           {/* <!--/First row*/}
@@ -294,10 +297,8 @@ class LandingPage extends Component {
               <i class="fas fa-book fa-2x blue-text"></i>
             </div>
             <div class="col-10">
-              <h5 class="feature-title">Detailed documentation</h5>
-              <p class="grey-text">We give you detailed user-friendly documentation at your disposal. It will help you
-                to implement your ideas
-                easily.
+              <h5 class="feature-title">Detailed View</h5>
+              <p class="grey-text">After successful upload, interpretation of medical jargon and personalized commentary will be rendered.
               </p>
             </div>
           </div>
@@ -311,10 +312,8 @@ class LandingPage extends Component {
               <i class="fas fa-graduation-cap fa-2x cyan-text"></i>
             </div>
             <div class="col-10">
-              <h5 class="feature-title">Lots of tutorials</h5>
-              <p class="grey-text">We care about the development of our users. We have prepared numerous tutorials,
-                which allow you to learn
-                how to use MDB as well as other technologies.</p>
+              <h5 class="feature-title">Multiple Languages</h5>
+              <p class="grey-text">Not familar with English? Translate into your native language at a click of a button</p>
             </div>
           </div>
           {/* <!--/Third row*/}
@@ -325,7 +324,7 @@ class LandingPage extends Component {
         {/* <!--Grid column*/}
         <div class="col-lg-6 col-md-12">
 
-          <p class="h5 text-center mb-4">Watch our "5 min Quick Start" tutorial</p>
+          <p class="h5 text-center mb-4">Take a tour!!</p>
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
           </div>
@@ -356,9 +355,9 @@ class LandingPage extends Component {
               <i class="fas fa-check-circle fa-2x indigo-text"></i>
             </div>
             <div class="col-10">
-              <h6 class="feature-title">Free for personal and commercial use</h6>
-              <p class="grey-text">Our license is user-friendly. Feel free to use MDB for both private as well as
-                commercial projects.
+<h6 class="feature-title">Dietry Recommendations</h6>
+              <p class="grey-text">Get dietary recommendations according to your report parameters
+
               </p>
               <div style={{height:"15px"}}></div>
             </div>
@@ -371,7 +370,7 @@ class LandingPage extends Component {
               <i class="fas fa-check-circle fa-2x indigo-text"></i>
             </div>
             <div class="col-10">
-              <h6 class="feature-title">400+ UI elements</h6>
+              <h6 class="feature-title">Free for personal use</h6>
               <p class="grey-text">An impressive collection of flexible components allows you to develop any project.
               </p>
               <div style={{height:"15px"}}></div>
@@ -385,8 +384,8 @@ class LandingPage extends Component {
               <i class="fas fa-check-circle fa-2x indigo-text"></i>
             </div>
             <div class="col-10">
-              <h6 class="feature-title">600+ icons</h6>
-              <p class="grey-text">Hundreds of useful, scalable, vector icons at your disposal.</p>
+              <h6 class="feature-title">Support</h6>
+              <p class="grey-text">Need help? Contact Support at medireporthelp@gmail.com</p>
               <div style={{height:"15px"}}></div>
             </div>
           </div>
@@ -649,73 +648,6 @@ class LandingPage extends Component {
   </div>
 </main>
 {/* <!--Main layout*/}
-
-{/* <!--Footer*/}
-<footer class="page-footer text-center font-small mt-4 wow fadeIn">
-
-  {/* <!--Call to action*/}
-  <div class="pt-4">
-    <a class="btn btn-outline-white" href="https://mdbootstrap.com/getting-started/"  role="button">Download
-      MDB
-      <i class="fas fa-download ml-2"></i>
-    </a>
-    <a class="btn btn-outline-white" href="https://mdbootstrap.com/bootstrap-tutorial/"  role="button">Start
-      free tutorial
-      <i class="fas fa-graduation-cap ml-2"></i>
-    </a>
-  </div>
-  {/* <!--/.Call to action*/}
-
-  <hr class="my-4"/>
-
-  {/* <!-- Social icons */}
-  <div class="pb-4">
-    <a href="https://www.facebook.com/mdbootstrap" >
-      <i class="fab fa-facebook-f mr-3"></i>
-    </a>
-
-    <a href="https://twitter.com/MDBootstrap" >
-      <i class="fab fa-twitter mr-3"></i>
-    </a>
-
-    <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" >
-      <i class="fab fa-youtube mr-3"></i>
-    </a>
-
-    <a href="https://plus.google.com/u/0/b/107863090883699620484" >
-      <i class="fab fa-google-plus-g mr-3"></i>
-    </a>
-
-    <a href="https://dribbble.com/mdbootstrap" >
-      <i class="fab fa-dribbble mr-3"></i>
-    </a>
-
-    <a href="https://pinterest.com/mdbootstrap" >
-      <i class="fab fa-pinterest mr-3"></i>
-    </a>
-
-    <a href="https://github.com/mdbootstrap/bootstrap-material-design" >
-      <i class="fab fa-github mr-3"></i>
-    </a>
-
-    <a href="http://codepen.io/mdbootstrap/" >
-      <i class="fab fa-codepen mr-3"></i>
-    </a>
-  </div>
-  {/* <!-- Social icons */}
-
-  {/* <!--Copyright*/}
-  <div class="footer-copyright py-3">
-    © 2018 Copyright:
-    <a href="https://mdbootstrap.com/bootstrap-tutorial/" > MDBootstrap.com </a>
-  </div>
-  {/* <!--/.Copyright*/}
-
-</footer>
-{/* <!--/.Footer*/}
-
-
-
             </div>
             )}
 
