@@ -107,6 +107,11 @@ export default class Chart extends Component {
 
     return (
       <div>
+          <div class="header">
+                        <a style={{color:"blue"}} href="/" class="logo">MEDIREPORT</a>
+                            <div class="header-right">
+                            </div>
+                        </div>
            <div className="text-overlay1">
                 <div className="header">
                     <a href="/" class="logo">MEDIREPORT</a>
