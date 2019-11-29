@@ -81,7 +81,7 @@ class Navbar extends Component {
                 <div style={{ width: "42%", float: "right" }}>
                     <React.Fragment>
                         <div class="header">
-                            <a href="/" class="logo">MEDIREPORT</a>
+                        <a style={{color:"blue"}} href="/" class="logo">MEDIREPORT</a>
                             <div class="header-right">
                             </div>
                         </div>
