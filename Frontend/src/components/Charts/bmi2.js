@@ -113,11 +113,6 @@ export default class Chart extends Component {
                             </div>
                         </div>
            <div className="text-overlay1">
-                <div className="header">
-                    <a href="/" class="logo">MEDIREPORT</a>
-                    <div class="header-right">
-                    </div>
-                </div>
         <h2>Body Mass Index Chart</h2>
         <Line redraw={true} ref="chart" data={data} options={options} />
         <label>

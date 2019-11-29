@@ -14,7 +14,7 @@ body {
 .main {
   display: grid;
   height: 800px;    
-  padding-top: 130px;
+  padding-top: 10px;
   /* grid-template-columns: 1fr 6fr; */
   grid-template-columns: repeat(auto-fit, minmax(479px, auto));
 }
