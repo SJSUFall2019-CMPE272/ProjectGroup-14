@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import { FacebookLoginButton, GoogleLoginButton } from "react-social-login-buttons";
+import { GoogleLogin } from 'react-google-login';
 import '../../styles/Navbar.css';
 // import FormPage from './FormPage.js'
-import { facebookAuth, googleAuth, signUpMongo } from "../../js/actions/accessActions";
+import { signUpMongo } from "../../js/actions/accessActions";
 import { connect } from "react-redux";
 import { Redirect } from 'react-router';
 
@@ -16,9 +16,7 @@ function mapStateToProps(store) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        submitSignUp: (book) => dispatch(signUpMongo(book)),
-        facebookAuth: dispatch(facebookAuth),
-        googleAuth: dispatch(googleAuth)
+        submitSignUp: (book) => dispatch(signUpMongo(book))
     };
 }
 
@@ -28,40 +26,12 @@ class Navbar extends Component {
         super(props);
         //maintain the state required for this component
         this.state = {
-            genderOptions: ['Male', 'Female', 'Others']
+            genderOptions: ['Male', 'Female', 'Others'],
+            google: false
         }
         this.submitSignUp = this.submitSignUp.bind(this);
-        this.facebookAuth = this.facebookAuth.bind(this);
-        this.googleAuth = this.googleAuth.bind(this);
+        this.responseGoogle = this.responseGoogle.bind(this);
     }
-
-    //   submitSignUp(e) {
-    //     let data = {
-    //       'first' : null,
-    //       'last' : null,
-    //       'email' : null,
-    //       'password' : null,
-    //       'type':"buyer" 
-    //     }
-    //     e.preventDefault(); 
-    //     data.first = (e.target[0].value);
-    //     data.last = (e.target[1].value);
-    //     data.email = (e.target[2].value);
-    //     data.password = (e.target[3].value);
-    //     console.log("insumbitsign in ", data);
-    //     this.props.signup(data);
-    // }
-
-    facebookAuth = () => {
-        console.log("test");
-        this.props.facebookAuth();
-
-    };
-
-    googleAuth = () => {
-        this.props.googleAuth();
-
-    };
 
     submitSignUp = (e) => {
         e.preventDefault();
@@ -88,8 +58,18 @@ class Navbar extends Component {
 
     };
 
+    responseGoogle = (response) => {
+        console.log(response);
+        localStorage.setItem("age","26");
+        localStorage.setItem("gender",);
+        localStorage.setItem("name","sakshi");
+       this.setState({
+           google:true
+       })
+      }
+       
     render() {
-        const redirectVar = (this.props.signupSuccess == true) ? <Redirect to="/login" /> : null;
+        const redirectVar = (this.props.signupSuccess == true || this.state.google==true) ? <Redirect to="/login" /> : null;
         return (
             <div>
                 {redirectVar}
@@ -132,22 +112,27 @@ class Navbar extends Component {
                                 </FormGroup>
                                 <FormGroup>
                                     <Label>Email</Label>
-                                    {/*<Input name="emailId" type="email" placeholder="abc@example.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></Input>*/}
-                                    <Input name="emailId" placeholder="abc@example.com" required></Input>
+                                    <Input name="emailId" type="email" placeholder="abc@example.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></Input>
+                                    {/* <Input name="emailId" placeholder="abc@example.com" required></Input> */}
                                 </FormGroup>
                                 <FormGroup>
                                     <Label>Password</Label>
-                                    {/*<Input name="password" type="password" placeholder="Password" name="password" minlength="8" required></Input>*/}
-                                    <Input name="password" type="password" placeholder="Password" name="password"
-                                        required></Input>
+                                    <Input name="password" type="password"  placeholder="********" name="password" minlength="8" required></Input>
+                                    {/* <Input name="password" type="password" placeholder="Password" name="password"
+                                        required></Input> */}
                                 </FormGroup>
                                 <Button className="btn-lg btn-dark btn-block">Create your account</Button>
                             </Form>
                             <div className="text-center pt-3">Or continue wtih
 
-                            <GoogleLoginButton onClick={this.googleAuth} />
-                            <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true" ></div>
-                                <div className="text-centre">
+                            <GoogleLogin
+    clientId="986335033587-3sjcnb8lqm06tgkifhsc5bshipp9ldga.apps.googleusercontent.com"
+    buttonText="Login"
+    onSuccess={this.responseGoogle}
+    onFailure={this.responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />
+                        <div className="text-centre">
                                 <h4>Have an account?</h4> <a style={{ fontSize: "19px", color: "black" }}
                                     href="/login">Sign in</a>
                                     </div>

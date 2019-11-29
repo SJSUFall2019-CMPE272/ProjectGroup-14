@@ -48,7 +48,7 @@ class LandingPage extends Component {
 
       {/* <!-- Right */}
       <ul class="navbar-nav nav-flex-icons">
-        <li class="nav-item">
+        {/* <li class="nav-item">
           <a href="https://www.facebook.com/mdbootstrap" class="nav-link" >
             <i class="fab fa-facebook-f"></i>
           </a>
@@ -57,7 +57,7 @@ class LandingPage extends Component {
           <a href="https://twitter.com/MDBootstrap" class="nav-link" >
             <i class="fab fa-twitter"></i>
           </a>
-        </li>
+        </li> */}
         <li class="nav-item">
           <a href="/login" class="nav-link border border-light rounded"
             >

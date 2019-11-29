@@ -23,7 +23,7 @@ class Main extends Component {
                 <Route exact path="/land" component={LandingPage}/>
                 <Route exact path="/bmi" component={bmi}/>
                 <Route exact path="/chart" component={bmi2}/>
-                <Route exact path="/chat" component={ChatInput  }/>
+                <Route exact path="/chat" component={ChatInput}/>
                 <Route exact path="/signup" component={Home}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/sidebar" component={SideBar}/>
