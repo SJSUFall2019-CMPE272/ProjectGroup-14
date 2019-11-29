@@ -96,13 +96,6 @@ class ImageUpload extends React.Component {
     }
 
     render() {
-      // let {imagePreviewUrl} = this.state;
-      // let $imagePreview = null;
-      // if (imagePreviewUrl) {
-      //   $imagePreview = (<img src={imagePreviewUrl} />);
-      // } else {
-      //   $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
-      // }
       return (
         <div class="body1">
           {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
@@ -115,13 +108,17 @@ class ImageUpload extends React.Component {
                     <div class="header-right">
                     </div>
                 </div>
-          <form onSubmit={(e)=>this._handleSubmit(e)}>
-            <input className="fileInput" 
-              type="file" accept='.pdf'
-              onChange={(e)=>this._handleImageChange(e)}  required/>
-            <button className="submitButton" 
-              type="submit">Upload Report</button>
-          </form>
+
+            <div style={{paddingTop: "200px"}}>
+                <form onSubmit={(e)=>this._handleSubmit(e)}>
+                    <input className="fileInput"
+                           type="file" accept='.pdf'
+                           onChange={(e)=>this._handleImageChange(e)}  required/>
+                    <button className="submitButton"
+                            type="submit">Upload Report</button>
+                </form>
+            </div>
+
           {/* </div> */}
                  {this.getPreview()}   
         </div>

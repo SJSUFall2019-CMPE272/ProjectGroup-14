@@ -50,11 +50,6 @@ const enNameToLocalNameMap = [
     {"enName": "Russian", "localName": "русский язык"},
 ];
 
-const diseaseData = [
-    {"male:70+": ["Cardiovascular diseases","Neoplasms","Chronic respiratory diseases","Neurological disorders","Respiratory infections and tuberculosis","Diabetes and kidney diseases","Digestive diseases","Unintentional injuries","Enteric infections","Other non-communicable diseases","Transport injuries","Self-harm and interpersonal violence","Other infectious diseases","Nutritional deficiencies","Substance use disorders","Skin and subcutaneous diseases","Neglected tropical diseases and malaria","Musculoskeletal disorders","HIV/AIDS and sexually transmitted infections"]},
-    {"male:50-69": ["Cardiovascular diseases", "Neoplasms", "Chronic respiratory diseases", "Digestive diseases", "Respiratory infections and tuberculosis", "Diabetes and kidney diseases", "Unintentional injuries", "Transport injuries", "Self-harm and interpersonal violence", "Neurological disorders", "Enteric infections", "Substance use disorders", "HIV/AIDS and sexually transmitted infections", "Other non-communicable diseases", "Other infectious diseases", "Neglected tropical diseases and malaria", "Skin and subcutaneous diseases", "Nutritional deficiencies", "Musculoskeletal disorders"]}
-]
-
 const diseaseDataMap = new Map();
 diseaseDataMap.set("male:70+", ["Cardiovascular diseases","Neoplasms","Chronic respiratory diseases","Neurological disorders","Respiratory infections and tuberculosis","Diabetes and kidney diseases","Digestive diseases","Unintentional injuries","Enteric infections","Other non-communicable diseases","Transport injuries","Self-harm and interpersonal violence","Other infectious diseases","Nutritional deficiencies","Substance use disorders","Skin and subcutaneous diseases","Neglected tropical diseases and malaria","Musculoskeletal disorders","HIV/AIDS and sexually transmitted infections"]);
 diseaseDataMap.set("male:50-69", ["Cardiovascular diseases", "Neoplasms", "Chronic respiratory diseases", "Digestive diseases", "Respiratory infections and tuberculosis", "Diabetes and kidney diseases", "Unintentional injuries", "Transport injuries", "Self-harm and interpersonal violence", "Neurological disorders", "Enteric infections", "Substance use disorders", "HIV/AIDS and sexually transmitted infections", "Other non-communicable diseases", "Other infectious diseases", "Neglected tropical diseases and malaria", "Skin and subcutaneous diseases", "Nutritional deficiencies", "Musculoskeletal disorders"]);
@@ -74,15 +69,14 @@ class ReportView extends Component {
         this.state = {
             data: [],
             numPages: null,
-            pageNumber: 2,
+            pageNumber: 1,
             langCode: "en",
             isOpenModal: false,
             name: localStorage.getItem('name'),
             gender: localStorage.getItem('gender'),
             age: localStorage.getItem('age'),
             searchTerm: this.props.location.state.searchTerm,
-           // searchTerm: localStorage.getItem('filename'),
-            file:sample,
+            file: sample,
             redirectVar: null
         };
         this.setLanguage = this.setLanguage.bind(this);
@@ -252,6 +246,12 @@ class ReportView extends Component {
 
     componentDidMount() {
         this.getData();
+
+        if (this.state.searchTerm != undefined) {
+            this.setState({file:  require("/Users/vijendra4/GoogleDrive/sjsu/272/MediReport/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
+                console.log("fileName123", this.state.file)
+            })
+        }
     }
 
     setLanguage = (enLanguageName) => {
@@ -307,9 +307,7 @@ class ReportView extends Component {
     }
 
     render() {
-        if(this.state.searchTerm!=undefined){
-            file:  '../../pdfs/'+this.state.searchTerm;
-        }
+
         return (
             <div>
                 {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
@@ -339,7 +337,6 @@ class ReportView extends Component {
                         <div class="btn-tweet">
                             <button class="btn btn-primary submit-btn" type="button"
                                     onClick={() => {window.open("live", "_blank")}}>
-                            {/*onClick={() => {this.setState({redirectVar: true})}}>*/}
                                 Click to personalise more!
                             </button>
                         </div>
@@ -354,7 +351,7 @@ class ReportView extends Component {
                         >
                             <Page pageNumber={this.state.pageNumber}/>
                         </Document>
-                        <p>Page {this.state.pageNumber} of {this.state.numPages}</p>
+                        Page {this.state.pageNumber} of {this.state.numPages}
                     </div>
                     <div>
                         <Button
