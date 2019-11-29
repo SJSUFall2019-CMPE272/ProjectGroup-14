@@ -32,6 +32,7 @@ app.use(session({
 }));
 
 app.use(function(req, res, next) {
+    //res.setHeader('Access-Control-Allow-Origin', 'http://54.184.206.203:3000');
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
@@ -52,6 +53,7 @@ const chatRoutes = require('./src/routes/Chat');
 
 //use cors to allow cross origin resource sharing
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+//app.use(cors({ origin: 'http://54.184.206.203:3000', credentials: true }));
 
 app.use(bodyParser.json({ limit: "50MB" }));
 

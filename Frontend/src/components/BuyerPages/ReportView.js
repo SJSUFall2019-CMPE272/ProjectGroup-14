@@ -138,6 +138,10 @@ class ReportView extends Component {
             </li>;
         });
 
+        console.log("foodArr.length")
+        console.log(foodArr.length)
+
+
         return <div>
             <ul className="ul li">{renderTodos}</ul>
         </div>;
@@ -187,25 +191,35 @@ class ReportView extends Component {
                             style={{fontSize: 12}}>{jsonOrder.comment}</div>
                             <br/>
 
-                            {this.getOrderStatusBadge("Preparing", "Dietary recommendations")} -
-                            <br/>
-                            <div style={{fontSize: 12}}>Below food items may impact your {jsonOrder.entityName} levels -</div>
-                            <br/>
-                            <div>
-                                <Scrollbars
-                                    style={{ height: 200 }}>
-                                    {this.getListOfFoodItems(jsonOrder.foods)}
-                                </Scrollbars>
-                            </div>
+                            {jsonOrder.foods.length > 0 &&
+                                <div>
+                                    {this.getOrderStatusBadge("Preparing", "Dietary recommendations")} -
+                                    <br/>
+                                    <div style={{fontSize: 12}}>Below food items may impact your {jsonOrder.entityName} levels -</div>
+                                    <br/>
+                                    <div>
+                                        <Scrollbars
+                                            style={{ height: 200 }}>
+                                            {this.getListOfFoodItems(jsonOrder.foods)}
+                                        </Scrollbars>
+                                    </div>
+                                </div>
+                            }
 
                             <br/><br/>
-                            {this.getOrderStatusBadge("Preparing", "Potential diagnosis")} -
-                            <div style={{fontSize: 12}}>{jsonOrder.entityName} imbalance can lead to the following conditions -</div>
-                            <br/>
-                            <Scrollbars
-                                style={{ height: 200 }}>
-                                {this.getListOfFoodItems(jsonOrder.diseases)}
-                            </Scrollbars>
+
+                            {jsonOrder.diseases.length > 0 &&
+                                <div>
+                                    {this.getOrderStatusBadge("Preparing", "Potential diagnosis")} -
+                                    <div style={{fontSize: 12}}>{jsonOrder.entityName} imbalance can lead to the following conditions -</div>
+                                    <br/>
+                                    <Scrollbars
+                                        style={{ height: 200 }}>
+                                        {this.getListOfFoodItems(jsonOrder.diseases)}
+                                    </Scrollbars>
+                                </div>
+                            }
+
 
                         </Card.Text>
                         <Button onClick={() => this.goToChat(jsonOrder)} type="button" variant="primary">Learn more</Button>

@@ -2,9 +2,7 @@ import React, {Component} from "react";
 import "../../styles/Upload.css"
 import {HOSTNAME} from "../Constants/Constants";
 import axios from 'axios';
-import sample from '../../pdfs/full-report.pdf';
 import {Document, Page} from 'react-pdf';
-import Particles from 'react-particles-js'
 import {Redirect} from "react-router";
 
 axios.defaults.withCredentials = true;

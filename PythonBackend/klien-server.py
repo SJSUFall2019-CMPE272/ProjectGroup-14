@@ -34,12 +34,13 @@ class ItemStore(object):
 
         text = text\
             .replace("\r", " ")\
-            .replace("\n", " ")\
+            .replace("\n", " ") \
+            .replace("gm", " ") \
             .replace("mg/dl", " ")\
             .replace("high", " ") \
             .lower()
 
-        text = re.sub(r'[^A-Za-z ]+', " ", text)
+        text = re.sub(r'[^A-Za-z ]+', " is a ", text)
         text = re.sub(' +', " ", text)
 
         text = text \
@@ -55,17 +56,20 @@ class ItemStore(object):
         sentence = sp(text)
         text = " ".join([token.lemma_ for token in sentence])
 
-        # print("lemmatized text")
-        # print(text)
+        print("lemmatized text")
+        print(text)
 
         doc = nlp(json.dumps(text))
         entities = doc.ents
-        data = {'entities': []}
 
         entitySet = set()
 
         for entity in entities:
             entitySet.add(str(entity))
+            splits = str(entity).split(" ")
+
+            for split in splits:
+                entitySet.add(str(split).strip())
 
         print(entitySet)
 
@@ -99,12 +103,12 @@ class ItemStore(object):
             # for result in food_query_results["results"]["bindings"]:
             #     result_entity["foods"].append(str(result["label"]["value"]))
 
-            food_dict = dict()
-            food_sparql_query = self.getLowFoodQuery(entity, langCode)
-            food_query_results = food_sparql_query.query().convert()
-
-            for result in food_query_results["results"]["bindings"]:
-                result_entity["foods"].append(str(result["label"]["value"]))
+            # food_dict = dict()
+            # food_sparql_query = self.getLowFoodQuery(entity, langCode)
+            # food_query_results = food_sparql_query.query().convert()
+            #
+            # for result in food_query_results["results"]["bindings"]:
+            #     result_entity["foods"].append(str(result["label"]["value"]))
 
             food_sparql_query = self.getFoodQuery(entity, langCode)
             food_query_results = food_sparql_query.query().convert()
