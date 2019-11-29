@@ -2,9 +2,7 @@ import React, {Component} from "react";
 import "../../styles/Upload.css"
 import {HOSTNAME} from "../Constants/Constants";
 import axios from 'axios';
-import sample from '../../pdfs/full-report.pdf';
 import {Document, Page} from 'react-pdf';
-import Particles from 'react-particles-js'
 import {Redirect} from "react-router";
 
 axios.defaults.withCredentials = true;
@@ -107,26 +105,25 @@ class ImageUpload extends React.Component {
       // }
       return (
         <div class="body1">
-
           {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
                     pathname: "/reportView",
                     state: {searchTerm: this.state.fileName}
                 }}/>}
-        <div className="text-overlay1">
+        {/* <div className="text-overlay1"> */}
                 <div className="header">
-                    <a href="/" class="logo">MEDIREPORT</a>
+                     <a style={{color:"black"}} href="/" class="logo">back</a>
                     <div class="header-right">
                     </div>
                 </div>
           <form onSubmit={(e)=>this._handleSubmit(e)}>
             <input className="fileInput" 
-              type="file" 
+              type="file" accept='.pdf'
               onChange={(e)=>this._handleImageChange(e)}  required/>
             <button className="submitButton" 
               type="submit">Upload Report</button>
           </form>
-          </div>
-                 {/* {this.getPreview()}    */}
+          {/* </div> */}
+                 {this.getPreview()}   
         </div>
       )
     }

@@ -80,8 +80,9 @@ class ReportView extends Component {
             name: localStorage.getItem('name'),
             gender: localStorage.getItem('gender'),
             age: localStorage.getItem('age'),
-            //searchTerm: this.props.location.state.searchTerm,
-            searchTerm: localStorage.getItem('filename'),
+            searchTerm: this.props.location.state.searchTerm,
+           // searchTerm: localStorage.getItem('filename'),
+            file:sample,
             redirectVar: null
         };
         this.setLanguage = this.setLanguage.bind(this);
@@ -292,6 +293,9 @@ class ReportView extends Component {
     }
 
     render() {
+        if(this.state.searchTerm!=undefined){
+            file:  '../../pdfs/'+this.state.searchTerm;
+        }
         return (
             <div>
                 {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
@@ -329,7 +333,7 @@ class ReportView extends Component {
                 <div className='rowC'>
                     <div>
                         <Document
-                            file={sample}
+                            file={this.state.file}
                             onLoadSuccess={this.onDocumentLoadSuccess}
                         >
                             <Page pageNumber={this.state.pageNumber}/>

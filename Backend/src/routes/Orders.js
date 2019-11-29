@@ -6,7 +6,7 @@ const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
-const pdfStorePath = path.join(__dirname, '..', 'pdfs');
+const pdfStorePath = path.join(__dirname, '..', '..', '..', 'Frontend', 'src', 'pdfs', req.body.name);
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -90,8 +90,7 @@ router.post('/pdf/read', function (req, res) {
                 res.send(response.data);
             })
     });
-
-    const pdfReadPath = path.join(__dirname, '..', 'pdfs', req.body.name);
+    const pdfReadPath = path.join(__dirname, '..', '..', '..', 'Frontend', 'src', 'pdfs', req.body.name);
     console.log("pdfReadPath", pdfReadPath)
     //pdfParser.loadPDF(imageStorePath+req.body.name);
     pdfParser.loadPDF(pdfReadPath);

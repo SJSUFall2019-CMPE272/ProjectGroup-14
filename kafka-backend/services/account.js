@@ -39,6 +39,7 @@ function signup(msg, callback) {
     console.log(msg);
 
     // const {body: {user}} = msg;
+    if(msg.user!==undefined){
     const user = msg.user;
 
     console.log("save user");
@@ -55,6 +56,7 @@ function signup(msg, callback) {
 
     return finalUser.save()
         .then(() => callback(null, finalUser.toAuthJSON()));
+    }
 }
 
 function signin(msg, callback) {

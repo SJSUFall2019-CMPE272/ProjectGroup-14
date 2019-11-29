@@ -52,7 +52,9 @@ class Login extends Component {
 
         console.log("signInBuyer payload");
         console.log({"user": data});
-
+        localStorage.setItem("age",26);
+        localStorage.setItem("gender","male");
+        localStorage.setItem("name",e.target[0].value);
         //this.props.signInBuyer({"user": data});
         this.props.submitSignIn({"user": data});
     }

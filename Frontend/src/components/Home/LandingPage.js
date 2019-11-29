@@ -13,7 +13,7 @@ class LandingPage extends Component {
   <div class="container">
 
     {/* <!-- Brand */}
-    <a class="navbar-brand" href="https://mdbootstrap.com/material-design-for-bootstrap/">
+    <a class="navbar-brand" href="/land">
       <h2><b>MEDIREPORT</b></h2>
     </a>
 
@@ -34,9 +34,6 @@ class LandingPage extends Component {
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/upload">Upload</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/homeBuyer/reportView/" >Report View</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/chart" >BMI Chart</a>
