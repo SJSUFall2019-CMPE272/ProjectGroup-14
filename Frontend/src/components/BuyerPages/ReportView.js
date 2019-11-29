@@ -76,7 +76,7 @@ class ReportView extends Component {
             numPages: null,
             pageNumber: 2,
             langCode: "en",
-            isOpenModal: true,
+            isOpenModal: false,
             name: localStorage.getItem('name'),
             gender: localStorage.getItem('gender'),
             age: localStorage.getItem('age'),
@@ -139,6 +139,10 @@ class ReportView extends Component {
             </li>;
         });
 
+        console.log("foodArr.length")
+        console.log(foodArr.length)
+
+
         return <div>
             <ul className="ul li">{renderTodos}</ul>
         </div>;
@@ -188,25 +192,35 @@ class ReportView extends Component {
                             style={{fontSize: 12}}>{jsonOrder.comment}</div>
                             <br/>
 
-                            {this.getOrderStatusBadge("Preparing", "Dietary recommendations")} -
-                            <br/>
-                            <div style={{fontSize: 12}}>Below food items may impact your {jsonOrder.entityName} levels -</div>
-                            <br/>
-                            <div>
-                                <Scrollbars
-                                    style={{ height: 200 }}>
-                                    {this.getListOfFoodItems(jsonOrder.foods)}
-                                </Scrollbars>
-                            </div>
+                            {jsonOrder.foods.length > 0 &&
+                                <div>
+                                    {this.getOrderStatusBadge("Preparing", "Dietary recommendations")} -
+                                    <br/>
+                                    <div style={{fontSize: 12}}>Below food items may impact your {jsonOrder.entityName} levels -</div>
+                                    <br/>
+                                    <div>
+                                        <Scrollbars
+                                            style={{ height: 200 }}>
+                                            {this.getListOfFoodItems(jsonOrder.foods)}
+                                        </Scrollbars>
+                                    </div>
+                                </div>
+                            }
 
                             <br/><br/>
-                            {this.getOrderStatusBadge("Preparing", "Potential diagnosis")} -
-                            <div style={{fontSize: 12}}>{jsonOrder.entityName} imbalance can lead to the following conditions -</div>
-                            <br/>
-                            <Scrollbars
-                                style={{ height: 200 }}>
-                                {this.getListOfFoodItems(jsonOrder.diseases)}
-                            </Scrollbars>
+
+                            {jsonOrder.diseases.length > 0 &&
+                                <div>
+                                    {this.getOrderStatusBadge("Preparing", "Potential diagnosis")} -
+                                    <div style={{fontSize: 12}}>{jsonOrder.entityName} imbalance can lead to the following conditions -</div>
+                                    <br/>
+                                    <Scrollbars
+                                        style={{ height: 200 }}>
+                                        {this.getListOfFoodItems(jsonOrder.diseases)}
+                                    </Scrollbars>
+                                </div>
+                            }
+
 
                         </Card.Text>
                         <Button onClick={() => this.goToChat(jsonOrder)} type="button" variant="primary">Learn more</Button>
@@ -310,7 +324,8 @@ class ReportView extends Component {
                     <Modal.Header closeButton>{this.getOrderStatusBadge("Ready", "MediReport's personalized recommendation")}</Modal.Header>
                     <Modal.Body>
                         <div style={{fontSize: 14}}>
-                            Hi {this.state.name}! For a {this.state.gender} in the age group {this.getAgeGroup(this.state.age)}, below are the most common diseases. We want you to be healthy.
+                            Hi {this.state.name}! For a {this.state.gender} in the age group {this.getAgeGroup(this.state.age)},
+                            below are the most common diseases. {this.getOrderStatusBadge("Delivered", "<NLG>")}We want you to be healthy.{this.getOrderStatusBadge("Delivered", "</NLG>")}
                             Please close this box to see the food items and complications associated with your medical test.
                         </div>
 
@@ -323,8 +338,9 @@ class ReportView extends Component {
                     <Modal.Footer>
                         <div class="btn-tweet">
                             <button class="btn btn-primary submit-btn" type="button"
-                            onClick={() => {this.setState({redirectVar: true})}}>
-                                Create
+                                    onClick={() => {window.open("live", "_blank")}}>
+                            {/*onClick={() => {this.setState({redirectVar: true})}}>*/}
+                                Click to personalise more!
                             </button>
                         </div>
                     </Modal.Footer>
@@ -341,6 +357,11 @@ class ReportView extends Component {
                         <p>Page {this.state.pageNumber} of {this.state.numPages}</p>
                     </div>
                     <div>
+                        <Button
+                            onClick={() => this.setState({isOpenModal: true})}
+                            type="button" variant="primary">
+                            Click to view MediReport's personal recommendation
+                        </Button>
                         {this.populateSection()}
                     </div>
                 </div>
