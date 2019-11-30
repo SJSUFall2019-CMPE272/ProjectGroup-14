@@ -125,13 +125,13 @@ class Navbar extends Component {
                             </Form>
                             <div className="text-center pt-3">Or continue wtih
 
-                            <GoogleLogin
+                            {/* <GoogleLogin
     clientId="986335033587-3sjcnb8lqm06tgkifhsc5bshipp9ldga.apps.googleusercontent.com"
     buttonText="Login"
     onSuccess={this.responseGoogle}
     onFailure={this.responseGoogle}
     cookiePolicy={'single_host_origin'}
-  />
+  /> */}
                         <div className="text-centre">
                                 <h4>Have an account?</h4> <a style={{ fontSize: "19px", color: "black" }}
                                     href="/login">Sign in</a>

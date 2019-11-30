@@ -187,32 +187,32 @@ class ReportView extends Component {
                             <br/>
 
                             {jsonOrder.foods.length > 0 &&
+                            <div>
+                                {this.getOrderStatusBadge("Preparing", "Dietary recommendations")} -
+                                <br/>
+                                <div style={{fontSize: 12}}>Below food items may impact your {jsonOrder.entityName} levels -</div>
+                                <br/>
                                 <div>
-                                    {this.getOrderStatusBadge("Preparing", "Dietary recommendations")} -
-                                    <br/>
-                                    <div style={{fontSize: 12}}>Below food items may impact your {jsonOrder.entityName} levels -</div>
-                                    <br/>
-                                    <div>
-                                        <Scrollbars
-                                            style={{ height: 200 }}>
-                                            {this.getListOfFoodItems(jsonOrder.foods)}
-                                        </Scrollbars>
-                                    </div>
+                                    <Scrollbars
+                                        style={{ height: 200 }}>
+                                        {this.getListOfFoodItems(jsonOrder.foods)}
+                                    </Scrollbars>
                                 </div>
+                            </div>
                             }
 
                             <br/><br/>
 
                             {jsonOrder.diseases.length > 0 &&
-                                <div>
-                                    {this.getOrderStatusBadge("Preparing", "Potential diagnosis")} -
-                                    <div style={{fontSize: 12}}>{jsonOrder.entityName} imbalance can lead to the following conditions -</div>
-                                    <br/>
-                                    <Scrollbars
-                                        style={{ height: 200 }}>
-                                        {this.getListOfFoodItems(jsonOrder.diseases)}
-                                    </Scrollbars>
-                                </div>
+                            <div>
+                                {this.getOrderStatusBadge("Preparing", "Potential diagnosis")} -
+                                <div style={{fontSize: 12}}>{jsonOrder.entityName} imbalance can lead to the following conditions -</div>
+                                <br/>
+                                <Scrollbars
+                                    style={{ height: 200 }}>
+                                    {this.getListOfFoodItems(jsonOrder.diseases)}
+                                </Scrollbars>
+                            </div>
                             }
 
 
@@ -248,9 +248,7 @@ class ReportView extends Component {
         this.getData();
 
         if (this.state.searchTerm != undefined) {
-
-            this.setState({file:  require("/home/ec2-user/Frontend/src/pdfs" + this.state.searchTerm)}, () => {
-            //this.setState({file:  require("/Users/vijendra4/GoogleDrive/sjsu/272/MediReport/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
+            this.setState({file:  require("/Users/sakshi/cmpe273-groupproject/project/MediReport/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
                 console.log("fileName123", this.state.file)
             })
         }

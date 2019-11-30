@@ -104,7 +104,7 @@ class ImageUpload extends React.Component {
                 }}/>}
         {/* <div className="text-overlay1"> */}
                 <div className="header">
-                     <a style={{color:"black"}} href="/" class="logo">back</a>
+                     <a style={{color:"black"}} href="/" class="logo">MEDIREPORT</a>
                     <div class="header-right">
                     </div>
                 </div>

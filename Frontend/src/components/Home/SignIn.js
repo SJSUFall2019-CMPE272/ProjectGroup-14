@@ -110,7 +110,8 @@ class Login extends Component {
                                 {/* <Input type="password" placeholder="Password" name="password" required></Input> */}
                             </FormGroup>
                             <Button className="btn-lg btn-dark btn-block">Sign in</Button>
-                            <div className="text-center pt-3">Or
+                            <div className="text-center pt-3">
+                                {/* Or
                             <div className="text-center pt-3" style={{color:"black"}}>
                             
                             <GoogleLogin
@@ -119,7 +120,7 @@ class Login extends Component {
     onSuccess={this.responseGoogle}
     onFailure={this.responseGoogle}
     cookiePolicy={'single_host_origin'}
-  />
+  /> */}
                                 <br/><a href="/signup">Create your account</a>
                                 </div>
                             </div>

@@ -16,9 +16,6 @@ const ChatInput = (props) => {
                             <div class="header-right">
                             </div>
                         </div>
-      <div className = "header">
-        <h2>MEDIREPORT CHAT HELP</h2>
-      </div>
       <div className = "main">
           <div className ="content">
           <div>

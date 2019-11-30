@@ -104,8 +104,24 @@ class SimpleForm extends Component {
             {
               id: 'end-message',
               message: 'Thanks! Your data was submitted successfully!',
-              end: true,
+              // end: true,
+              trigger : '9'
             },
+            {
+              id: '9',
+              message: 'Is there anything else we can help you with?',
+              trigger: 'query',
+            },
+            {
+              id: 'query',
+              user: true,
+              trigger: '11',
+            },
+            {
+              id: '11',
+              message: 'Thankyou for your query. Our support team will get back to you.',
+              end:true
+            }
           ]}
         />
       );
