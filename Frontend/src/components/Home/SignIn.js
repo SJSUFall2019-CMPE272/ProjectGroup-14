@@ -111,10 +111,10 @@ class Login extends Component {
                             </FormGroup>
                             <Button className="btn-lg btn-dark btn-block">Sign in</Button>
                             <div className="text-center pt-3">
-                                {/* Or
+                                {/* Or */}
                             <div className="text-center pt-3" style={{color:"black"}}>
                             
-                            <GoogleLogin
+                            {/* <GoogleLogin
     clientId="986335033587-3sjcnb8lqm06tgkifhsc5bshipp9ldga.apps.googleusercontent.com"
     buttonText="Login"
     onSuccess={this.responseGoogle}
