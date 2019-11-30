@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
+import {Redirect} from "react-router";
 
 const colors = ["#78ce90", "#b977ce", "#fac76e", "#de4d4d"];
 const data = {
@@ -107,6 +108,9 @@ export default class Chart extends Component {
 
     return (
       <div>
+          {localStorage.getItem("name")==null  && <Redirect to={{
+                    pathname: "/"
+                }}/>}
           <div class="header">
                         <a style={{color:"blue"}} href="/" class="logo">MEDIREPORT</a>
                             <div class="header-right">
