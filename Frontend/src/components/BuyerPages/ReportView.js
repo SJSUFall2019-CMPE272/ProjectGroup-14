@@ -214,10 +214,8 @@ class ReportView extends Component {
                                 </Scrollbars>
                             </div>
                             }
-
-
                         </Card.Text>
-                        <Button onClick={() => this.goToChat(jsonOrder)} type="button" variant="primary">Learn more</Button>
+
                     </Card.Body>
                 </Card>
             </li>;
@@ -248,7 +246,8 @@ class ReportView extends Component {
         this.getData();
 
         if (this.state.searchTerm != undefined) {
-            this.setState({file:  require("/Users/sakshi/cmpe273-groupproject/project/MediReport/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
+            //this.setState({file:  require("/Users/sakshi/cmpe273-groupproject/project/MediReport/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
+            this.setState({file:  require("/home/ec2-user/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
                 console.log("fileName123", this.state.file)
             })
         }

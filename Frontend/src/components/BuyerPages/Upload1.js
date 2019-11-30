@@ -98,9 +98,12 @@ class ImageUpload extends React.Component {
     render() {
       return (
         <div class="body1">
-          {this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
+          {localStorage.getItem("name")!=null && this.state.redirectVar != null && this.state.redirectVar === true && <Redirect to={{
                     pathname: "/reportView",
                     state: {searchTerm: this.state.fileName}
+                }}/>}
+             {localStorage.getItem("name")==null  && <Redirect to={{
+                    pathname: "/"
                 }}/>}
         {/* <div className="text-overlay1"> */}
                 <div className="header">
