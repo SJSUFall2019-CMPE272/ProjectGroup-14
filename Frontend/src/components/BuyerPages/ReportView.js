@@ -248,7 +248,9 @@ class ReportView extends Component {
         this.getData();
 
         if (this.state.searchTerm != undefined) {
-            this.setState({file:  require("/Users/vijendra4/GoogleDrive/sjsu/272/MediReport/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
+
+            this.setState({file:  require("/home/ec2-user/Frontend/src/pdfs" + this.state.searchTerm)}, () => {
+            //this.setState({file:  require("/Users/vijendra4/GoogleDrive/sjsu/272/MediReport/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
                 console.log("fileName123", this.state.file)
             })
         }
