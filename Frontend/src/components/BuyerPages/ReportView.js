@@ -63,6 +63,28 @@ diseaseDataMap.set("female:15-49", ["Neoplasms", "Cardiovascular diseases", "HIV
 diseaseDataMap.set("female:5-14", ["Enteric infections", "Unintentional injuries", "Other infectious diseases", "Neglected tropical diseases and malaria", "Respiratory infections and tuberculosis", "Neoplasms", "Transport injuries", "HIV/AIDS and sexually transmitted infections", "Other non-communicable diseases", "Self-harm and interpersonal violence", "Digestive diseases", "Cardiovascular diseases", "Neurological disorders", "Diabetes and kidney diseases", "Nutritional deficiencies", "Chronic respiratory diseases", "Musculoskeletal disorders", "Maternal and neonatal disorders", "Skin and subcutaneous diseases", "Mental disorders"]);
 diseaseDataMap.set("female:<5", ["Maternal and neonatal disorders", "Respiratory infections and tuberculosis", "Other non-communicable diseases", "Enteric infections", "Other infectious diseases", "Neglected tropical diseases and malaria", "Unintentional injuries", "HIV/AIDS and sexually transmitted infections", "Nutritional deficiencies", "Transport injuries", "Neoplasms", "Digestive diseases", "Self-harm and interpersonal violence", "Cardiovascular diseases", "Neurological disorders", "Diabetes and kidney diseases", "Chronic respiratory diseases", "Skin and subcutaneous diseases"]);
 
+const testRangeDataMap = new Map();
+testRangeDataMap.set("bilirubin", {"min": 0, "max": 1.2, "current": 1.39});
+testRangeDataMap.set("cholesterol", {"min": 0, "max": 200, "current": 216});
+testRangeDataMap.set("uric acid", {"min": 3.4, "max": 7, "current": 5.6});
+testRangeDataMap.set("creatinine", {"min": 0.5, "max": 1.5, "current": 0.89});
+
+const nlgMap = new Map();
+nlgMap.set(0, "Please check with your doctor.");
+nlgMap.set(1, "We need to get your level within range.");
+nlgMap.set(2, "More testing needs to be done.");
+nlgMap.set(3, "You are at a risk.");
+nlgMap.set(4, "You have to look at things that will help.");
+nlgMap.set(5, "This might be a cause of many diseases");
+
+const nlgOkMap = new Map();
+nlgOkMap.set(0, "Yous should have no symptoms.");
+nlgOkMap.set(1, "There is no need to reduce it.");
+nlgOkMap.set(2, "You seem healthy.");
+nlgOkMap.set(3, "Everything looks good");
+nlgOkMap.set(4, "It is good to be within the range");
+nlgOkMap.set(5, "Your levels are within the allowable range");
+
 class ReportView extends Component {
     constructor(props) {
         super(props);
@@ -99,23 +121,27 @@ class ReportView extends Component {
 
         switch (status) {
             case "New":
-                badge = <Badge style={{fontSize: 14}} variant="primary">{term}</Badge>;
+                badge = <Badge style={{fontSize: 24}} variant="primary">{term}</Badge>;
                 break;
 
             case "Preparing":
-                badge = <Badge style={{fontSize: 14}} variant="info">{term}</Badge>;
+                badge = <Badge style={{fontSize: 24}} variant="info">{term}</Badge>;
                 break;
 
             case "Ready":
-                badge = <Badge style={{fontSize: 14}} variant="dark">{term}</Badge>;
+                badge = <Badge style={{fontSize: 24}} variant="dark">{term}</Badge>;
                 break;
 
             case "Delivered":
-                badge = <Badge style={{fontSize: 14}} variant="success">{term}</Badge>;
+                badge = <Badge style={{fontSize: 24}} variant="success">{term}</Badge>;
                 break;
 
             case "Cancel":
-                badge = <Badge style={{fontSize: 14}} variant="danger">{term}</Badge>;
+                badge = <Badge style={{fontSize: 24}} variant="danger">{term}</Badge>;
+                break;
+
+            case "Warning":
+                badge = <Badge style={{fontSize: 24}} variant="warning">{term}</Badge>;
                 break;
         }
 
@@ -128,14 +154,14 @@ class ReportView extends Component {
 
         const renderTodos = foodArr.map((food, index) => {
             return <li style={{fontSize: 12}} key={index}>
-                {food}
+                <div style={{fontSize: 20}}>{food}</div>
+
                 <br/>
             </li>;
         });
 
         console.log("foodArr.length")
         console.log(foodArr.length)
-
 
         return <div>
             <ul className="ul li">{renderTodos}</ul>
@@ -171,26 +197,62 @@ class ReportView extends Component {
             console.log("jsonOrder");
             console.log(jsonOrder);
 
+            const isPresentInMap = testRangeDataMap.has(jsonOrder.entityName);
+            let range = isPresentInMap? testRangeDataMap.get(jsonOrder.entityName) : null;
+
+            const getRangeWord = (range) => {
+                if (range.current > range.max) {
+                    return this.getOrderStatusBadge("Cancel", "MORE THAN")
+                } else if (range.current < range.min) {
+                    return this.getOrderStatusBadge("Cancel", "LESS THAN")
+                } else {
+                    return this.getOrderStatusBadge("Delivered", "WITHIN")
+                }
+            }
+
+            const getNLGSentence = (range) => {
+                const rand = Math.round(Math.random() * 5);
+                const sent = (range.current > range.max || range.current < range.min)
+                    ? nlgMap.get(rand)
+                    : nlgOkMap.get(rand);
+
+                return <div>{this.getOrderStatusBadge("Warning", "<NLG>")}
+                    {sent}
+                    {this.getOrderStatusBadge("Warning", "</NLG>")}</div>
+            }
+
             return <li key={index}>
-                <Card style={{width: '50rem'}}>
+                <Card style={{width: '63rem'}}>
 
                     {/*{<Card.Img variant="top" src={require("../../images/restaurant-logo.png")}/>}*/}
                     <Card.Body>
                         <Card.Title>{this.getOrderStatusBadge("Ready", "Clinical term")}</Card.Title>
                         <Card.Text>
                             {this.getOrderStatusBadge("Preparing", "Term")} - <div
-                            style={{fontSize: 12}}>{jsonOrder.entityName}</div>
+                            style={{fontSize: 20}}>{jsonOrder.entityName}</div>
+                            <br/>
+
+                            {isPresentInMap && <div style={{fontSize: 20}}>
+                                {this.getOrderStatusBadge("Preparing", "Analysis")} <br/>
+                                Minimum value {jsonOrder.entityName} is - {range.min}<br/>
+                                Maximum value {jsonOrder.entityName} is - {range.max}<br/>
+                                Your value {jsonOrder.entityName} is - {range.current}<br/>
+
+                                Your value of {jsonOrder.entityName} is {getRangeWord(range)}
+                                than the permissible range. <br/>
+                                {getNLGSentence(range)}
+                            </div>}
                             <br/>
 
                             {this.getOrderStatusBadge("Preparing", "Explanation")} - <div
-                            style={{fontSize: 12}}>{jsonOrder.comment}</div>
+                            style={{fontSize: 20}}>{jsonOrder.comment}</div>
                             <br/>
 
                             {jsonOrder.foods.length > 0 &&
                             <div>
                                 {this.getOrderStatusBadge("Preparing", "Dietary recommendations")} -
                                 <br/>
-                                <div style={{fontSize: 12}}>Below food items may impact your {jsonOrder.entityName} levels -</div>
+                                <div style={{fontSize: 20}}>Below food items may impact your {jsonOrder.entityName} levels -</div>
                                 <br/>
                                 <div>
                                     <Scrollbars
@@ -206,7 +268,7 @@ class ReportView extends Component {
                             {jsonOrder.diseases.length > 0 &&
                             <div>
                                 {this.getOrderStatusBadge("Preparing", "Potential diagnosis")} -
-                                <div style={{fontSize: 12}}>{jsonOrder.entityName} imbalance can lead to the following conditions -</div>
+                                <div style={{fontSize: 20}}>{jsonOrder.entityName} imbalance can lead to the following conditions -</div>
                                 <br/>
                                 <Scrollbars
                                     style={{ height: 200 }}>
@@ -246,8 +308,8 @@ class ReportView extends Component {
         this.getData();
 
         if (this.state.searchTerm != undefined) {
-            //this.setState({file:  require("/Users/sakshi/cmpe273-groupproject/project/MediReport/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
-            this.setState({file:  require("/home/ec2-user/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
+            this.setState({file:  require("/Users/vijendra4/GoogleDrive/sjsu/272/MediReport/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
+            //this.setState({file:  require("/home/ec2-user/Frontend/src/pdfs/" + this.state.searchTerm)}, () => {
                 console.log("fileName123", this.state.file)
             })
         }
@@ -305,6 +367,8 @@ class ReportView extends Component {
         </div>
     }
 
+
+
     render() {
 
         return (
@@ -343,7 +407,7 @@ class ReportView extends Component {
                 </Modal>
 
                 <div className='rowC'>
-                    <div>
+                    <div style={{marginLeft: -60}}>
                         <Document
                             file={this.state.file}
                             onLoadSuccess={this.onDocumentLoadSuccess}
@@ -352,7 +416,7 @@ class ReportView extends Component {
                         </Document>
                         Page {this.state.pageNumber} of {this.state.numPages}
                     </div>
-                    <div>
+                    <div style={{width: 800}}>
                         <Button
                             onClick={() => this.setState({isOpenModal: true})}
                             type="button" variant="primary">
